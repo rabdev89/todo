@@ -1,0 +1,3 @@
+# Never commit OAuth client downloads (contain client_secret)
+client_secret*.json
+**/client_secret*.json

@@ -1,0 +1,30 @@
+{
+  "frontend": {
+    "framework": "React (Vite)",
+    "language": "TypeScript",
+    "styling": "Material UI (MUI)",
+    "state_management": "React Context API"
+  },
+  "backend": {
+    "framework": "NestJS",
+    "language": "TypeScript",
+    "database": "PostgreSQL",
+    "orm": "Prisima"
+  },
+  "testing": {
+    "frontend": "Vitest / React Testing Library",
+    "backend": "Jest",
+    "e2e": "Playwright"
+  },
+  "deployment": {
+    "platform": "Docker",
+    "ci_cd": "GitHub Actions",
+    "hosting": "Render / DigitalOcean"
+  },
+  "tools": {
+    "package_manager": "npm",
+    "linter": "ESLint",
+    "formatter": "Prettier",
+    "type_checker": "tsc"
+  }
+}

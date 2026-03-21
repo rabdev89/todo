@@ -1,0 +1,15 @@
+{
+  "id": "T-104",
+  "title": "Secure Routes Middleware",
+  "epic_id": "epic-001",
+  "status": "completed",
+  "priority": "high",
+  "track": "B",
+  "dependencies": ["T-103"],
+  "description": "Protect API routes using JWT authentication middleware.",
+  "requirements": [
+    "Apply JwtAuthGuard to protected routes",
+    "Implement a /users/me endpoint for profile fetching",
+    "Verify unauthorized requests return 401"
+  ]
+}

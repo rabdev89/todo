@@ -1,0 +1,369 @@
+{
+  "$schema": "./commands.schema.json",
+  "version": "1.0.0",
+  "description": "Machine-readable command registry for BOB - AI Software Development Workflow Framework",
+  "commands": {
+    "run": {
+      "agent": "executor",
+      "handler": "phase_runner.ts",
+      "description": "Execute the SDLC engine for a specific ticket",
+      "args": ["ticketId"],
+      "options": {
+        "phase": {
+          "type": "string",
+          "description": "Start from specific phase",
+          "enum": ["research", "design", "implement", "validate", "done"]
+        },
+        "skip-guards": {
+          "type": "boolean",
+          "description": "Skip guard checks (not recommended)"
+        }
+      },
+      "phases": ["research", "design", "implement", "validate", "done"]
+    },
+    "status": {
+      "agent": "orchestrator",
+      "handler": "state_manager.ts",
+      "description": "Show current status, phase, dependencies, and blockers for a ticket",
+      "args": ["ticketId"]
+    },
+    "deps": {
+      "agent": "orchestrator",
+      "handler": "dependency_engine.ts",
+      "description": "Display dependency tree and analyze if ticket can be executed",
+      "args": ["ticketId"]
+    },
+    "next": {
+      "agent": "orchestrator",
+      "handler": "dependency_engine.ts",
+      "description": "List all tickets ready for execution based on dependency resolution",
+      "args": []
+    },
+    "context": {
+      "agent": "orchestrator",
+      "handler": "context_builder.ts",
+      "description": "Generate AI context pack for focused ticket work",
+      "args": ["ticketId"],
+      "options": {
+        "format": {
+          "type": "string",
+          "description": "Output format",
+          "enum": ["markdown", "json"],
+          "default": "markdown"
+        },
+        "compress": {
+          "type": "boolean",
+          "description": "Apply context compression for token optimization",
+          "default": true
+        }
+      }
+    },
+    "validate": {
+      "agent": "verifier",
+      "handler": "validation_runner.ts",
+      "description": "Run all guards (File Guard, Architecture Guard) without advancing ticket",
+      "args": ["ticketId"]
+    },
+    "index-repo": {
+      "agent": "researcher",
+      "handler": "repo_intelligence/indexer.ts",
+      "description": "Index repository for intelligent search",
+      "args": [],
+      "options": {
+        "path": {
+          "type": "string",
+          "description": "Repository path to index",
+          "default": "./web-applications"
+        },
+        "watch": {
+          "type": "boolean",
+          "description": "Watch for changes and auto-reindex"
+        },
+        "reset": {
+          "type": "boolean",
+          "description": "Reset index before indexing"
+        },
+        "parallel": {
+          "type": "boolean",
+          "description": "Use parallel processing"
+        },
+        "workers": {
+          "type": "number",
+          "description": "Number of parallel workers"
+        }
+      }
+    },
+    "search": {
+      "agent": "researcher",
+      "handler": "repo_intelligence/search.ts",
+      "description": "Search repository by meaning or keyword",
+      "args": ["query"],
+      "options": {
+        "type": {
+          "type": "string",
+          "description": "Search type",
+          "enum": ["semantic", "keyword", "hybrid"],
+          "default": "hybrid"
+        },
+        "limit": {
+          "type": "number",
+          "description": "Number of results",
+          "default": 10
+        },
+        "threshold": {
+          "type": "number",
+          "description": "Similarity threshold",
+          "default": 0.7
+        }
+      }
+    },
+    "symbols": {
+      "agent": "researcher",
+      "handler": "repo_intelligence/symbols.ts",
+      "description": "Find functions, classes, methods by name across the codebase",
+      "args": ["name"]
+    },
+    "dependents": {
+      "agent": "researcher",
+      "handler": "repo_intelligence/dependents.ts",
+      "description": "Locate all files that import or depend on a specific symbol",
+      "args": ["symbol"]
+    },
+    "research": {
+      "agent": "researcher",
+      "handler": "agents/researcher.ts",
+      "description": "Run researcher agent to discover patterns and map codebase",
+      "args": ["ticketId"],
+      "output": "RESEARCH.md"
+    },
+    "plan": {
+      "agent": "planner",
+      "handler": "agents/planner.ts",
+      "description": "Run planner agent to create detailed implementation plan",
+      "args": ["ticketId"],
+      "output": "BLUEPRINT.md"
+    },
+    "execute": {
+      "agent": "executor",
+      "handler": "agents/executor.ts",
+      "description": "Run executor agent to implement code according to blueprint",
+      "args": ["ticketId"],
+      "output": "RECORD.md"
+    },
+    "verify": {
+      "agent": "verifier",
+      "handler": "agents/verifier.ts",
+      "description": "Run verifier agent to validate implementation against requirements",
+      "args": ["ticketId"],
+      "output": "VERIFICATION.md"
+    },
+    "agent-status": {
+      "agent": "orchestrator",
+      "handler": "agent_orchestrator.ts",
+      "description": "Show execution status of all agents for a ticket",
+      "args": ["ticketId"]
+    },
+    "agents": {
+      "agent": "orchestrator",
+      "handler": "agent_orchestrator.ts",
+      "description": "Display available agents, their purposes, and usage flow",
+      "args": []
+    },
+    "session": {
+      "subcommands": {
+        "start": {
+          "agent": "orchestrator",
+          "handler": "session/session_manager.ts",
+          "description": "Create a new session for the current project",
+          "options": {
+            "name": {
+              "type": "string",
+              "description": "Session name"
+            }
+          }
+        },
+        "list": {
+          "agent": "orchestrator",
+          "handler": "session/session_manager.ts",
+          "description": "Show recent sessions",
+          "options": {
+            "limit": {
+              "type": "number",
+              "description": "Number of sessions to show"
+            }
+          }
+        },
+        "stats": {
+          "agent": "orchestrator",
+          "handler": "session/session_manager.ts",
+          "description": "Display statistics for a session",
+          "args": ["sessionId"]
+        },
+        "current": {
+          "agent": "orchestrator",
+          "handler": "session/session_manager.ts",
+          "description": "Show details of the currently active session",
+          "args": []
+        },
+        "use": {
+          "agent": "orchestrator",
+          "handler": "session/session_manager.ts",
+          "description": "Switch to a different session",
+          "args": ["sessionId"]
+        }
+      }
+    },
+    "architecture": {
+      "subcommands": {
+        "register": {
+          "agent": "orchestrator",
+          "handler": "architecture_registry.ts",
+          "description": "Register a module in the architecture registry",
+          "args": ["moduleName", "moduleType", "filePath"]
+        },
+        "query": {
+          "agent": "orchestrator",
+          "handler": "architecture_registry.ts",
+          "description": "Query architecture registry for module information",
+          "args": ["moduleType"],
+          "options": {
+            "module": {
+              "type": "string",
+              "description": "Specific module name to query"
+            }
+          }
+        },
+        "validate": {
+          "agent": "verifier",
+          "handler": "architecture_guard.ts",
+          "description": "Validate architecture layer rules and import violations",
+          "args": [],
+          "options": {
+            "files": {
+              "type": "array",
+              "description": "Specific files to validate"
+            }
+          }
+        },
+        "rules": {
+          "agent": "orchestrator",
+          "handler": "architecture_guard.ts",
+          "description": "Display current architecture layer rules",
+          "args": []
+        },
+        "update": {
+          "agent": "orchestrator",
+          "handler": "architecture_registry.ts",
+          "description": "Update architecture registry from current codebase",
+          "args": [],
+          "options": {
+            "scan": {
+              "type": "boolean",
+              "description": "Scan codebase to auto-detect modules",
+              "default": true
+            }
+          }
+        }
+      }
+    },
+    "insights": {
+      "agent": "orchestrator",
+      "handler": "learning_layer.ts",
+      "description": "Display learning insights and metrics",
+      "options": {
+        "export": {
+          "type": "string",
+          "description": "Export path for JSON output"
+        }
+      }
+    },
+    "design": {
+      "agent": "designer",
+      "handler": "agents/design.ts",
+      "description": "Run design agent to generate UI/UX specifications",
+      "args": ["ticketId"],
+      "output": "design/DESIGN.md"
+    }
+  },
+  "agents": {
+    "researcher": {
+      "description": "Discovers patterns, maps codebase, finds relevant skills",
+      "promptFile": "agents_prompts_index.md#researcher",
+      "inputs": ["ticketId", "PRD.md", "FRD.md"],
+      "outputs": ["RESEARCH.md"]
+    },
+    "planner": {
+      "description": "Creates detailed implementation plans and blueprints",
+      "promptFile": "agents_prompts_index.md#planner",
+      "inputs": ["RESEARCH.md", "PRD.md"],
+      "outputs": ["BLUEPRINT.md"]
+    },
+    "designer": {
+      "description": "Generates UI/UX design specifications using reasoning engine",
+      "promptFile": "agents_prompts_index.md#designer",
+      "inputs": ["RESEARCH.md", "PRD.md"],
+      "outputs": ["design/DESIGN.md"]
+    },
+    "executor": {
+      "description": "Implements code according to blueprint",
+      "promptFile": "agents_prompts_index.md#executor",
+      "inputs": ["BLUEPRINT.md", "context_pack"],
+      "outputs": ["RECORD.md", "code_changes"]
+    },
+    "verifier": {
+      "description": "Validates implementation against requirements",
+      "promptFile": "agents_prompts_index.md#verifier",
+      "inputs": ["BLUEPRINT.md", "RECORD.md", "implementation"],
+      "outputs": ["VERIFICATION.md"]
+    },
+    "orchestrator": {
+      "description": "Coordinates agents and manages workflow",
+      "promptFile": "agents_prompts_index.md#orchestrator",
+      "inputs": ["command", "context"],
+      "outputs": ["agent_invocation"]
+    }
+  },
+  "slashCommands": {
+    "scope-epic": {
+      "agent": "planner",
+      "description": "Create and scaffold tickets for a new epic",
+      "workflow": ["read_epic_backlog", "analyze_prd", "create_tickets"]
+    },
+    "execute-plan": {
+      "agent": "executor",
+      "description": "Work through planning doc tasks interactively",
+      "workflow": ["research", "plan", "execute", "verify"]
+    },
+    "writing-test": {
+      "agent": "verifier",
+      "description": "Produce unit/integration tests targeting 80-100% coverage"
+    },
+    "check-implementation": {
+      "agent": "verifier",
+      "description": "Validate changes against design docs and requirements"
+    },
+    "code-review": {
+      "agent": "verifier",
+      "description": "Conduct structured code review"
+    },
+    "capture-knowledge": {
+      "agent": "orchestrator",
+      "description": "Document key insights and patterns"
+    },
+    "autonomous": {
+      "agent": "executor",
+      "description": "Execute complete pipeline automatically",
+      "workflow": ["research", "plan", "execute", "verify"],
+      "autoAdvance": true
+    },
+    "debug": {
+      "agent": "executor",
+      "description": "Enter debug loop to fix issues",
+      "workflow": ["clarify", "reproduce", "hypothesize", "isolate", "plan", "validate"]
+    },
+    "verify-ticket": {
+      "agent": "verifier",
+      "description": "Run verification pipeline on completed ticket"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+# Trae IDE Rules for Agent
+
+## Repository Intelligence & Scoping
+- **MANDATORY**: Always check for `repo_data` files before scoping tickets or performing codebase exploration.
+- **If `web-applications/repo_data/` directory does not exist**, run: `npm run make:setup-index` before proceeding.
+- **MANDATORY**: Always consult `repo_data` files (found in `engine/repo_data` or `web-applications/repo_data`) after ensuring they exist.
+- Use `files.json`, `symbols.json`, `chunks.json`, and `imports.json` to gain a comprehensive understanding of the codebase structure and dependencies before making implementation plans.
+- This applies to both Track A (Lean) and Track B (Full) tickets.

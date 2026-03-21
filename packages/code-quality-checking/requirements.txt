@@ -1,0 +1,8 @@
+ruff>=0.3.0
+bandit>=1.7.8
+radon>=6.0.1
+mypy>=1.9.0
+lizard>=1.17.10
+pip-audit>=2.7.2
+vulture>=2.11
+pydocstyle>=6.3.0

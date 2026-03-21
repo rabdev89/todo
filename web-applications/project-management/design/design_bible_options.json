@@ -1,0 +1,40 @@
+{
+  "directions": [
+    {
+      "id": 1,
+      "name": "The Pristine Productivity Engine",
+      "description": "Fallback direction due to reasoning engine error.",
+      "tokens": {
+        "primary": "#cccccc",
+        "secondary": "#999999",
+        "heading": "sans-serif",
+        "body": "serif"
+      },
+      "full_spec": "Reasoning engine failed."
+    },
+    {
+      "id": 2,
+      "name": "Glass Morphic Focus",
+      "description": "Fallback direction due to reasoning engine error.",
+      "tokens": {
+        "primary": "#cccccc",
+        "secondary": "#999999",
+        "heading": "sans-serif",
+        "body": "serif"
+      },
+      "full_spec": "Reasoning engine failed."
+    },
+    {
+      "id": 3,
+      "name": "Neo-Tactile Workspace",
+      "description": "Fallback direction due to reasoning engine error.",
+      "tokens": {
+        "primary": "#cccccc",
+        "secondary": "#999999",
+        "heading": "sans-serif",
+        "body": "serif"
+      },
+      "full_spec": "Reasoning engine failed."
+    }
+  ]
+}

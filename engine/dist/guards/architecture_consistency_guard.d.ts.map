@@ -1,0 +1,1 @@
+{"version":3,"file":"architecture_consistency_guard.d.ts","sourceRoot":"","sources":["../../src/guards/architecture_consistency_guard.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,gBAAgB,EAAE,WAAW,EAAE,MAAM,cAAc,CAAC;AAI7D,qBAAa,4BAA6B,YAAW,gBAAgB;IACjE,IAAI,SAA8B;IAClC,WAAW,SAAgD;IAErD,GAAG,CAAC,QAAQ,EAAE,MAAM,GAAG,OAAO,CAAC,WAAW,CAAC;CAqBpD"}

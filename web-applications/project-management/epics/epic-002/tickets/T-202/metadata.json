@@ -1,0 +1,15 @@
+{
+  "id": "T-202",
+  "title": "Subtask Logic (Hierarchy & Completion)",
+  "epic_id": "epic-002",
+  "status": "completed",
+  "priority": "medium",
+  "track": "B",
+  "dependencies": ["T-201"],
+  "description": "Implement subtask management and rules for task completion.",
+  "requirements": [
+    "POST /tasks/:id/subtasks: Add subtask",
+    "PATCH /subtasks/:id: Toggle subtask completion",
+    "Logic: Parent task cannot be 'Completed' if subtasks are pending"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "T-301",
+  "title": "Attachment Service",
+  "epic_id": "epic-003",
+  "status": "scoped",
+  "priority": "medium",
+  "track": "B",
+  "dependencies": ["T-104"],
+  "description": "Implement file upload and attachment management.",
+  "requirements": [
+    "POST /tasks/:id/attachments: Upload file",
+    "GET /attachments/:id: Download/View file",
+    "Limit file size to 5MB"
+  ]
+}

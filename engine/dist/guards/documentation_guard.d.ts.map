@@ -1,0 +1,1 @@
+{"version":3,"file":"documentation_guard.d.ts","sourceRoot":"","sources":["../../src/guards/documentation_guard.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,gBAAgB,EAAE,WAAW,EAAE,MAAM,cAAc,CAAC;AAK7D,qBAAa,kBAAmB,YAAW,gBAAgB;IACvD,IAAI,SAA6B;IACjC,WAAW,SAAmE;IAExE,GAAG,CAAC,QAAQ,EAAE,MAAM,GAAG,OAAO,CAAC,WAAW,CAAC;CAwCpD"}

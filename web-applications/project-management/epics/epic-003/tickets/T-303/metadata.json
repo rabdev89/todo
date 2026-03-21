@@ -1,0 +1,16 @@
+{
+  "id": "T-303",
+  "title": "Responsive Optimization",
+  "epic_id": "epic-003",
+  "status": "scoped",
+  "priority": "low",
+  "track": "B",
+  "dependencies": ["T-203", "T-204"],
+  "description": "Refine the UI/UX for mobile and tablet devices, ensuring a seamless experience across all screen sizes.",
+  "requirements": [
+    "Mobile-first navigation (Bottom bar or Hamburger)",
+    "Responsive task cards and detail modals",
+    "Performance optimization for mobile rendering",
+    "Touch-friendly interactive elements"
+  ]
+}

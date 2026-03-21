@@ -1,0 +1,87 @@
+{
+  "name": "Framework Initialization Seed",
+  "version": "1.0",
+  "description": "Automatic memory seeding for new projects. Load these entries into /memories/repo/ during project initialization.",
+  "entries": [
+    {
+      "id": "framework-decision-gate",
+      "title": "Decision Gate: Choose Your Track",
+      "content": "EVERY new ticket starts with WORKFLOW_DECISION_GATE.md. Answer 3 questions:\n1. Scope Check: Is this a single file/component change?\n2. Complexity Check: Does this require design/research?\n3. Effort Estimate: Will this take < 30 minutes?\n\nAnswer pattern determines Track:\n- All YES → Track A (Lean): 30 min overhead, quick decision→code→test→done\n- Any NO → Track B (Full): 1 hour overhead, decision→requirements→design→plan→code→test→review→done\n\nThis is non-negotiable. No ticket work without decision gate. See project-management/WORKFLOW_DECISION_GATE.md",
+      "tags": ["framework", "workflow", "enforcement", "decision-making"],
+      "scope": "project",
+      "created": "2026-03-08"
+    },
+    {
+      "id": "framework-error-recovery",
+      "title": "Error Recovery Pattern: 3 Attempts, 5 Minutes Each",
+      "content": "When something fails, use this pattern:\n\nStep 1 (< 5 min): Try autonomous fixes\n- Dependency issues → npm/pip/flutter install\n- File not found → check path, case sensitivity\n- Type errors → run build, read full error\n- Auth errors → verify credentials/permissions\n- Network failures → retry with backoff\n\nStep 2 (< 5 min each, max 3 times): Adjust and retry\n- Change code slightly, rebuild, test\n- Check logs for more info\n- Try different approach\n\nStep 3 (No progress?): STOP and escalate\n- You've hit the circuit breaker\n- Document what you tried and why it failed\n- Ask for human help (see EMERGENCIES.md)\n\nNEVER retry the same command 10 times hoping for different results. That's a circuit breaker trigger.",
+      "tags": ["framework", "error-handling", "circuit-breaker", "escalation"],
+      "scope": "project",
+      "created": "2026-03-08"
+    },
+    {
+      "id": "framework-circuit-breaker",
+      "title": "Circuit Breaker: When to Stop and Escalate",
+      "content": "Circuit breaker triggers (escalate immediately when ANY of these occur):\n\n1. **Repetition Without Progress**: Attempted 3 times, no measurable progress toward goal\n2. **Error Pattern Repeats**: Same root cause, same error message appearing again\n3. **Retry Loop**: Retrying the same command repeatedly expecting different results\n4. **Cascading failures**: Fixed one thing, broke three others\n\nEscalation format:\n- Issue: [One sentence]\n- What happened: [Error + stack trace]\n- What I tried: [3 numbered attempts with results]\n- Why escalating: [Which trigger was hit]\n- Hypothesis: [What I think the real problem is]\n- Recommended next steps: [What could work, even if you can't do it]\n\nSee .agent/rules/WORKFLOW.md and .agent/rules/EMERGENCIES.md",
+      "tags": ["framework", "circuit-breaker", "escalation", "error-handling"],
+      "scope": "project",
+      "created": "2026-03-08"
+    },
+    {
+      "id": "framework-memory-checkpoint",
+      "title": "Memory Checkpoint: Step 3 of Every Workflow",
+      "content": "After completing significant work, ALWAYS ask:\n\"What would help the next agent do similar work faster?\"\n\nIf answer is valuable, save it to /memories/repo/:\n- Pattern discovered? → Save as repo memory\n- Gotcha/trap found? → Save as repo memory  \n- Validation method that works? → Save as repo memory\n- Code style for this stack? → Save as repo memory\n\nFormat:\n- Title: Specific and searchable\n- Content: 3-5 sentences, actionable not theoretical\n- Tags: 3-4 keywords for discovery\n- Example: \"Flutter TextField validation pattern\" not \"how to validate in Flutter\"\n\nMemory creates institutional knowledge. Each entry saves future agents 15-30 minutes.\nSee .agent/rules/WORKFLOW.md Step 3 and /memories/repo/ examples.",
+      "tags": ["framework", "memory", "learning", "knowledge-capture"],
+      "scope": "project",
+      "created": "2026-03-08"
+    },
+    {
+      "id": "framework-two-tracks",
+      "title": "Track A vs Track B: Quick Reference",
+      "content": "TRACK A (Lean) - For simple, bounded work:\n- Decision → Code → Test → Done\n- 30 minutes overhead total\n- Use when: single file change, no design needed, < 30 min effort\n- Examples: bug fix, UI tweak, small feature\n\nTRACK B (Full) - For complex, architectural work:\n- Decision → Req → Design → Plan → Code → Test → Review → Done\n- 1 hour overhead total\n- Use when: new feature, design needed, > 30 min effort, multiple files\n- Examples: new epic, refactor, integration\n\nDetermine track using WORKFLOW_DECISION_GATE.md (3 questions).\nDon't skip phases in Track B; phases exist for a reason.\nDon't over-engineer Track A work with unnecessary documentation.\n\nEach track has appropriate ceremonies matched to work complexity.",
+      "tags": ["framework", "workflow", "tracks", "execution"],
+      "scope": "project",
+      "created": "2026-03-08"
+    },
+    {
+      "id": "framework-bob-commands",
+      "title": "Bob Orchestration Commands: Quick Start",
+      "content": "Bob is your command orchestrator. Key commands:\n\n`orchestrate --single`\n- Executes ONE action from the prioritized backlog\n- Use when: following manual workflow, testing specific action\n- Returns: action result or escalation point\n\n`orchestrate --auto`\n- Executes actions until a decision point or error is hit\n- Use when: running an automated ticket phase\n- Returns: when human input needed\n\n`orchestrate --max-steps N`\n- Executes up to N actions before stopping\n- Use when: limiting scope of auto execution\n- Safety mechanism for large changes\n\n`orchestrate --no-prompt`\n- Skips confirmation prompts, executes autonomously\n- Use when: in CI/CD or batch operations\n- Requires explicit approval first\n\nFull command docs: engine/src/orchestration/types.ts\nCommand mapping: engine/src/shared/command_mapping.ts\nSee BOB_README.md for architecture details.",
+      "tags": ["framework", "bob", "orchestration", "commands"],
+      "scope": "project",
+      "created": "2026-03-08"
+    },
+    {
+      "id": "framework-common-mistakes",
+      "title": "Common Mistakes (Avoid These)",
+      "content": "🚫 Framework Anti-Patterns:\n\n1. **Skip Decision Gate**: Thinking you can save time. You can't. It clears confusion immediately.\n2. **Mix Tracks**: Using Full workflow for Track A work (over-engineering) or Track A for Track B work (under-delivering).\n3. **Ignore Circuit Breaker**: Retrying same command 10+ times. That's a loop - escalate instead.\n4. **Over-Automate**: Trying to automate something that needs human judgment (architecture decisions, design choices).\n5. **Forget Memory Checkpoint**: Completing work without asking \"what did I learn?\" Lost knowledge for next agent.\n6. **Assume Parallel Execution**: Tasks aren't parallelized by default. Rare case where independent tasks happen simultaneously - document when doing it.\n7. **Skip Testing**: Thinking code works so tests aren't needed. Tests are how you verify decision quality.\n\nSee .agent/rules/WORKFLOW.md Anti-patterns section for detailed explanations.",
+      "tags": ["framework", "anti-patterns", "mistakes", "workflow"],
+      "scope": "project",
+      "created": "2026-03-08"
+    },
+    {
+      "id": "framework-rules-overview",
+      "title": "Core Rules Architecture: 5 Essential Files",
+      "content": "The framework has 5 core rule files (no more 19 with duplication):\n\n1. **.agent/rules/CORE_PRINCIPLES.md** (Universal)\n   - 8 principles: Simplicity, Self-Describing, Immutability, Composition, Testability, Errors as Data, Explicit, Separation of Concerns\n   - Read once, applies to all code\n\n2. **.agent/rules/CODE_QUALITY.md** (All code)\n   - Testing requirements (TDD, 5-key-questions)\n   - Code style guides (JS/TS/Python/Flutter/Dart)\n   - Code review standards\n   - When to escalate\n\n3. **.agent/rules/WORKFLOW.md** (Execution)\n   - Step 1: Decision Gate\n   - Step 2: Error Recovery & Circuit Breaker\n   - Step 3: Update Memory\n   - Key Rules and Anti-patterns\n\n4. **.agent/rules/EMERGENCIES.md** (When stuck)\n   - Escalation protocol (3 steps)\n   - Emergency scenarios with handling\n   - Post-escalation review\n   - FAQ\n\n5. **project-management/WORKFLOW_DECISION_GATE.md** (First thing)\n   - 3-question decision matrix\n   - Determines Track A vs Track B\n   - Mandatory before any ticket work\n\nStack-specific rules available: javascript.md, python.md, flutter.md, react.md, fastapi.md\nSee .agent/rules/CONSOLIDATION_GUIDE.md for why 19 files → 5 files consolidation happened.",
+      "tags": ["framework", "rules", "architecture", "documentation"],
+      "scope": "project",
+      "created": "2026-03-08"
+    },
+    {
+      "id": "framework-scaffold-checklist",
+      "title": "Project Initialization Checklist",
+      "content": "When starting a new project, verify these are in place:\n\n☑ WORKFLOW_DECISION_GATE.md (in project-management/)\n  → Required before ANY ticket work\n\n☑ 5 Core Rules (in .agent/rules/)\n  → CORE_PRINCIPLES.md, CODE_QUALITY.md, WORKFLOW.md, EMERGENCIES.md\n  → Plus CONSOLIDATION_GUIDE.md for context\n\n☑ Repository Memory (in /memories/repo/)\n  → Should have framework-decision-gate\n  → Should have framework-error-recovery\n  → Should have framework-circuit-breaker\n  → Should have framework-memory-checkpoint\n  → Should have framework-two-tracks\n  → Should have framework-bob-commands\n  → Should have framework-common-mistakes\n  → Should have framework-rules-overview\n  → (This is the memory-seed.json file)\n\n☑ Tech Stack Verified\n  → ci/ci_config.sh has correct tech stack\n  → Primary testing framework installed (jest, pytest, flutter_test, etc)\n  → No placeholder values in build configs\n\nOptional but recommended:\n  → BOB_README.md for orchestration docs\n  → Stack-specific rules (.agent/rules/javascript.md, etc)\n  → CLAUDE.md for agent interaction guidelines\n\nAll core files are in the framework root. Copy/reference them in new projects.",
+      "tags": ["framework", "initialization", "setup", "checklist"],
+      "scope": "project",
+      "created": "2026-03-08"
+    },
+    {
+      "id": "framework-slash-command-mapping",
+      "title": "Slash-command Mapping for /bob",
+      "content": "In this framework `/bob` is shorthand for executing the Bob engine. The memory seeding ensures new agents know how to translate it:\n\n- `/bob` → run `cd engine; npm run start -- bob` via run_in_terminal.\n- `/bob-status` → run `cd engine; npm run start -- bob-status`.\n\nDo NOT assume typing `/bob` executes the command automatically; an agent must explicitly call the terminal tool. The same pattern applies for any future slash-commands mapped to terminal actions.",
+      "tags": ["framework", "commands", "bob"],
+      "scope": "project",
+      "created": "2026-03-08"
+    }
+  ]
+}

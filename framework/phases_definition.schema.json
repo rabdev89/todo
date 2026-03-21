@@ -1,0 +1,140 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Phases Definition Schema",
+  "description": "Schema for BOB - AI Software Development Workflow Framework phase definitions",
+  "type": "object",
+  "required": ["framework_version", "phases"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "framework_version": {
+      "type": "string",
+      "description": "Version of the framework"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of this phase definition file"
+    },
+    "phases": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/phase"
+      }
+    },
+    "project_types": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/projectType"
+      }
+    },
+    "settings": {
+      "$ref": "#/definitions/settings"
+    }
+  },
+  "definitions": {
+    "phase": {
+      "type": "object",
+      "required": ["id", "name", "description", "entry_condition", "exit_condition", "steps"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the phase"
+        },
+        "name": {
+          "type": "string",
+          "description": "Human-readable name"
+        },
+        "description": {
+          "type": "string"
+        },
+        "entry_condition": {
+          "type": "string",
+          "description": "Condition required to enter this phase"
+        },
+        "exit_condition": {
+          "type": "string",
+          "description": "Condition marking phase completion"
+        },
+        "skippable": {
+          "type": "boolean",
+          "default": false
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/step"
+          }
+        }
+      }
+    },
+    "step": {
+      "type": "object",
+      "required": ["id", "name", "description", "required_action", "user_input_required", "next_step"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "required_action": {
+          "type": "string",
+          "description": "Action handler identifier"
+        },
+        "user_input_required": {
+          "type": "boolean"
+        },
+        "next_step": {
+          "type": ["string", "null"],
+          "description": "Next step ID or null for phase end"
+        },
+        "estimated_duration": {
+          "type": "string"
+        }
+      }
+    },
+    "projectType": {
+      "type": "object",
+      "required": ["name", "description", "skip_phases"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "skip_phases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "settings": {
+      "type": "object",
+      "properties": {
+        "auto_advance": {
+          "type": "boolean"
+        },
+        "require_user_approval": {
+          "type": "boolean"
+        },
+        "dashboard_auto_generate": {
+          "type": "boolean"
+        },
+        "state_persistence": {
+          "type": "string",
+          "enum": ["file", "memory"]
+        },
+        "watchdog_interval_minutes": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}

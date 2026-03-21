@@ -1,0 +1,429 @@
+[2026-03-18T12:33:25.145Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T12:33:25.146Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T12:33:25.149Z] [INFO] Loaded current state {"phaseId":"development","stepId":"swarm_tickets","status":"pending","mode":"full","project_type":null,"project_name":null}
+[2026-03-18T12:33:25.151Z] [INFO] Step marked as running {"phaseId":"development","stepId":"swarm_tickets","stepName":"Bee Swarm (Parallel Fan-Out)"}
+[2026-03-18T12:33:25.151Z] [INFO] Prepared action context {"phaseId":"development","stepId":"swarm_tickets","requiredAction":"trigger_swarm","personaId":"executor","layer":"ticket","track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T12:33:25.152Z] [INFO] Executed action handler {"phaseId":"development","stepId":"swarm_tickets","action":"trigger_swarm","success":true}
+[2026-03-18T12:33:25.154Z] [INFO] Step completed successfully {"phaseId":"development","stepId":"swarm_tickets","stepName":"Bee Swarm (Parallel Fan-Out)","advancedPhase":"development","advancedStep":"ticket_selection","isNewPhase":false}
+[2026-03-18T12:33:25.154Z] [INFO] Bob CLI command completed {"success":true,"phase":"development","step":"ticket_selection","message":"✅ Completed step: Bee Swarm (Parallel Fan-Out). Next: ticket_selection"}
+[2026-03-18T12:34:27.762Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T12:34:27.763Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T12:34:27.764Z] [INFO] Loaded current state {"phaseId":"framework_bootstrap","stepId":"check_framework_setup","status":"pending","mode":"full","project_type":null,"project_name":null}
+[2026-03-18T12:34:27.766Z] [INFO] Step marked as running {"phaseId":"framework_bootstrap","stepId":"check_framework_setup","stepName":"Validate Framework Setup"}
+[2026-03-18T12:34:27.766Z] [INFO] Prepared action context {"phaseId":"framework_bootstrap","stepId":"check_framework_setup","requiredAction":"validate_framework_setup","personaId":"orchestrator","layer":"ticket","track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T12:34:27.859Z] [INFO] Executed action handler {"phaseId":"framework_bootstrap","stepId":"check_framework_setup","action":"validate_framework_setup","success":false,"error":"One or more framework checks failed"}
+[2026-03-18T12:34:27.863Z] [ERROR] Step execution failed {"phaseId":"framework_bootstrap","stepId":"check_framework_setup","stepName":"Validate Framework Setup","error":"One or more framework checks failed"}
+[2026-03-18T12:34:27.863Z] [INFO] Bob CLI command completed {"success":false,"phase":"framework_bootstrap","step":"check_framework_setup","message":"❌ Step failed: One or more framework checks failed"}
+[2026-03-18T12:38:49.089Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T12:38:49.090Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T12:38:49.092Z] [INFO] Loaded current state {"phaseId":"project_initialization","stepId":"detect_project_type","status":"pending","mode":"full","project_type":null,"project_name":null}
+[2026-03-18T12:38:49.094Z] [INFO] Step marked as running {"phaseId":"project_initialization","stepId":"detect_project_type","stepName":"Detect Project Type"}
+[2026-03-18T12:38:49.094Z] [INFO] Prepared action context {"phaseId":"project_initialization","stepId":"detect_project_type","requiredAction":"select_project_type","personaId":"planner","layer":"ticket","track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T12:38:49.094Z] [INFO] Executed action handler {"phaseId":"project_initialization","stepId":"detect_project_type","action":"select_project_type","success":false,"error":"Project type and name not configured"}
+[2026-03-18T12:38:49.094Z] [INFO] AI input required {"phaseId":"project_initialization","stepId":"detect_project_type","requiredFields":[]}
+[2026-03-18T12:38:49.096Z] [INFO] Bob CLI command completed {"success":false,"phase":"project_initialization","step":"detect_project_type","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T12:39:54.359Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T12:39:54.360Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T12:39:54.362Z] [INFO] Loaded current state {"phaseId":"project_initialization","stepId":"detect_project_type","status":"pending","mode":"full","project_type":null,"project_name":null}
+[2026-03-18T12:39:54.363Z] [INFO] Step marked as running {"phaseId":"project_initialization","stepId":"detect_project_type","stepName":"Detect Project Type"}
+[2026-03-18T12:39:54.363Z] [INFO] Prepared action context {"phaseId":"project_initialization","stepId":"detect_project_type","requiredAction":"select_project_type","personaId":"planner","layer":"ticket","track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T12:39:54.364Z] [INFO] Executed action handler {"phaseId":"project_initialization","stepId":"detect_project_type","action":"select_project_type","success":false,"error":"Project type and name not configured"}
+[2026-03-18T12:39:54.364Z] [INFO] AI input required {"phaseId":"project_initialization","stepId":"detect_project_type","requiredFields":[]}
+[2026-03-18T12:39:54.366Z] [INFO] Bob CLI command completed {"success":false,"phase":"project_initialization","step":"detect_project_type","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T12:41:11.772Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T12:41:11.774Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T12:41:11.775Z] [INFO] Loaded current state {"phaseId":"project_initialization","stepId":"detect_project_type","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T12:41:11.776Z] [INFO] Step marked as running {"phaseId":"project_initialization","stepId":"detect_project_type","stepName":"Detect Project Type"}
+[2026-03-18T12:41:11.777Z] [INFO] Prepared action context {"phaseId":"project_initialization","stepId":"detect_project_type","requiredAction":"select_project_type","personaId":"planner","layer":"ticket","track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T12:41:11.777Z] [INFO] Executed action handler {"phaseId":"project_initialization","stepId":"detect_project_type","action":"select_project_type","success":true}
+[2026-03-18T12:41:11.780Z] [INFO] Step completed successfully {"phaseId":"project_initialization","stepId":"detect_project_type","stepName":"Detect Project Type","advancedPhase":"project_initialization","advancedStep":"initialize_management_structure","isNewPhase":false}
+[2026-03-18T12:41:11.780Z] [INFO] Bob CLI command completed {"success":true,"phase":"project_initialization","step":"initialize_management_structure","message":"✅ Completed step: Detect Project Type. Next: initialize_management_structure"}
+[2026-03-18T12:43:06.073Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T12:43:06.076Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T12:43:06.078Z] [INFO] Loaded current state {"phaseId":"project_initialization","stepId":"initialize_management_structure","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T12:43:06.079Z] [INFO] Step marked as running {"phaseId":"project_initialization","stepId":"initialize_management_structure","stepName":"Initialize Management Structure"}
+[2026-03-18T12:43:06.079Z] [INFO] Prepared action context {"phaseId":"project_initialization","stepId":"initialize_management_structure","requiredAction":"generate_project_management_structure","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T12:43:06.079Z] [INFO] generateProjectManagementStructure invoked
+[2026-03-18T12:43:06.080Z] [INFO] Created project management directories {"createdDirs":["web-applications/project-management/epics","project-management/backlog","project-management/releases","project-management/docs"]}
+[2026-03-18T12:43:06.081Z] [INFO] Created project management template files {"createdFiles":["web-applications/project-management/epics/README.md","web-applications/project-management/backlog/backlog.md"]}
+[2026-03-18T12:43:06.082Z] [INFO] Executed action handler {"phaseId":"project_initialization","stepId":"initialize_management_structure","action":"generate_project_management_structure","success":true}
+[2026-03-18T12:43:06.085Z] [INFO] Step completed successfully {"phaseId":"project_initialization","stepId":"initialize_management_structure","stepName":"Initialize Management Structure","advancedPhase":"product_definition","advancedStep":"vision_generation","isNewPhase":true}
+[2026-03-18T12:43:06.085Z] [INFO] Bob CLI command completed {"success":true,"phase":"product_definition","step":"vision_generation","message":"🎉 Completed phase: Project Initialization. Moving to product_definition."}
+[2026-03-18T12:43:11.958Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T12:43:11.959Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T12:43:11.960Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"vision_generation","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T12:43:11.961Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"vision_generation","stepName":"Generate Vision Document"}
+[2026-03-18T12:43:11.962Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"vision_generation","requiredAction":"generate_vision_document","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T12:43:11.963Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"vision_generation","action":"generate_vision_document","success":false,"error":"Vision details not configured"}
+[2026-03-18T12:43:11.974Z] [INFO] AI input required {"phaseId":"product_definition","stepId":"vision_generation","requiredFields":[]}
+[2026-03-18T12:43:11.980Z] [INFO] Bob CLI command completed {"success":false,"phase":"product_definition","step":"vision_generation","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T12:59:05.933Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T12:59:05.935Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T12:59:05.936Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"vision_generation","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T12:59:05.937Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"vision_generation","stepName":"Generate Vision Document"}
+[2026-03-18T12:59:05.938Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"vision_generation","requiredAction":"generate_vision_document","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T12:59:05.939Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"vision_generation","action":"generate_vision_document","success":true}
+[2026-03-18T12:59:05.941Z] [INFO] Step completed successfully {"phaseId":"product_definition","stepId":"vision_generation","stepName":"Generate Vision Document","advancedPhase":"product_definition","advancedStep":"vision_review","isNewPhase":false}
+[2026-03-18T12:59:05.941Z] [INFO] Bob CLI command completed {"success":true,"phase":"product_definition","step":"vision_review","message":"✅ Completed step: Generate Vision Document. Next: vision_review"}
+[2026-03-18T12:59:11.847Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T12:59:11.848Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T12:59:11.849Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"vision_review","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T12:59:11.850Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"vision_review","stepName":"Review Vision"}
+[2026-03-18T12:59:11.851Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"vision_review","requiredAction":"user_review_vision","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T12:59:11.851Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"vision_review","action":"user_review_vision","success":false,"error":"Vision requires user approval"}
+[2026-03-18T12:59:11.851Z] [INFO] AI input required {"phaseId":"product_definition","stepId":"vision_review","requiredFields":[]}
+[2026-03-18T12:59:11.853Z] [INFO] Bob CLI command completed {"success":false,"phase":"product_definition","step":"vision_review","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:04:34.312Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:04:34.314Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:04:34.315Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"vision_review","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:04:34.317Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"vision_review","stepName":"Review Vision"}
+[2026-03-18T13:04:34.317Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"vision_review","requiredAction":"user_review_vision","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:04:34.318Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"vision_review","action":"user_review_vision","success":true}
+[2026-03-18T13:04:34.320Z] [INFO] Step completed successfully {"phaseId":"product_definition","stepId":"vision_review","stepName":"Review Vision","advancedPhase":"product_definition","advancedStep":"user_flow_creation","isNewPhase":false}
+[2026-03-18T13:04:34.320Z] [INFO] Bob CLI command completed {"success":true,"phase":"product_definition","step":"user_flow_creation","message":"✅ Completed step: Review Vision. Next: user_flow_creation"}
+[2026-03-18T13:04:40.137Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:04:40.138Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:04:40.140Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"user_flow_creation","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:04:40.141Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"user_flow_creation","stepName":"Create User Flow"}
+[2026-03-18T13:04:40.142Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"user_flow_creation","requiredAction":"generate_user_flow","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:04:40.144Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"user_flow_creation","action":"generate_user_flow","success":false,"error":"User flow details not configured"}
+[2026-03-18T13:04:40.144Z] [INFO] AI input required {"phaseId":"product_definition","stepId":"user_flow_creation","requiredFields":[]}
+[2026-03-18T13:04:40.146Z] [INFO] Bob CLI command completed {"success":false,"phase":"product_definition","step":"user_flow_creation","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:04:52.483Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:04:52.485Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:04:52.486Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"user_flow_creation","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:04:52.488Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"user_flow_creation","stepName":"Create User Flow"}
+[2026-03-18T13:04:52.488Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"user_flow_creation","requiredAction":"generate_user_flow","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:04:52.489Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"user_flow_creation","action":"generate_user_flow","success":true}
+[2026-03-18T13:04:52.492Z] [INFO] Step completed successfully {"phaseId":"product_definition","stepId":"user_flow_creation","stepName":"Create User Flow","advancedPhase":"product_definition","advancedStep":"user_flow_review","isNewPhase":false}
+[2026-03-18T13:04:52.492Z] [INFO] Bob CLI command completed {"success":true,"phase":"product_definition","step":"user_flow_review","message":"✅ Completed step: Create User Flow. Next: user_flow_review"}
+[2026-03-18T13:04:58.462Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:04:58.464Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:04:58.464Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"user_flow_review","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:04:58.467Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"user_flow_review","stepName":"Review User Flow"}
+[2026-03-18T13:04:58.468Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"user_flow_review","requiredAction":"user_review_user_flow","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:04:58.468Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"user_flow_review","action":"user_review_user_flow","success":false,"error":"User flow requires user approval"}
+[2026-03-18T13:04:58.469Z] [INFO] AI input required {"phaseId":"product_definition","stepId":"user_flow_review","requiredFields":[]}
+[2026-03-18T13:04:58.470Z] [INFO] Bob CLI command completed {"success":false,"phase":"product_definition","step":"user_flow_review","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:05:36.216Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:05:36.218Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:05:36.219Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"user_flow_review","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:05:36.220Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"user_flow_review","stepName":"Review User Flow"}
+[2026-03-18T13:05:36.221Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"user_flow_review","requiredAction":"user_review_user_flow","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:05:36.221Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"user_flow_review","action":"user_review_user_flow","success":true}
+[2026-03-18T13:05:36.224Z] [INFO] Step completed successfully {"phaseId":"product_definition","stepId":"user_flow_review","stepName":"Review User Flow","advancedPhase":"product_definition","advancedStep":"user_flow_validation","isNewPhase":false}
+[2026-03-18T13:05:36.224Z] [INFO] Bob CLI command completed {"success":true,"phase":"product_definition","step":"user_flow_validation","message":"✅ Completed step: Review User Flow. Next: user_flow_validation"}
+[2026-03-18T13:05:42.222Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:05:42.224Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:05:42.225Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"user_flow_validation","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:05:42.227Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"user_flow_validation","stepName":"Validate User Flow"}
+[2026-03-18T13:05:42.227Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"user_flow_validation","requiredAction":"validate_user_flow","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:05:42.228Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"user_flow_validation","action":"validate_user_flow","success":true}
+[2026-03-18T13:05:42.231Z] [INFO] Step completed successfully {"phaseId":"product_definition","stepId":"user_flow_validation","stepName":"Validate User Flow","advancedPhase":"product_definition","advancedStep":"requirements_alignment","isNewPhase":false}
+[2026-03-18T13:05:42.231Z] [INFO] Bob CLI command completed {"success":true,"phase":"product_definition","step":"requirements_alignment","message":"✅ Completed step: Validate User Flow. Next: requirements_alignment"}
+[2026-03-18T13:05:48.175Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:05:48.176Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:05:48.177Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"requirements_alignment","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:05:48.179Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"requirements_alignment","stepName":"Align Requirements"}
+[2026-03-18T13:05:48.179Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"requirements_alignment","requiredAction":"generate_requirements","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:05:48.179Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"requirements_alignment","action":"generate_requirements","success":true}
+[2026-03-18T13:05:48.182Z] [INFO] Step completed successfully {"phaseId":"product_definition","stepId":"requirements_alignment","stepName":"Align Requirements","advancedPhase":"product_definition","advancedStep":"generate_design_bible","isNewPhase":false}
+[2026-03-18T13:05:48.182Z] [INFO] Bob CLI command completed {"success":true,"phase":"product_definition","step":"generate_design_bible","message":"✅ Completed step: Align Requirements. Next: generate_design_bible"}
+[2026-03-18T13:05:54.076Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:05:54.078Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:05:54.079Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"generate_design_bible","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:05:54.080Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"generate_design_bible","stepName":"Generate Design Bible"}
+[2026-03-18T13:05:54.081Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"generate_design_bible","requiredAction":"generate_design_bible","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:05:54.081Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"generate_design_bible","action":"generate_design_bible","success":false}
+[2026-03-18T13:05:54.082Z] [INFO] AI input required {"phaseId":"product_definition","stepId":"generate_design_bible","requiredFields":[]}
+[2026-03-18T13:05:54.083Z] [INFO] Bob CLI command completed {"success":false,"phase":"product_definition","step":"generate_design_bible","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:06:04.685Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:06:04.686Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:06:04.687Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"generate_design_bible","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:06:04.689Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"generate_design_bible","stepName":"Generate Design Bible"}
+[2026-03-18T13:06:04.690Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"generate_design_bible","requiredAction":"generate_design_bible","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:06:04.884Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"generate_design_bible","action":"generate_design_bible","success":false}
+[2026-03-18T13:06:04.884Z] [INFO] AI input required {"phaseId":"product_definition","stepId":"generate_design_bible","requiredFields":[]}
+[2026-03-18T13:06:04.886Z] [INFO] Bob CLI command completed {"success":false,"phase":"product_definition","step":"generate_design_bible","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:06:42.147Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:06:42.148Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:06:42.149Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"generate_design_bible","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:06:42.151Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"generate_design_bible","stepName":"Generate Design Bible"}
+[2026-03-18T13:06:42.152Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"generate_design_bible","requiredAction":"generate_design_bible","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:06:42.152Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"generate_design_bible","action":"generate_design_bible","success":true}
+[2026-03-18T13:06:42.155Z] [INFO] Step completed successfully {"phaseId":"product_definition","stepId":"generate_design_bible","stepName":"Generate Design Bible","advancedPhase":"product_definition","advancedStep":"approve_design_bible","isNewPhase":false}
+[2026-03-18T13:06:42.155Z] [INFO] Bob CLI command completed {"success":true,"phase":"product_definition","step":"approve_design_bible","message":"✅ Completed step: Generate Design Bible. Next: approve_design_bible"}
+[2026-03-18T13:06:48.130Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:06:48.132Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:06:48.134Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"approve_design_bible","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:06:48.135Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"approve_design_bible","stepName":"Approve Design Bible"}
+[2026-03-18T13:06:48.136Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"approve_design_bible","requiredAction":"approve_design_bible","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:06:48.136Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"approve_design_bible","action":"approve_design_bible","success":false}
+[2026-03-18T13:06:48.136Z] [INFO] AI input required {"phaseId":"product_definition","stepId":"approve_design_bible","requiredFields":[]}
+[2026-03-18T13:06:48.137Z] [INFO] Bob CLI command completed {"success":false,"phase":"product_definition","step":"approve_design_bible","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:09:44.147Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:09:44.148Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:09:44.150Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"approve_design_bible","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:09:44.152Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"approve_design_bible","stepName":"Approve Design Bible"}
+[2026-03-18T13:09:44.152Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"approve_design_bible","requiredAction":"approve_design_bible","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:09:44.152Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"approve_design_bible","action":"approve_design_bible","success":true}
+[2026-03-18T13:09:44.155Z] [INFO] Step completed successfully {"phaseId":"product_definition","stepId":"approve_design_bible","stepName":"Approve Design Bible","advancedPhase":"product_definition","advancedStep":"requirements_review","isNewPhase":false}
+[2026-03-18T13:09:44.155Z] [INFO] Bob CLI command completed {"success":true,"phase":"product_definition","step":"requirements_review","message":"✅ Completed step: Approve Design Bible. Next: requirements_review"}
+[2026-03-18T13:09:51.959Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:09:51.960Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:09:51.961Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"requirements_review","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:09:51.963Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"requirements_review","stepName":"Review Requirements"}
+[2026-03-18T13:09:51.963Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"requirements_review","requiredAction":"user_review_requirements","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:09:51.964Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"requirements_review","action":"user_review_requirements","success":false,"error":"User requirements approval required"}
+[2026-03-18T13:09:51.964Z] [INFO] AI input required {"phaseId":"product_definition","stepId":"requirements_review","requiredFields":[]}
+[2026-03-18T13:09:51.966Z] [INFO] Bob CLI command completed {"success":false,"phase":"product_definition","step":"requirements_review","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:17:49.709Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:17:49.711Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:17:49.712Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"requirements_review","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:17:49.714Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"requirements_review","stepName":"Review Requirements"}
+[2026-03-18T13:17:49.715Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"requirements_review","requiredAction":"user_review_requirements","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:17:49.715Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"requirements_review","action":"user_review_requirements","success":false,"error":"User requirements approval required"}
+[2026-03-18T13:17:49.715Z] [INFO] AI input required {"phaseId":"product_definition","stepId":"requirements_review","requiredFields":[]}
+[2026-03-18T13:17:49.717Z] [INFO] Bob CLI command completed {"success":false,"phase":"product_definition","step":"requirements_review","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:18:31.554Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:18:31.556Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:18:31.557Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"requirements_review","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:18:31.559Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"requirements_review","stepName":"Review Requirements"}
+[2026-03-18T13:18:31.559Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"requirements_review","requiredAction":"user_review_requirements","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:18:31.559Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"requirements_review","action":"user_review_requirements","success":false,"error":"User requirements approval required"}
+[2026-03-18T13:18:31.560Z] [INFO] AI input required {"phaseId":"product_definition","stepId":"requirements_review","requiredFields":[]}
+[2026-03-18T13:18:31.561Z] [INFO] Bob CLI command completed {"success":false,"phase":"product_definition","step":"requirements_review","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:18:45.504Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:18:45.509Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:18:45.513Z] [INFO] Loaded current state {"phaseId":"product_definition","stepId":"requirements_review","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:18:45.523Z] [INFO] Step marked as running {"phaseId":"product_definition","stepId":"requirements_review","stepName":"Review Requirements"}
+[2026-03-18T13:18:45.525Z] [INFO] Prepared action context {"phaseId":"product_definition","stepId":"requirements_review","requiredAction":"user_review_requirements","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:18:45.526Z] [INFO] Executed action handler {"phaseId":"product_definition","stepId":"requirements_review","action":"user_review_requirements","success":false,"error":"User requirements approval required"}
+[2026-03-18T13:18:45.527Z] [INFO] AI input required {"phaseId":"product_definition","stepId":"requirements_review","requiredFields":[]}
+[2026-03-18T13:18:45.534Z] [INFO] Bob CLI command completed {"success":false,"phase":"product_definition","step":"requirements_review","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:19:05.095Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:19:05.097Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:19:05.098Z] [INFO] Loaded current state {"phaseId":"technical_architecture","stepId":"architecture_design","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:19:05.099Z] [INFO] Step marked as running {"phaseId":"technical_architecture","stepId":"architecture_design","stepName":"Design Architecture"}
+[2026-03-18T13:19:05.100Z] [INFO] Prepared action context {"phaseId":"technical_architecture","stepId":"architecture_design","requiredAction":"generate_architecture_design","personaId":"architecture-designer","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:19:05.100Z] [INFO] Executed action handler {"phaseId":"technical_architecture","stepId":"architecture_design","action":"generate_architecture_design","success":true}
+[2026-03-18T13:19:05.100Z] [INFO] AI input required {"phaseId":"technical_architecture","stepId":"architecture_design","requiredFields":[]}
+[2026-03-18T13:19:05.102Z] [INFO] Bob CLI command completed {"success":false,"phase":"technical_architecture","step":"architecture_design","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:19:20.691Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:19:20.692Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:19:20.693Z] [INFO] Loaded current state {"phaseId":"technical_architecture","stepId":"architecture_design","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:19:20.695Z] [INFO] Step marked as running {"phaseId":"technical_architecture","stepId":"architecture_design","stepName":"Design Architecture"}
+[2026-03-18T13:19:20.695Z] [INFO] Prepared action context {"phaseId":"technical_architecture","stepId":"architecture_design","requiredAction":"generate_architecture_design","personaId":"architecture-designer","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:19:20.696Z] [INFO] Executed action handler {"phaseId":"technical_architecture","stepId":"architecture_design","action":"generate_architecture_design","success":true}
+[2026-03-18T13:19:20.698Z] [INFO] Step completed successfully {"phaseId":"technical_architecture","stepId":"architecture_design","stepName":"Design Architecture","advancedPhase":"technical_architecture","advancedStep":"generate_tech_stack","isNewPhase":false}
+[2026-03-18T13:19:20.698Z] [INFO] Bob CLI command completed {"success":true,"phase":"technical_architecture","step":"generate_tech_stack","message":"✅ Completed step: Design Architecture. Next: generate_tech_stack"}
+[2026-03-18T13:19:27.597Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:19:27.598Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:19:27.599Z] [INFO] Loaded current state {"phaseId":"technical_architecture","stepId":"generate_tech_stack","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:19:27.601Z] [INFO] Step marked as running {"phaseId":"technical_architecture","stepId":"generate_tech_stack","stepName":"Generate Tech Stack"}
+[2026-03-18T13:19:27.601Z] [INFO] Prepared action context {"phaseId":"technical_architecture","stepId":"generate_tech_stack","requiredAction":"generate_tech_stack","personaId":"architecture-designer","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:19:27.602Z] [INFO] Executed action handler {"phaseId":"technical_architecture","stepId":"generate_tech_stack","action":"generate_tech_stack","success":true}
+[2026-03-18T13:19:27.602Z] [INFO] AI input required {"phaseId":"technical_architecture","stepId":"generate_tech_stack","requiredFields":[]}
+[2026-03-18T13:19:27.603Z] [INFO] Bob CLI command completed {"success":false,"phase":"technical_architecture","step":"generate_tech_stack","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:19:40.071Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:19:40.073Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:19:40.074Z] [INFO] Loaded current state {"phaseId":"technical_architecture","stepId":"generate_tech_stack","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:19:40.076Z] [INFO] Step marked as running {"phaseId":"technical_architecture","stepId":"generate_tech_stack","stepName":"Generate Tech Stack"}
+[2026-03-18T13:19:40.076Z] [INFO] Prepared action context {"phaseId":"technical_architecture","stepId":"generate_tech_stack","requiredAction":"generate_tech_stack","personaId":"architecture-designer","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:19:40.077Z] [INFO] Executed action handler {"phaseId":"technical_architecture","stepId":"generate_tech_stack","action":"generate_tech_stack","success":true}
+[2026-03-18T13:19:40.080Z] [INFO] Step completed successfully {"phaseId":"technical_architecture","stepId":"generate_tech_stack","stepName":"Generate Tech Stack","advancedPhase":"technical_architecture","advancedStep":"generate_project_context","isNewPhase":false}
+[2026-03-18T13:19:40.080Z] [INFO] Bob CLI command completed {"success":true,"phase":"technical_architecture","step":"generate_project_context","message":"✅ Completed step: Generate Tech Stack. Next: generate_project_context"}
+[2026-03-18T13:19:46.286Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:19:46.287Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:19:46.288Z] [INFO] Loaded current state {"phaseId":"technical_architecture","stepId":"generate_project_context","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:19:46.290Z] [INFO] Step marked as running {"phaseId":"technical_architecture","stepId":"generate_project_context","stepName":"Generate Project Context"}
+[2026-03-18T13:19:46.290Z] [INFO] Prepared action context {"phaseId":"technical_architecture","stepId":"generate_project_context","requiredAction":"generate_project_context","personaId":"architecture-designer","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:19:46.290Z] [INFO] generateProjectContext invoked
+[2026-03-18T13:19:46.291Z] [INFO] Project context written {"contextPath":"/Users/ronaldbaniqued/Code/Origin/ToDoApp/ai-assisted-development/web-applications/project-management/project_context.json"}
+[2026-03-18T13:19:46.291Z] [INFO] Executed action handler {"phaseId":"technical_architecture","stepId":"generate_project_context","action":"generate_project_context","success":true}
+[2026-03-18T13:19:46.294Z] [INFO] Step completed successfully {"phaseId":"technical_architecture","stepId":"generate_project_context","stepName":"Generate Project Context","advancedPhase":"technical_architecture","advancedStep":"tech_stack_validation","isNewPhase":false}
+[2026-03-18T13:19:46.294Z] [INFO] Bob CLI command completed {"success":true,"phase":"technical_architecture","step":"tech_stack_validation","message":"✅ Completed step: Generate Project Context. Next: tech_stack_validation"}
+[2026-03-18T13:19:52.491Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:19:52.492Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:19:52.493Z] [INFO] Loaded current state {"phaseId":"technical_architecture","stepId":"tech_stack_validation","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:19:52.495Z] [INFO] Step marked as running {"phaseId":"technical_architecture","stepId":"tech_stack_validation","stepName":"Validate Tech Stack"}
+[2026-03-18T13:19:52.496Z] [INFO] Prepared action context {"phaseId":"technical_architecture","stepId":"tech_stack_validation","requiredAction":"validate_tech_stack","personaId":"architecture-designer","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:19:52.496Z] [INFO] Executed action handler {"phaseId":"technical_architecture","stepId":"tech_stack_validation","action":"validate_tech_stack","success":true}
+[2026-03-18T13:19:52.499Z] [INFO] Step completed successfully {"phaseId":"technical_architecture","stepId":"tech_stack_validation","stepName":"Validate Tech Stack","advancedPhase":"technical_architecture","advancedStep":"database_schema_planning","isNewPhase":false}
+[2026-03-18T13:19:52.499Z] [INFO] Bob CLI command completed {"success":true,"phase":"technical_architecture","step":"database_schema_planning","message":"✅ Completed step: Validate Tech Stack. Next: database_schema_planning"}
+[2026-03-18T13:19:59.303Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:19:59.304Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:19:59.305Z] [INFO] Loaded current state {"phaseId":"technical_architecture","stepId":"database_schema_planning","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:19:59.307Z] [INFO] Step marked as running {"phaseId":"technical_architecture","stepId":"database_schema_planning","stepName":"Plan Database Schema"}
+[2026-03-18T13:19:59.308Z] [INFO] Prepared action context {"phaseId":"technical_architecture","stepId":"database_schema_planning","requiredAction":"generate_database_schema","personaId":"architecture-designer","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:19:59.308Z] [INFO] Executed action handler {"phaseId":"technical_architecture","stepId":"database_schema_planning","action":"generate_database_schema","success":true}
+[2026-03-18T13:19:59.308Z] [INFO] AI input required {"phaseId":"technical_architecture","stepId":"database_schema_planning","requiredFields":[]}
+[2026-03-18T13:19:59.310Z] [INFO] Bob CLI command completed {"success":false,"phase":"technical_architecture","step":"database_schema_planning","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:20:15.991Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:20:15.993Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:20:15.994Z] [INFO] Loaded current state {"phaseId":"technical_architecture","stepId":"database_schema_planning","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:20:15.996Z] [INFO] Step marked as running {"phaseId":"technical_architecture","stepId":"database_schema_planning","stepName":"Plan Database Schema"}
+[2026-03-18T13:20:15.996Z] [INFO] Prepared action context {"phaseId":"technical_architecture","stepId":"database_schema_planning","requiredAction":"generate_database_schema","personaId":"architecture-designer","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:20:15.996Z] [INFO] Executed action handler {"phaseId":"technical_architecture","stepId":"database_schema_planning","action":"generate_database_schema","success":true}
+[2026-03-18T13:20:15.999Z] [INFO] Step completed successfully {"phaseId":"technical_architecture","stepId":"database_schema_planning","stepName":"Plan Database Schema","advancedPhase":"technical_architecture","advancedStep":"api_contract_definition","isNewPhase":false}
+[2026-03-18T13:20:15.999Z] [INFO] Bob CLI command completed {"success":true,"phase":"technical_architecture","step":"api_contract_definition","message":"✅ Completed step: Plan Database Schema. Next: api_contract_definition"}
+[2026-03-18T13:20:22.899Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:20:22.900Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:20:22.901Z] [INFO] Loaded current state {"phaseId":"technical_architecture","stepId":"api_contract_definition","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:20:22.903Z] [INFO] Step marked as running {"phaseId":"technical_architecture","stepId":"api_contract_definition","stepName":"Define API Contracts"}
+[2026-03-18T13:20:22.903Z] [INFO] Prepared action context {"phaseId":"technical_architecture","stepId":"api_contract_definition","requiredAction":"generate_api_contracts","personaId":"architecture-designer","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:20:22.903Z] [INFO] Executed action handler {"phaseId":"technical_architecture","stepId":"api_contract_definition","action":"generate_api_contracts","success":true}
+[2026-03-18T13:20:22.903Z] [INFO] AI input required {"phaseId":"technical_architecture","stepId":"api_contract_definition","requiredFields":[]}
+[2026-03-18T13:20:22.905Z] [INFO] Bob CLI command completed {"success":false,"phase":"technical_architecture","step":"api_contract_definition","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:20:38.941Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:20:38.943Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:20:38.945Z] [INFO] Loaded current state {"phaseId":"technical_architecture","stepId":"api_contract_definition","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:20:38.947Z] [INFO] Step marked as running {"phaseId":"technical_architecture","stepId":"api_contract_definition","stepName":"Define API Contracts"}
+[2026-03-18T13:20:38.948Z] [INFO] Prepared action context {"phaseId":"technical_architecture","stepId":"api_contract_definition","requiredAction":"generate_api_contracts","personaId":"architecture-designer","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:20:38.948Z] [INFO] Executed action handler {"phaseId":"technical_architecture","stepId":"api_contract_definition","action":"generate_api_contracts","success":true}
+[2026-03-18T13:20:38.951Z] [INFO] Step completed successfully {"phaseId":"technical_architecture","stepId":"api_contract_definition","stepName":"Define API Contracts","advancedPhase":"technical_architecture","advancedStep":"eng_arch_audit","isNewPhase":false}
+[2026-03-18T13:20:38.951Z] [INFO] Bob CLI command completed {"success":true,"phase":"technical_architecture","step":"eng_arch_audit","message":"✅ Completed step: Define API Contracts. Next: eng_arch_audit"}
+[2026-03-18T13:20:46.761Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:20:46.762Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:20:46.763Z] [INFO] Loaded current state {"phaseId":"technical_architecture","stepId":"eng_arch_audit","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:20:46.765Z] [INFO] Step marked as running {"phaseId":"technical_architecture","stepId":"eng_arch_audit","stepName":"Audit Technical Architecture (Eng Mode)"}
+[2026-03-18T13:20:46.766Z] [INFO] Prepared action context {"phaseId":"technical_architecture","stepId":"eng_arch_audit","requiredAction":"eng_arch_audit","personaId":"architecture-designer","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:20:46.766Z] [INFO] Executed action handler {"phaseId":"technical_architecture","stepId":"eng_arch_audit","action":"eng_arch_audit","success":true}
+[2026-03-18T13:20:46.766Z] [INFO] AI input required {"phaseId":"technical_architecture","stepId":"eng_arch_audit","requiredFields":[]}
+[2026-03-18T13:20:46.768Z] [INFO] Bob CLI command completed {"success":false,"phase":"technical_architecture","step":"eng_arch_audit","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:20:58.989Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:20:58.991Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:20:58.992Z] [INFO] Loaded current state {"phaseId":"technical_architecture","stepId":"eng_arch_audit","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:20:58.994Z] [INFO] Step marked as running {"phaseId":"technical_architecture","stepId":"eng_arch_audit","stepName":"Audit Technical Architecture (Eng Mode)"}
+[2026-03-18T13:20:58.994Z] [INFO] Prepared action context {"phaseId":"technical_architecture","stepId":"eng_arch_audit","requiredAction":"eng_arch_audit","personaId":"architecture-designer","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:20:58.994Z] [INFO] Executed action handler {"phaseId":"technical_architecture","stepId":"eng_arch_audit","action":"eng_arch_audit","success":true}
+[2026-03-18T13:20:58.994Z] [INFO] AI input required {"phaseId":"technical_architecture","stepId":"eng_arch_audit","requiredFields":[]}
+[2026-03-18T13:20:58.996Z] [INFO] Bob CLI command completed {"success":false,"phase":"technical_architecture","step":"eng_arch_audit","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:21:09.066Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:21:09.068Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:21:09.069Z] [INFO] Loaded current state {"phaseId":"technical_architecture","stepId":"eng_arch_audit","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:21:09.071Z] [INFO] Step marked as running {"phaseId":"technical_architecture","stepId":"eng_arch_audit","stepName":"Audit Technical Architecture (Eng Mode)"}
+[2026-03-18T13:21:09.072Z] [INFO] Prepared action context {"phaseId":"technical_architecture","stepId":"eng_arch_audit","requiredAction":"eng_arch_audit","personaId":"architecture-designer","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:21:09.072Z] [INFO] Executed action handler {"phaseId":"technical_architecture","stepId":"eng_arch_audit","action":"eng_arch_audit","success":true}
+[2026-03-18T13:21:09.072Z] [INFO] AI input required {"phaseId":"technical_architecture","stepId":"eng_arch_audit","requiredFields":[]}
+[2026-03-18T13:21:09.075Z] [INFO] Bob CLI command completed {"success":false,"phase":"technical_architecture","step":"eng_arch_audit","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:21:16.903Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:21:16.904Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:21:16.905Z] [INFO] Loaded current state {"phaseId":"technical_architecture","stepId":"eng_arch_audit","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:21:16.907Z] [INFO] Step marked as running {"phaseId":"technical_architecture","stepId":"eng_arch_audit","stepName":"Audit Technical Architecture (Eng Mode)"}
+[2026-03-18T13:21:16.907Z] [INFO] Prepared action context {"phaseId":"technical_architecture","stepId":"eng_arch_audit","requiredAction":"eng_arch_audit","personaId":"architecture-designer","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:21:16.907Z] [INFO] Executed action handler {"phaseId":"technical_architecture","stepId":"eng_arch_audit","action":"eng_arch_audit","success":true}
+[2026-03-18T13:21:16.908Z] [INFO] AI input required {"phaseId":"technical_architecture","stepId":"eng_arch_audit","requiredFields":[]}
+[2026-03-18T13:21:16.909Z] [INFO] Bob CLI command completed {"success":false,"phase":"technical_architecture","step":"eng_arch_audit","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:21:30.558Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:21:30.559Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:21:30.561Z] [INFO] Loaded current state {"phaseId":"project_planning","stepId":"epic_generation","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:21:30.562Z] [INFO] Step marked as running {"phaseId":"project_planning","stepId":"epic_generation","stepName":"Generate Epics"}
+[2026-03-18T13:21:30.563Z] [INFO] Prepared action context {"phaseId":"project_planning","stepId":"epic_generation","requiredAction":"generate_epics","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:21:30.563Z] [INFO] Executed action handler {"phaseId":"project_planning","stepId":"epic_generation","action":"generate_epics","success":true}
+[2026-03-18T13:21:30.567Z] [INFO] Step completed successfully {"phaseId":"project_planning","stepId":"epic_generation","stepName":"Generate Epics","advancedPhase":"project_planning","advancedStep":"epic_review","isNewPhase":false}
+[2026-03-18T13:21:30.568Z] [INFO] Bob CLI command completed {"success":true,"phase":"project_planning","step":"epic_review","message":"✅ Completed step: Generate Epics. Next: epic_review"}
+[2026-03-18T13:21:37.064Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:21:37.066Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:21:37.067Z] [INFO] Loaded current state {"phaseId":"project_planning","stepId":"epic_review","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:21:37.068Z] [INFO] Step marked as running {"phaseId":"project_planning","stepId":"epic_review","stepName":"Review Epics"}
+[2026-03-18T13:21:37.069Z] [INFO] Prepared action context {"phaseId":"project_planning","stepId":"epic_review","requiredAction":"review_epics","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:21:37.070Z] [INFO] Executed action handler {"phaseId":"project_planning","stepId":"epic_review","action":"review_epics","success":true}
+[2026-03-18T13:21:37.070Z] [INFO] AI input required {"phaseId":"project_planning","stepId":"epic_review","requiredFields":[]}
+[2026-03-18T13:21:37.072Z] [INFO] Bob CLI command completed {"success":false,"phase":"project_planning","step":"epic_review","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:21:59.935Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:21:59.936Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:21:59.938Z] [INFO] Loaded current state {"phaseId":"project_planning","stepId":"epic_review","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:21:59.939Z] [INFO] Step marked as running {"phaseId":"project_planning","stepId":"epic_review","stepName":"Review Epics"}
+[2026-03-18T13:21:59.940Z] [INFO] Prepared action context {"phaseId":"project_planning","stepId":"epic_review","requiredAction":"review_epics","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:21:59.940Z] [INFO] Executed action handler {"phaseId":"project_planning","stepId":"epic_review","action":"review_epics","success":true}
+[2026-03-18T13:21:59.943Z] [INFO] Step completed successfully {"phaseId":"project_planning","stepId":"epic_review","stepName":"Review Epics","advancedPhase":"project_planning","advancedStep":"ticket_generation","isNewPhase":false}
+[2026-03-18T13:21:59.943Z] [INFO] Bob CLI command completed {"success":true,"phase":"project_planning","step":"ticket_generation","message":"✅ Completed step: Review Epics. Next: ticket_generation"}
+[2026-03-18T13:22:07.603Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:22:07.604Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:22:07.605Z] [INFO] Loaded current state {"phaseId":"project_planning","stepId":"ticket_generation","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:22:07.610Z] [INFO] Step marked as running {"phaseId":"project_planning","stepId":"ticket_generation","stepName":"Generate Tickets"}
+[2026-03-18T13:22:07.611Z] [INFO] Prepared action context {"phaseId":"project_planning","stepId":"ticket_generation","requiredAction":"generate_tickets","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:22:07.613Z] [INFO] Executed action handler {"phaseId":"project_planning","stepId":"ticket_generation","action":"generate_tickets","success":true}
+[2026-03-18T13:22:07.615Z] [INFO] Step completed successfully {"phaseId":"project_planning","stepId":"ticket_generation","stepName":"Generate Tickets","advancedPhase":"project_planning","advancedStep":"ticket_validation","isNewPhase":false}
+[2026-03-18T13:22:07.615Z] [INFO] Bob CLI command completed {"success":true,"phase":"project_planning","step":"ticket_validation","message":"✅ Completed step: Generate Tickets. Next: ticket_validation"}
+[2026-03-18T13:22:14.474Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:22:14.475Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:22:14.477Z] [INFO] Loaded current state {"phaseId":"project_planning","stepId":"ticket_validation","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:22:14.478Z] [INFO] Step marked as running {"phaseId":"project_planning","stepId":"ticket_validation","stepName":"Validate Tickets"}
+[2026-03-18T13:22:14.479Z] [INFO] Prepared action context {"phaseId":"project_planning","stepId":"ticket_validation","requiredAction":"validate_tickets","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:22:14.479Z] [INFO] Executed action handler {"phaseId":"project_planning","stepId":"ticket_validation","action":"validate_tickets","success":true}
+[2026-03-18T13:22:14.482Z] [INFO] Step completed successfully {"phaseId":"project_planning","stepId":"ticket_validation","stepName":"Validate Tickets","advancedPhase":"project_planning","advancedStep":"project_timeline_generation","isNewPhase":false}
+[2026-03-18T13:22:14.482Z] [INFO] Bob CLI command completed {"success":true,"phase":"project_planning","step":"project_timeline_generation","message":"✅ Completed step: Validate Tickets. Next: project_timeline_generation"}
+[2026-03-18T13:22:21.729Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:22:21.730Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:22:21.731Z] [INFO] Loaded current state {"phaseId":"project_planning","stepId":"project_timeline_generation","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:22:21.733Z] [INFO] Step marked as running {"phaseId":"project_planning","stepId":"project_timeline_generation","stepName":"Generate Project Timeline"}
+[2026-03-18T13:22:21.733Z] [INFO] Prepared action context {"phaseId":"project_planning","stepId":"project_timeline_generation","requiredAction":"generate_project_timeline","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:22:21.733Z] [INFO] Executed action handler {"phaseId":"project_planning","stepId":"project_timeline_generation","action":"generate_project_timeline","success":true}
+[2026-03-18T13:22:21.733Z] [INFO] AI input required {"phaseId":"project_planning","stepId":"project_timeline_generation","requiredFields":[]}
+[2026-03-18T13:22:21.735Z] [INFO] Bob CLI command completed {"success":false,"phase":"project_planning","step":"project_timeline_generation","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:22:34.907Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:22:34.910Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:22:34.911Z] [INFO] Loaded current state {"phaseId":"project_planning","stepId":"project_timeline_generation","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:22:34.913Z] [INFO] Step marked as running {"phaseId":"project_planning","stepId":"project_timeline_generation","stepName":"Generate Project Timeline"}
+[2026-03-18T13:22:34.913Z] [INFO] Prepared action context {"phaseId":"project_planning","stepId":"project_timeline_generation","requiredAction":"generate_project_timeline","personaId":"planner","layer":null,"track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:22:34.914Z] [INFO] Executed action handler {"phaseId":"project_planning","stepId":"project_timeline_generation","action":"generate_project_timeline","success":true}
+[2026-03-18T13:22:34.917Z] [INFO] Step completed successfully {"phaseId":"project_planning","stepId":"project_timeline_generation","stepName":"Generate Project Timeline","advancedPhase":"development","advancedStep":"swarm_tickets","isNewPhase":true}
+[2026-03-18T13:22:34.917Z] [INFO] Bob CLI command completed {"success":true,"phase":"development","step":"swarm_tickets","message":"🎉 Completed phase: Project Planning. Moving to development."}
+[2026-03-18T13:22:42.048Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:22:42.050Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:22:42.051Z] [INFO] Loaded current state {"phaseId":"development","stepId":"swarm_tickets","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:22:42.052Z] [INFO] Step marked as running {"phaseId":"development","stepId":"swarm_tickets","stepName":"Bee Swarm (Parallel Fan-Out)"}
+[2026-03-18T13:22:42.053Z] [INFO] Prepared action context {"phaseId":"development","stepId":"swarm_tickets","requiredAction":"trigger_swarm","personaId":"executor","layer":"ticket","track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:22:42.054Z] [INFO] Executed action handler {"phaseId":"development","stepId":"swarm_tickets","action":"trigger_swarm","success":true}
+[2026-03-18T13:22:42.056Z] [INFO] Step completed successfully {"phaseId":"development","stepId":"swarm_tickets","stepName":"Bee Swarm (Parallel Fan-Out)","advancedPhase":"development","advancedStep":"ticket_selection","isNewPhase":false}
+[2026-03-18T13:22:42.056Z] [INFO] Bob CLI command completed {"success":true,"phase":"development","step":"ticket_selection","message":"✅ Completed step: Bee Swarm (Parallel Fan-Out). Next: ticket_selection"}
+[2026-03-18T13:22:49.756Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:22:49.757Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:22:49.758Z] [INFO] Loaded current state {"phaseId":"development","stepId":"ticket_selection","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:22:49.760Z] [INFO] Step marked as running {"phaseId":"development","stepId":"ticket_selection","stepName":"Select Next Ticket"}
+[2026-03-18T13:22:49.761Z] [INFO] Prepared action context {"phaseId":"development","stepId":"ticket_selection","requiredAction":"select_next_ticket","personaId":"executor","layer":"ticket","track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:22:49.761Z] [INFO] Executed action handler {"phaseId":"development","stepId":"ticket_selection","action":"select_next_ticket","success":true}
+[2026-03-18T13:22:49.764Z] [INFO] Step completed successfully {"phaseId":"development","stepId":"ticket_selection","stepName":"Select Next Ticket","advancedPhase":"epic_hardening","advancedStep":"integration_testing","isNewPhase":true}
+[2026-03-18T13:22:49.764Z] [INFO] Bob CLI command completed {"success":true,"phase":"epic_hardening","step":"integration_testing","message":"🎉 Completed phase: Development. Moving to epic_hardening."}
+[2026-03-18T13:22:56.458Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:22:56.460Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:22:56.461Z] [INFO] Loaded current state {"phaseId":"epic_hardening","stepId":"integration_testing","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:22:56.463Z] [INFO] Step marked as running {"phaseId":"epic_hardening","stepId":"integration_testing","stepName":"Integration Testing"}
+[2026-03-18T13:22:56.464Z] [INFO] Prepared action context {"phaseId":"epic_hardening","stepId":"integration_testing","requiredAction":"run_integration_tests","personaId":"verifier","layer":"epic","track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:22:56.464Z] [INFO] Executed action handler {"phaseId":"epic_hardening","stepId":"integration_testing","action":"run_integration_tests","success":true}
+[2026-03-18T13:22:56.464Z] [INFO] AI input required {"phaseId":"epic_hardening","stepId":"integration_testing","requiredFields":[],"statusFile":"framework_status.json"}
+[2026-03-18T13:22:56.466Z] [INFO] Bob CLI command completed {"success":false,"phase":"epic_hardening","step":"integration_testing","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:24:15.433Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:24:15.435Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:24:15.436Z] [INFO] Loaded current state {"phaseId":"epic_hardening","stepId":"integration_testing","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:24:15.438Z] [INFO] Step marked as running {"phaseId":"epic_hardening","stepId":"integration_testing","stepName":"Integration Testing"}
+[2026-03-18T13:24:15.439Z] [INFO] Prepared action context {"phaseId":"epic_hardening","stepId":"integration_testing","requiredAction":"run_integration_tests","personaId":"verifier","layer":"epic","track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:24:15.439Z] [INFO] Executed action handler {"phaseId":"epic_hardening","stepId":"integration_testing","action":"run_integration_tests","success":true}
+[2026-03-18T13:24:15.439Z] [INFO] AI input required {"phaseId":"epic_hardening","stepId":"integration_testing","requiredFields":[],"statusFile":"framework_status.json"}
+[2026-03-18T13:24:15.441Z] [INFO] Bob CLI command completed {"success":false,"phase":"epic_hardening","step":"integration_testing","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:25:15.950Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:25:15.952Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:25:15.953Z] [INFO] Loaded current state {"phaseId":"epic_hardening","stepId":"integration_testing","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:25:15.956Z] [INFO] Step marked as running {"phaseId":"epic_hardening","stepId":"integration_testing","stepName":"Integration Testing"}
+[2026-03-18T13:25:15.956Z] [INFO] Prepared action context {"phaseId":"epic_hardening","stepId":"integration_testing","requiredAction":"run_integration_tests","personaId":"verifier","layer":"epic","track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:25:15.957Z] [INFO] Executed action handler {"phaseId":"epic_hardening","stepId":"integration_testing","action":"run_integration_tests","success":true}
+[2026-03-18T13:25:15.957Z] [INFO] AI input required {"phaseId":"epic_hardening","stepId":"integration_testing","requiredFields":[],"statusFile":"framework_status.json"}
+[2026-03-18T13:25:15.959Z] [INFO] Bob CLI command completed {"success":false,"phase":"epic_hardening","step":"integration_testing","message":"⏸️  Awaiting AI Agent Input - Update configuration file and retry"}
+[2026-03-18T13:25:33.250Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:25:33.252Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:25:33.253Z] [INFO] Loaded current state {"phaseId":"development","stepId":"code_generation","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:25:33.254Z] [INFO] Step marked as running {"phaseId":"development","stepId":"code_generation","stepName":"Generate Code"}
+[2026-03-18T13:25:33.255Z] [INFO] Prepared action context {"phaseId":"development","stepId":"code_generation","requiredAction":"generate_code","personaId":"executor","layer":"epic","track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:25:33.255Z] [INFO] Executed action handler {"phaseId":"development","stepId":"code_generation","action":"generate_code","success":false,"error":"No ticket selected. Run select_next_ticket first."}
+[2026-03-18T13:25:33.257Z] [ERROR] Step execution failed {"phaseId":"development","stepId":"code_generation","stepName":"Generate Code","error":"No ticket selected. Run select_next_ticket first."}
+[2026-03-18T13:25:33.257Z] [INFO] Bob CLI command completed {"success":false,"phase":"development","step":"code_generation","message":"❌ Step failed: No ticket selected. Run select_next_ticket first."}
+[2026-03-18T13:25:43.948Z] [INFO] Bob CLI command invoked {"mode":"full"}
+[2026-03-18T13:25:43.949Z] [INFO] BobEngine.run invoked {"options":{"mode":"full"}}
+[2026-03-18T13:25:43.950Z] [INFO] Loaded current state {"phaseId":"development","stepId":"ticket_selection","status":"pending","mode":"full","project_type":"new_project","project_name":"TodoAppCertification"}
+[2026-03-18T13:25:43.952Z] [INFO] Step marked as running {"phaseId":"development","stepId":"ticket_selection","stepName":"Select Next Ticket"}
+[2026-03-18T13:25:43.952Z] [INFO] Prepared action context {"phaseId":"development","stepId":"ticket_selection","requiredAction":"select_next_ticket","personaId":"executor","layer":"epic","track":null,"docPaths":["AGENTS.md","project-management/WORKFLOW_OVERVIEW.md","project-management/vision.md","project-management/PRD.md","project-management/FRD.md"]}
+[2026-03-18T13:25:43.953Z] [INFO] Executed action handler {"phaseId":"development","stepId":"ticket_selection","action":"select_next_ticket","success":true}
+[2026-03-18T13:25:43.956Z] [INFO] Step completed successfully {"phaseId":"development","stepId":"ticket_selection","stepName":"Select Next Ticket","advancedPhase":"epic_hardening","advancedStep":"integration_testing","isNewPhase":true}
+[2026-03-18T13:25:43.956Z] [INFO] Bob CLI command completed {"success":true,"phase":"epic_hardening","step":"integration_testing","message":"🎉 Completed phase: Development. Moving to epic_hardening."}

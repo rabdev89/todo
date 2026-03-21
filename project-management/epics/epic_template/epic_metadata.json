@@ -1,0 +1,11 @@
+{
+  "epic_id": "EPIC-XXX",
+  "name": "Epic Name Template",
+  "status": "planned",
+  "approved_for_release": false,
+  "threat_model_completed": false,
+  "e2e_tests_passed": false,
+  "security_scan_passed": false,
+  "staging_deployment_successful": false,
+  "smoke_test_passed": false
+}

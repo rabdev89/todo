@@ -1,0 +1,15 @@
+{
+  "id": "T-101",
+  "title": "Initial Scaffolding (React + NestJS)",
+  "epic_id": "epic-001",
+  "status": "completed",
+  "priority": "high",
+  "dependencies": [],
+  "description": "Setup the initial project structure for both the frontend (React + Vite) and backend (NestJS).",
+  "requirements": [
+    "Initialize React with Vite and TypeScript in /web-applications/frontend",
+    "Initialize NestJS with TypeScript in /web-applications/backend",
+    "Configure basic ESLint and Prettier for both",
+    "Verify build commands run locally"
+  ]
+}

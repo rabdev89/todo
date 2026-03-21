@@ -1,0 +1,16 @@
+{
+  "id": "T-103",
+  "title": "Auth Service (Register/Login)",
+  "epic_id": "epic-001",
+  "status": "completed",
+  "priority": "high",
+  "track": "B",
+  "dependencies": ["T-102"],
+  "description": "Implement registration and login logic with JWT generation.",
+  "requirements": [
+    "Create AuthService and AuthController",
+    "Implement /auth/register endpoint",
+    "Implement /auth/login endpoint",
+    "Ensure passwords are hashed before storage"
+  ]
+}

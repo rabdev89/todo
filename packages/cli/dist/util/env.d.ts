@@ -1,0 +1,14 @@
+import { EnvironmentDefinition, EnvironmentCode } from '../types.js';
+export declare const ENVIRONMENT_DEFINITIONS: Record<EnvironmentCode, EnvironmentDefinition>;
+export declare const ALL_ENVIRONMENT_CODES: EnvironmentCode[];
+export declare function getAllEnvironments(): EnvironmentDefinition[];
+export declare function getEnvironment(envCode: EnvironmentCode): EnvironmentDefinition | undefined;
+export declare function getAllEnvironmentCodes(): EnvironmentCode[];
+export declare function getEnvironmentsByCodes(codes: EnvironmentCode[]): EnvironmentDefinition[];
+export declare function isValidEnvironmentCode(value: string): value is EnvironmentCode;
+export declare function getEnvironmentDisplayName(envCode: EnvironmentCode): string;
+export declare function validateEnvironmentCodes(envCodes: string[]): EnvironmentCode[];
+export declare function getGlobalCapableEnvironments(): EnvironmentDefinition[];
+export declare function hasGlobalSupport(envCode: EnvironmentCode): boolean;
+export declare function getSkillPath(envCode: EnvironmentCode): string | undefined;
+export declare function getSkillCapableEnvironments(): EnvironmentDefinition[];

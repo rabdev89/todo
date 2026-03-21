@@ -1,0 +1,17 @@
+{
+  "id": "T-106",
+  "title": "Registration Validation",
+  "epicId": "epic-001",
+  "status": "implementation-complete",
+  "priority": "high",
+  "track": "B",
+  "dependencies": ["T-103"],
+  "description": "Strong password rules, email/displayName sanitization, duplicate email 409, frontend validation and API wiring.",
+  "requirements": [
+    "RegisterDto password complexity (!@#$%^&*)",
+    "Trim email; optional displayName trimmed and persisted",
+    "409 on duplicate email",
+    "LoginPage register/login with Snackbar for duplicate email"
+  ],
+  "completion_notes": "Prisma migration add_user_display_name. RegisterDto + AuthService. Unit tests register.dto.spec. E2e uses shared setupE2eApp ValidationPipe (13 tests). Frontend registerValidation.ts + LoginPage. design/.gitignore for client_secret*.json — copy Google OAuth values to backend .env only (T-105), do not commit JSON secrets."
+}

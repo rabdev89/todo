@@ -1,0 +1,14 @@
+{
+  "directories": {
+    "project_management": "web-applications/project-management",
+    "epics": "web-applications/project-management/epics",
+    "dashboard": "web-applications/bob",
+    "framework": "framework",
+    "web_apps": "web-applications"
+  },
+  "patterns": {
+    "metadata_filename": "metadata.json",
+    "default_branch": "main",
+    "ticket_id_prefix": "T-"
+  }
+}

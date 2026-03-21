@@ -1,0 +1,15 @@
+{
+  "id": "T-102",
+  "title": "User Model & Migrations",
+  "epic_id": "epic-001",
+  "status": "completed",
+  "priority": "high",
+  "track": "B",
+  "dependencies": ["T-101"],
+  "description": "Implement the User entity and generate initial database migrations.",
+  "requirements": [
+    "Define User entity with id, email, password_hash, and timestamps",
+    "Setup Prisma/TypeORM in the backend",
+    "Generate and run the initial migration to create the users table"
+  ]
+}

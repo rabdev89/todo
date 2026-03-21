@@ -1,0 +1,15 @@
+{
+  "id": "T-302",
+  "title": "Sorting & Filtering (FE/BE)",
+  "epic_id": "epic-003",
+  "status": "scoped",
+  "priority": "medium",
+  "track": "B",
+  "dependencies": ["T-203"],
+  "description": "Implement advanced sorting and filtering for the task dashboard.",
+  "requirements": [
+    "Server-side filtering logic",
+    "Frontend filter bar component",
+    "Search functionality"
+  ]
+}

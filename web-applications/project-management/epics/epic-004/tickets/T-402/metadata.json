@@ -1,0 +1,19 @@
+{
+  "id": "T-402",
+  "title": "File Attachments (UI Integration)",
+  "epicId": "epic-004",
+  "status": "scoped",
+  "priority": "medium",
+  "track": "B",
+  "dependencies": ["T-401", "T-204"],
+  "last_updated": "2026-03-21",
+  "notes": "Full Track B scoping complete: requirements/README.md, design/README.md, planning/README.md, testing/README.md created. Ready for implementation phase. UI already partially implemented in DashboardPage.tsx and verified via manual checks.",
+  "requirements": [
+    "Add 'Attachments' section to Task Detail Drawer",
+    "Implement file upload button/zone in the drawer",
+    "Display list of attached files with icons and names",
+    "Implement file download/open functionality",
+    "Implement file deletion with confirmation",
+    "Show upload progress and success/error toasts"
+  ]
+}

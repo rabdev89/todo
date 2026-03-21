@@ -1,0 +1,19 @@
+{
+  "directions": [
+    {
+      "name": "The Pristine Productivity Engine",
+      "rationale": "A safe, industry-standard approach focusing on maximum legibility and frictionless task management. It uses a clean grid and subtle depth to make the UI feel fast and professional.",
+      "modifiers": "--minimalist --grid-heavy --muted --depth-layers --micro-interactions"
+    },
+    {
+      "name": "Glass Morphic Focus",
+      "rationale": "A modern, trend-forward direction using translucency and vibrant accents to create a premium, 'Apple-like' aesthetic. It emphasizes visual delight while maintaining high hierarchy clarity.",
+      "modifiers": "--glassmorphism --vibrant --floating-cards --gradient-mesh --scroll-animations"
+    },
+    {
+      "name": "Neo-Tactile Workspace",
+      "rationale": "A disruptive, unique brand voice that uses bold typography and tactile 'clay' elements. It breaks away from traditional flat design to create a memorable, tactile interaction experience.",
+      "modifiers": "--asymmetric --claymorphism --high-contrast --neon-accents --grainy-texture"
+    }
+  ]
+}

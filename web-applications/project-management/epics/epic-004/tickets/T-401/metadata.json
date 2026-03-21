@@ -1,0 +1,12 @@
+{
+  "id": "T-401",
+  "title": "File Attachments (Backend)",
+  "epicId": "epic-004",
+  "status": "scoped",
+  "priority": "low",
+  "track": "B",
+  "dependencies": ["T-201"],
+  "completion_percentage": 0,
+  "last_updated": "2026-03-21",
+  "notes": "Full Track B scoping complete: TRACK_DECISION.md, requirements/README.md, design/README.md, planning/README.md, testing/README.md created. Ready for implementation phase. Backend logic already partially implemented in previous steps and verified via preliminary E2E tests."
+}

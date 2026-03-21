@@ -1,0 +1,30 @@
+name: Code Quality Check
+on:
+  push:
+    branches: [main, develop, "feature/*", "epic/*"]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  quality:
+    name: Multi-Stack Quality Gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+
+      - name: Install Quality Tools
+        run: |
+          pip install -r packages/code-quality-checking/requirements.txt
+
+      - name: Run Quality Gate (PI Mode)
+        run: python packages/code-quality-checking/quality-check.py --mode pi

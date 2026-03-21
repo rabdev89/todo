@@ -1,0 +1,17 @@
+{
+  "id": "T-105",
+  "title": "Social Login (Google, Facebook)",
+  "epic_id": "epic-001",
+  "status": "implementation-complete",
+  "priority": "medium",
+  "track": "B",
+  "dependencies": ["T-103", "T-104"],
+  "description": "Implement social authentication using passport-google-oauth20 and passport-facebook strategies.",
+  "requirements": [
+    "Google OAuth2 login flow",
+    "Facebook OAuth2 login flow",
+    "User account linking (same email)",
+    "Frontend login buttons with social branding"
+  ],
+  "completion_notes": "Backend OAuth strategies, endpoints, JWT generation, find-or-create by email with secure OAuth-only password hash. Frontend: social buttons use VITE_API_BASE_URL; callback route /auth/callback matches backend FRONTEND_URL redirect; token URL-encoded. E2E 11/11 passing. Configure GOOGLE_* / FACEBOOK_* in backend .env for live OAuth."
+}

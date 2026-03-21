@@ -1,0 +1,20 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: todoapp-mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: acn_todo_app
+    volumes:
+      - todoapp_mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+volumes:
+  todoapp_mysql_data:
+
+

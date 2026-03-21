@@ -1,0 +1,32 @@
+{
+  "id": "T-501",
+  "title": "Pagination & Lazy Loading",
+  "epicId": "epic-005",
+  "status": "in-progress",
+  "priority": "medium",
+  "track": "B",
+  "dependencies": ["T-201", "T-203"],
+  "completion_percentage": 100,
+  "last_updated": "2026-03-21",
+  "scoping_notes": {
+    "track_justification": "Track B (Full SDLC) - All three WORKFLOW_DECISION_GATE questions answered YES: (1) API contract changes (pagination params + metadata), (2) Multi-layer complexity (backend service + controller + frontend state + UI), (3) Effort > 8 hours (8 hours estimated)",
+    "effort_estimate_hours": 8,
+    "key_artifacts": [
+      "TRACK_DECISION.md - Full Track B justification with 3-question analysis",
+      "design/README.md - Backend & Frontend architecture (created previously)",
+      "planning/README.md - 23 implementation tasks across 5 phases with dependencies",
+      "testing/README.md - Integration, E2E, and manual QA test cases (created previously)",
+      "implementation/README.md - Phase tracking template with checklists"
+    ],
+    "critical_decisions": [
+      "Pagination defaults: limit=20, max_limit=100 for balanced UX and backend load",
+      "Append tasks instead of replace for better infinite scroll UX",
+      "Reset pagination to page 1 on filter/sort change to prevent stale results",
+      "Separate count query for clarity + future Redis caching opportunity"
+    ],
+    "parallelization_opportunity": "Backend (P1+P2) and Frontend (P3+P4) can work in parallel; QA can start integration tests after P2-T2 completion",
+    "risk_assessment": "Medium risk - pagination offset errors, filter/pagination edge cases. Mitigated by unit tests (8 test cases) and comprehensive E2E tests. Load testing recommended for 500+ task scenarios.",
+    "implementation_ready": true,
+    "next_phase": "Phase 1: Backend Service Layer - Update TasksService.findAll() with pagination logic"
+  }
+}

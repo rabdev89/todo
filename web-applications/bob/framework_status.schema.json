@@ -1,0 +1,184 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Framework Status Schema",
+  "description": "Schema for BOB - AI Software Development Workflow Framework runtime status",
+  "type": "object",
+  "required": ["framework_version", "current_phase", "current_step", "status", "phases"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "framework_version": {
+      "type": "string"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "current_phase": {
+      "type": "string",
+      "description": "Current framework phase id from phases_definition.json"
+    },
+    "current_step": {
+      "type": "string",
+      "description": "Current framework step id within the current phase"
+    },
+    "current_layer": {
+      "type": ["string", "null"],
+      "enum": ["ticket", "epic", "pi", null],
+      "description": "Current SDLC layer (ticket, epic, pi) or null if not set"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "running", "waiting_user", "completed", "failed", "paused"]
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["full", "lean"],
+      "description": "Current orchestration mode (full or lean)"
+    },
+    "installation_type": {
+      "type": "string",
+      "enum": ["normal", "complete"],
+      "description": "Installation profile: normal=bundle-install (default), complete=setup-all"
+    },
+    "project_type": {
+      "type": ["string", "null"]
+    },
+    "project_name": {
+      "type": ["string", "null"]
+    },
+    "current_ticket_id": {
+      "type": ["string", "null"],
+      "description": "Currently targeted ticket id when operating at ticket layer"
+    },
+    "current_epic_id": {
+      "type": ["string", "null"],
+      "description": "Currently targeted epic id when operating at epic or PI layer"
+    },
+    "current_pi_id": {
+      "type": ["string", "null"],
+      "description": "Currently targeted PI id when operating at PI layer"
+    },
+    "current_track": {
+      "type": ["string", "null"],
+      "enum": ["A", "B", null],
+      "description": "Track selection for ticket-level work (A = Lean, B = Full)"
+    },
+    "phases": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/phaseStatus"
+      }
+    },
+    "metrics": {
+      "$ref": "#/definitions/metrics"
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "phase": { "type": "string" },
+          "step": { "type": "string" },
+          "id": { "type": "string" },
+          "message": { "type": "string" },
+          "timestamp": { "type": "string" }
+        }
+      }
+    },
+    "metadata": {
+      "$ref": "#/definitions/metadata"
+    }
+  },
+  "definitions": {
+    "phaseStatus": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["pending", "running", "completed", "failed", "skipped"]
+        },
+        "started_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "completed_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "current_ticket": {
+          "type": ["string", "null"]
+        },
+        "steps": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/stepStatus"
+          }
+        }
+      }
+    },
+    "stepStatus": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["pending", "running", "completed", "failed", "skipped"]
+        },
+        "started_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "completed_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "result": {
+          "type": ["object", "null"]
+        },
+        "error": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "total_phases": { "type": "number" },
+        "completed_phases": { "type": "number" },
+        "total_steps": { "type": "number" },
+        "completed_steps": { "type": "number" },
+        "started_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "estimated_completion": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "last_action": { "type": ["string", "null"] },
+        "last_action_result": { "type": ["string", "null"] },
+        "user_approvals_required": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "user_approvals_granted": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "skipped_phases": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "custom_data": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

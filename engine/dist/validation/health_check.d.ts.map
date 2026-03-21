@@ -1,0 +1,1 @@
+{"version":3,"file":"health_check.d.ts","sourceRoot":"","sources":["../../src/validation/health_check.ts"],"names":[],"mappings":"AAMA,MAAM,WAAW,iBAAiB;IAChC,KAAK,EAAE,OAAO,CAAC;IACf,MAAM,EAAE,MAAM,EAAE,CAAC;IACjB,QAAQ,EAAE,MAAM,EAAE,CAAC;CACpB;AAED;;;GAGG;AACH,wBAAsB,mBAAmB,IAAI,OAAO,CAAC,iBAAiB,CAAC,CAwDtE"}

@@ -1,0 +1,16 @@
+{
+  "id": "T-201",
+  "title": "Task CRUD API Endpoints",
+  "epic_id": "epic-002",
+  "status": "completed",
+  "priority": "high",
+  "track": "B",
+  "dependencies": ["T-104"],
+  "description": "Implement the core Task CRUD operations in the NestJS backend.",
+  "requirements": [
+    "POST /tasks: Create a task",
+    "GET /tasks: List user's tasks",
+    "PATCH /tasks/:id: Update task",
+    "DELETE /tasks/:id: Delete task"
+  ]
+}

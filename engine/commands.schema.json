@@ -1,0 +1,179 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "commands.schema.json",
+  "title": "AI Development Framework Command Registry Schema",
+  "description": "Schema for the machine-readable command registry",
+  "type": "object",
+  "required": ["version", "description", "commands"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to this schema"
+    },
+    "version": {
+      "type": "string",
+      "description": "Registry version (semver)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable description of the registry"
+    },
+    "commands": {
+      "type": "object",
+      "description": "All available commands",
+      "patternProperties": {
+        "^[a-z][a-z0-9-]*$": {
+          "$ref": "#/definitions/command"
+        }
+      },
+      "additionalProperties": false
+    },
+    "agents": {
+      "type": "object",
+      "description": "Agent definitions",
+      "patternProperties": {
+        "^[a-z][a-z0-9-]*$": {
+          "$ref": "#/definitions/agent"
+        }
+      }
+    },
+    "slashCommands": {
+      "type": "object",
+      "description": "Slash command definitions",
+      "patternProperties": {
+        "^[a-z][a-z0-9-]*$": {
+          "$ref": "#/definitions/slashCommand"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "command": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "Simple command definition",
+          "required": ["agent", "handler", "description"],
+          "properties": {
+            "agent": {
+              "type": "string",
+              "description": "Agent responsible for this command"
+            },
+            "handler": {
+              "type": "string",
+              "description": "File path to the handler implementation"
+            },
+            "description": {
+              "type": "string",
+              "description": "Human-readable description"
+            },
+            "args": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Required positional arguments"
+            },
+            "options": {
+              "type": "object",
+              "description": "Command options/flags",
+              "patternProperties": {
+                "^[a-z][a-z0-9-]*$": {
+                  "$ref": "#/definitions/option"
+                }
+              }
+            },
+            "phases": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Execution phases for this command"
+            },
+            "output": {
+              "type": "string",
+              "description": "Default output file name"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "description": "Command with subcommands",
+          "required": ["subcommands"],
+          "properties": {
+            "subcommands": {
+              "type": "object",
+              "patternProperties": {
+                "^[a-z][a-z0-9-]*$": {
+                  "$ref": "#/definitions/command"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "option": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["string", "number", "boolean", "array"]
+        },
+        "description": {
+          "type": "string"
+        },
+        "enum": {
+          "type": "array",
+          "description": "Allowed values for string options"
+        },
+        "default": {
+          "description": "Default value for the option"
+        },
+        "items": {
+          "type": "object",
+          "description": "Schema for array items"
+        }
+      }
+    },
+    "agent": {
+      "type": "object",
+      "required": ["description"],
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "promptFile": {
+          "type": "string",
+          "description": "Reference to prompt documentation"
+        },
+        "inputs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "outputs": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "slashCommand": {
+      "type": "object",
+      "required": ["agent", "description"],
+      "properties": {
+        "agent": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "workflow": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Ordered workflow steps"
+        },
+        "autoAdvance": {
+          "type": "boolean",
+          "description": "Whether to automatically advance through workflow"
+        }
+      }
+    }
+  }
+}

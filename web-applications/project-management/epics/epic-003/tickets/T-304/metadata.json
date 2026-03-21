@@ -1,0 +1,16 @@
+{
+  "id": "T-304",
+  "title": "Mobile App Shell",
+  "epic_id": "epic-003",
+  "status": "scoped",
+  "priority": "low",
+  "track": "B",
+  "dependencies": ["T-303"],
+  "description": "Implement a specialized mobile shell for the application, focusing on PWA features and mobile-specific design refinements.",
+  "requirements": [
+    "PWA Manifest and Service Worker implementation",
+    "Add to Home Screen (A2HS) support",
+    "Splash screen and app icon generation",
+    "Offline fallback page"
+  ]
+}

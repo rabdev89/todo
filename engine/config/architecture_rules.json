@@ -1,0 +1,108 @@
+{
+  "layers": [
+    {
+      "name": "ui",
+      "patterns": [
+        "src/ui/**/*",
+        "src/components/**/*",
+        "src/pages/**/*",
+        "src/app/**/*",
+        "lib/ui/**/*",
+        "lib/widgets/**/*"
+      ],
+      "allowedImports": [
+        "service",
+        "model",
+        "utils",
+        "types"
+      ],
+      "description": "UI components, pages, and widgets"
+    },
+    {
+      "name": "service",
+      "patterns": [
+        "src/services/**/*",
+        "src/api/**/*",
+        "src/business/**/*",
+        "src/logic/**/*",
+        "lib/services/**/*",
+        "lib/business/**/*"
+      ],
+      "allowedImports": [
+        "model",
+        "utils",
+        "types",
+        "infra"
+      ],
+      "description": "Business logic, services, and API handlers"
+    },
+    {
+      "name": "model",
+      "patterns": [
+        "src/models/**/*",
+        "src/entities/**/*",
+        "src/domain/**/*",
+        "lib/models/**/*",
+        "lib/entities/**/*"
+      ],
+      "allowedImports": [
+        "utils",
+        "types"
+      ],
+      "description": "Data models, entities, and domain objects"
+    },
+    {
+      "name": "utils",
+      "patterns": [
+        "src/utils/**/*",
+        "src/helpers/**/*",
+        "src/lib/**/*",
+        "lib/utils/**/*",
+        "lib/helpers/**/*"
+      ],
+      "allowedImports": [
+        "types"
+      ],
+      "description": "Utility functions and helpers"
+    },
+    {
+      "name": "infra",
+      "patterns": [
+        "src/infra/**/*",
+        "src/db/**/*",
+        "src/repository/**/*",
+        "src/dal/**/*",
+        "lib/infra/**/*",
+        "lib/db/**/*"
+      ],
+      "allowedImports": [
+        "model",
+        "utils",
+        "types"
+      ],
+      "description": "Infrastructure, database access, and repositories"
+    },
+    {
+      "name": "types",
+      "patterns": [
+        "src/types/**/*",
+        "src/interfaces/**/*",
+        "lib/types/**/*",
+        "types/**/*"
+      ],
+      "allowedImports": [],
+      "description": "Shared type definitions and interfaces"
+    }
+  ],
+  "strictMode": false,
+  "excludePatterns": [
+    "**/*.test.*",
+    "**/*.spec.*",
+    "**/__tests__/**/*",
+    "**/*.stories.*",
+    "**/node_modules/**",
+    "**/.git/**",
+    "**/dist/**",
+    "**/build/**"
+  ]
+}

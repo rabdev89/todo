@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Morphic Focus - Preview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+        }
+
+        .glass-container {
+            width: 100%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            padding: 30px;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-weight: 600;
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .task-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .task-card:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .icon-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+
+        .task-info {
+            flex: 1;
+        }
+
+        .task-title {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .task-time {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        .fab {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #ffffff;
+            color: #764ba2;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="glass-container">
+        <h1>Overview</h1>
+        
+        <div class="task-card">
+            <div class="icon-circle">✨</div>
+            <div class="task-info">
+                <div class="task-title">Design new icons</div>
+                <div class="task-time">09:00 AM</div>
+            </div>
+        </div>
+
+        <div class="task-card">
+            <div class="icon-circle">📅</div>
+            <div class="task-info">
+                <div class="task-title">Meeting with stakeholders</div>
+                <div class="task-time">11:30 AM</div>
+            </div>
+        </div>
+
+        <div class="task-card" style="opacity: 0.6">
+            <div class="icon-circle">✅</div>
+            <div class="task-info">
+                <div class="task-title">Push to production</div>
+                <div class="task-time">08:00 AM</div>
+            </div>
+        </div>
+
+        <div class="fab">+</div>
+    </div>
+</body>
+</html>

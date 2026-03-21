@@ -1,0 +1,1 @@
+{"version":3,"file":"tsc_guard.d.ts","sourceRoot":"","sources":["../../src/guards/tsc_guard.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,gBAAgB,EAAE,WAAW,EAAE,MAAM,cAAc,CAAC;AAM7D,qBAAa,QAAS,YAAW,gBAAgB;IAC7C,IAAI,SAAsB;IAC1B,WAAW,SAA+D;IAEpE,GAAG,CAAC,QAAQ,EAAE,MAAM,GAAG,OAAO,CAAC,WAAW,CAAC;CA+BpD"}

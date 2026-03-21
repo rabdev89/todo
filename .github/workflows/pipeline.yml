@@ -1,0 +1,57 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main, develop, "release/*"]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  validate:
+    name: Validate Workflow
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 🏗️ Setup Framework (Dynamic)
+        # To be truly tech-agnostic while still working, we check the config.
+        # This part usually requires one action per stack, but we can wrap it.
+        run: |
+          # Detect stack and run setup
+          if grep -q "flutter" ci/ci_config.sh; then
+            echo "Installing Flutter..."
+            # Using a known reliable action for the detection
+          fi
+        shell: bash
+
+      # Tech-agnostic Flutter Setup (only runs if needed)
+      - name: 💙 Setup Flutter
+        if: contains(github.workspace, 'flutter') || hashFiles('**/pubspec.yaml') != ''
+        uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+          cache: true
+
+      # Tech-agnostic Node Setup (only runs if needed)
+      - name: 🟢 Setup Node
+        if: hashFiles('**/package-lock.json', '**/yarn.lock') != ''
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: 🛠️ Initialize Runner
+        run: bash ci/setup_runner.sh
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+
+      - name: 🚀 Run CI Pipeline
+        run: bash ci/pipeline.sh
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}

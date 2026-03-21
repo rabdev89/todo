@@ -1,0 +1,11 @@
+{
+  "ticket_id": "T-XXX",
+  "title": "Ticket Title Template",
+  "status": "planned",
+  "dependencies": [],
+  "requirements_done": false,
+  "design_done": false,
+  "implementation_done": false,
+  "tests_done": false,
+  "approved": false
+}

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NavTask – To-do</title>
+  <script src="https://cdn.tailwindcss.com"></script> <!--Change the tailwind into materui-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-100 min-h-screen">
+
+  <!-- Mobile Top Bar -->
+  <header
+    class="md:hidden fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-30 h-14 flex items-center justify-between px-4">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M2 14V2l5 7V2h7v12l-5-7v7H2z" fill="white" />
+        </svg>
+      </div>
+      <span class="font-bold text-gray-900 text-base">NavTask</span>
+    </div>
+    <button id="mobileMenuBtn" onclick="toggleSidebar()" class="text-gray-500 hover:text-gray-700 p-1">
+      <i class="fas fa-bars text-xl"></i>
+    </button>
+  </header>
+
+  <!-- Sidebar Overlay (mobile) -->
+  <div id="sidebarOverlay" onclick="toggleSidebar()" class="hidden fixed inset-0 bg-black/40 z-30 md:hidden"></div>
+
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <aside id="sidebar"
+      class="fixed top-0 left-0 h-full w-52 bg-white border-r border-gray-200 z-40 transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out md:z-10">
+      <div class="p-4 h-full flex flex-col">
+        <!-- Logo -->
+        <div class="flex items-center gap-2 mb-5 pb-4 border-b border-gray-200">
+          <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center flex-shrink-0">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M2 14V2l5 7V2h7v12l-5-7v7H2z" fill="white" />
+            </svg>
+          </div>
+          <span class="font-bold text-gray-900 text-base">NavTask</span>
+        </div>
+
+        <!-- User Profile -->
+        <div class="flex flex-col items-center mb-5 pb-4 border-b border-gray-200">
+          <div
+            class="w-16 h-16 rounded-full bg-gray-100 border-2 border-gray-200 flex items-center justify-center mb-2">
+            <i class="fas fa-user text-gray-400 text-2xl"></i>
+          </div>
+          <span class="text-sm text-gray-700 font-medium text-center">Jhon Doe_456</span>
+        </div>
+
+        <!-- Nav Links -->
+        <nav class="space-y-0.5">
+          <a href="#"
+            class="flex items-center gap-3 px-3 py-2 rounded-lg bg-blue-50 text-blue-700 text-sm font-semibold">
+            <i class="fas fa-house w-4 text-center"></i>
+            Home
+          </a>
+          <a href="#"
+            class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 text-sm hover:bg-gray-50 transition-colors">
+            <i class="fas fa-right-from-bracket w-4 text-center"></i>
+            Sign out
+          </a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="md:ml-52 flex-1 p-4 md:p-6 mt-14 md:mt-0">
+      <h1 class="text-xl font-semibold text-gray-800 mb-4">To-do</h1>
+
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+        <!-- Toolbar -->
+        <div class="flex items-center justify-between px-5 py-3.5 border-b border-gray-100">
+          <button id="filterBtn" onclick="toggleFilterMenu()"
+            class="flex items-center gap-2 text-sm text-gray-600 border border-gray-300 px-3.5 py-1.5 rounded-lg hover:bg-gray-50 transition-colors relative">
+            <i class="fas fa-filter text-xs text-gray-500"></i>
+            Filter
+          </button>
+          <!-- Filter dropdown (simple) -->
+          <div id="filterMenu" style="display:none"
+            class="absolute top-[calc(100%+4px)] left-0 bg-white border border-gray-200 rounded-xl shadow-lg z-20 w-48 p-2 text-sm">
+            <div class="px-2 py-1 text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">Priority</div>
+            <label class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-50 cursor-pointer"><input
+                type="checkbox" class="accent-blue-600" value="High" onchange="applyFilter(this,'priority')">
+              High</label>
+            <label class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-50 cursor-pointer"><input
+                type="checkbox" class="accent-blue-600" value="Low" onchange="applyFilter(this,'priority')"> Low</label>
+            <label class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-50 cursor-pointer"><input
+                type="checkbox" class="accent-blue-600" value="Critical" onchange="applyFilter(this,'priority')">
+              Critical</label>
+            <div class="border-t border-gray-100 my-1"></div>
+            <div class="px-2 py-1 text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">Status</div>
+            <label class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-50 cursor-pointer"><input
+                type="checkbox" class="accent-blue-600" value="Not Started" onchange="applyFilter(this,'status')"> Not
+              Started</label>
+            <label class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-50 cursor-pointer"><input
+                type="checkbox" class="accent-blue-600" value="In Progress" onchange="applyFilter(this,'status')"> In
+              Progress</label>
+            <label class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-50 cursor-pointer"><input
+                type="checkbox" class="accent-blue-600" value="Complete" onchange="applyFilter(this,'status')">
+              Complete</label>
+            <label class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-50 cursor-pointer"><input
+                type="checkbox" class="accent-blue-600" value="Cancelled" onchange="applyFilter(this,'status')">
+              Cancelled</label>
+          </div>
+          <button onclick="openModal()"
+            class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
+            <i class="fas fa-plus text-xs"></i>
+            New Task
+          </button>
+        </div>
+
+        <!-- Table -->
+        <div class="overflow-x-auto">
+          <table class="w-full min-w-[680px] text-sm">
+            <thead>
+              <tr class="border-b border-gray-100">
+                <th class="w-12 px-4 py-3 text-center">
+                  <i class="far fa-trash-can text-gray-400 text-sm"></i>
+                </th>
+                <th class="px-3 py-3 text-left">
+                  <button onclick="sortBy('title')"
+                    class="flex items-center gap-1 font-medium text-gray-600 hover:text-gray-800 transition-colors">
+                    Title <i class="fas fa-sort text-xs text-gray-400"></i>
+                  </button>
+                </th>
+                <th class="px-3 py-3 text-left whitespace-nowrap">
+                  <button onclick="sortBy('due')"
+                    class="flex items-center gap-1 font-medium text-gray-600 hover:text-gray-800 transition-colors">
+                    Due Date <i class="fas fa-sort text-xs text-gray-400"></i>
+                  </button>
+                </th>
+                <th class="px-3 py-3 text-left">
+                  <button onclick="sortBy('priority')"
+                    class="flex items-center gap-1 font-medium text-gray-600 hover:text-gray-800 transition-colors">
+                    Priority <i class="fas fa-sort text-xs text-gray-400"></i>
+                  </button>
+                </th>
+                <th class="px-3 py-3 text-left">
+                  <button onclick="sortBy('status')"
+                    class="flex items-center gap-1 font-medium text-gray-600 hover:text-gray-800 transition-colors">
+                    Status <i class="fas fa-sort text-xs text-gray-400"></i>
+                  </button>
+                </th>
+                <th class="w-12 px-3 py-3"></th>
+              </tr>
+            </thead>
+            <tbody id="taskTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- New / Edit Task Modal -->
+  <div id="taskModal" style="display:none" class="fixed inset-0 bg-black/40 items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-sm p-6">
+      <div class="flex items-center justify-between mb-5">
+        <h2 id="modalHeading" class="text-lg font-semibold text-gray-900">New Task</h2>
+        <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-xl leading-none">&times;</button>
+      </div>
+      <div class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">Title <span
+              class="text-red-500">*</span></label>
+          <input id="inputTitle" type="text" placeholder="Enter task title..."
+            class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">Due Date</label>
+          <input id="inputDate" type="date"
+            class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">Priority</label>
+          <select id="inputPriority"
+            class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            <option>High</option>
+            <option>Low</option>
+            <option>Critical</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">Status</label>
+          <select id="inputStatus"
+            class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            <option>Not Started</option>
+            <option>In Progress</option>
+            <option>Complete</option>
+            <option>Cancelled</option>
+          </select>
+        </div>
+      </div>
+      <div class="flex gap-3 mt-6">
+        <button onclick="closeModal()"
+          class="flex-1 border border-gray-300 text-gray-700 text-sm font-medium py-2 rounded-lg hover:bg-gray-50 transition-colors">Cancel</button>
+        <button id="saveBtn" onclick="saveTask()"
+          class="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 rounded-lg transition-colors">Add
+          Task</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let editingId = null;
+    let filterPriorities = [];
+    let filterStatuses = [];
+    let sortField = null;
+    let sortDir = 1;
+
+    const tasks = [
+      { id: 1, title: "UX+ (SMX)", due: "10/19/2024", priority: "High", status: "Not Started", statusDate: null, attach: false, expand: false },
+      { id: 2, title: "GenAI trainings. MyLearning", due: "08/30/2024", priority: "High", status: "Complete", statusDate: "08/27/2024", attach: true, expand: true },
+      { id: 3, title: "Declutter basement", due: "09/30/2024", priority: "Low", status: "Not Started", statusDate: null, attach: false, expand: false },
+      { id: 4, title: "Take a bike ride through a scenic park, stopping to enjoy the fresh air and the beauty of nature.", due: "12/08/2024", priority: "Low", status: "Cancelled", statusDate: null, attach: true, expand: false },
+      { id: 5, title: "Presentation for XXX client visit", due: "09/30/2024", priority: "Critical", status: "In Progress", statusDate: null, attach: false, expand: true },
+      { id: 6, title: "Mateus' release of cards", due: "09/15/2024", priority: "High", status: "Not Started", statusDate: null, attach: false, expand: false, dateLabel: "Today", dateColor: "text-green-500" },
+      { id: 7, title: "Update CV and Portfolio", due: "10/07/2024", priority: "High", status: "In Progress", statusDate: null, attach: true, expand: false },
+      { id: 8, title: "AC maintenance", due: "12/05/2025", priority: "Low", status: "Cancelled", statusDate: null, attach: false, expand: false },
+      { id: 9, title: "Study sketch: Basic anatomy", due: "09/05/2024", priority: "Low", status: "In Progress", statusDate: null, attach: true, expand: false, dateLabel: "Overdue", dateColor: "text-red-500" },
+      { id: 10, title: "Wireframes YYY project", due: "10/11/2024", priority: "High", status: "Complete", statusDate: "09/30/2024", attach: false, expand: true },
+      { id: 11, title: "Brownbag: AAA project", due: "09/23/2024", priority: "Critical", status: "Not Started", statusDate: null, attach: true, expand: true },
+      { id: 12, title: "Files cleanup", due: "10/28/2024", priority: "Low", status: "Not Started", statusDate: null, attach: false, expand: false },
+    ];
+
+    function badge(p) {
+      const m = { High: "border-yellow-400 text-yellow-500", Low: "border-green-500 text-green-600", Critical: "border-red-500 text-red-600" };
+      return `<span class="inline-block text-xs border ${m[p] || 'border-gray-400 text-gray-600'} px-2 py-0.5 rounded font-medium">${p}</span>`;
+    }
+
+    function statusIcon(s) {
+      const icons = {
+        'Not Started': `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="#9ca3af" stroke-width="1.5"/></svg>`,
+        'Complete': `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#2563eb"/><path d="M4.5 8L6.5 10L11.5 5.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+        'In Progress': `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#dbeafe"/><path d="M8 8 L8 1 A7 7 0 0 0 8 15 Z" fill="#2563eb"/><circle cx="8" cy="8" r="7" stroke="#93c5fd" stroke-width="1"/></svg>`,
+        'Cancelled': `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="#d1d5db" stroke-width="1.5"/><line x1="4.5" y1="11.5" x2="11.5" y2="4.5" stroke="#d1d5db" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+      };
+      return icons[s] || '';
+    }
+
+    function statusCell(s, sDate) {
+      const tc = { 'Not Started': 'text-gray-500', 'Complete': 'text-gray-700', 'In Progress': 'text-gray-700', 'Cancelled': 'text-gray-500' };
+      return `<div class="flex items-start gap-2">
+        <span class="mt-0.5 flex-shrink-0">${statusIcon(s)}</span>
+        <div>
+          <div class="${tc[s] || 'text-gray-600'} text-sm leading-tight">${s}</div>
+          ${sDate ? `<div class="text-xs text-gray-400">${sDate}</div>` : ''}
+        </div>
+      </div>`;
+    }
+
+    function getFilteredSorted() {
+      let list = [...tasks];
+      if (filterPriorities.length) list = list.filter(t => filterPriorities.includes(t.priority));
+      if (filterStatuses.length) list = list.filter(t => filterStatuses.includes(t.status));
+      if (sortField) {
+        list.sort((a, b) => {
+          let av = a[sortField] || '', bv = b[sortField] || '';
+          if (sortField === 'due') { av = new Date(av); bv = new Date(bv); }
+          return av > bv ? sortDir : av < bv ? -sortDir : 0;
+        });
+      }
+      return list;
+    }
+
+    function render() {
+      const tbody = document.getElementById('taskTableBody');
+      const list = getFilteredSorted();
+      if (!list.length) {
+        tbody.innerHTML = `<tr><td colspan="6" class="text-center py-10 text-gray-400 text-sm">No tasks found</td></tr>`;
+        return;
+      }
+      tbody.innerHTML = list.map(t => {
+        const dueHtml = t.dateLabel
+          ? `<div class="${t.dateColor} text-sm font-medium">${t.due}</div><div class="${t.dateColor} text-xs">${t.dateLabel}</div>`
+          : `<span class="text-gray-600 text-sm">${t.due || '—'}</span>`;
+        return `
+          <tr class="border-b border-gray-100 hover:bg-slate-50 transition-colors group">
+            <td class="w-12 px-4 py-3 text-center">
+              <input type="checkbox" class="w-4 h-4 accent-blue-600 cursor-pointer rounded">
+            </td>
+            <td class="px-3 py-3 min-w-[200px] max-w-xs">
+              <div class="flex items-start gap-1.5">
+                ${t.expand
+            ? `<button class="flex-shrink-0 mt-0.5 text-gray-400 hover:text-gray-600 transition-colors"><i class="fas fa-caret-right text-xs"></i></button>`
+            : `<span class="w-3 flex-shrink-0"></span>`}
+                <span class="text-sm font-medium text-gray-800 underline decoration-gray-300 cursor-pointer hover:text-blue-600 transition-colors leading-snug">${t.title}</span>
+                ${t.attach ? `<i class="fas fa-paperclip text-gray-400 text-xs flex-shrink-0 mt-0.5 ml-0.5"></i>` : ''}
+              </div>
+            </td>
+            <td class="px-3 py-3 whitespace-nowrap">${dueHtml}</td>
+            <td class="px-3 py-3">${badge(t.priority)}</td>
+            <td class="px-3 py-3">${statusCell(t.status, t.statusDate)}</td>
+            <td class="w-12 px-3 py-3 text-center">
+              <button onclick="openEditModal(${t.id})" class="text-gray-400 hover:text-blue-500 transition-colors">
+                <i class="fas fa-pencil text-sm"></i>
+              </button>
+            </td>
+          </tr>`;
+      }).join('');
+    }
+
+    function sortBy(field) {
+      if (sortField === field) sortDir *= -1;
+      else { sortField = field; sortDir = 1; }
+      render();
+    }
+
+    function applyFilter(el, type) {
+      const v = el.value;
+      if (type === 'priority') {
+        if (el.checked) filterPriorities.push(v);
+        else filterPriorities = filterPriorities.filter(x => x !== v);
+      } else {
+        if (el.checked) filterStatuses.push(v);
+        else filterStatuses = filterStatuses.filter(x => x !== v);
+      }
+      render();
+    }
+
+    function toggleFilterMenu() {
+      const m = document.getElementById('filterMenu');
+      m.style.display = m.style.display === 'none' ? 'block' : 'none';
+    }
+
+    document.addEventListener('click', e => {
+      const btn = document.getElementById('filterBtn');
+      const menu = document.getElementById('filterMenu');
+      if (!btn.contains(e.target) && !menu.contains(e.target)) {
+        menu.style.display = 'none';
+      }
+    });
+
+    function openModal() {
+      editingId = null;
+      document.getElementById('modalHeading').textContent = 'New Task';
+      document.getElementById('saveBtn').textContent = 'Add Task';
+      document.getElementById('inputTitle').value = '';
+      document.getElementById('inputDate').value = '';
+      document.getElementById('inputPriority').value = 'High';
+      document.getElementById('inputStatus').value = 'Not Started';
+      document.getElementById('inputTitle').style.borderColor = '';
+      document.getElementById('taskModal').style.display = 'flex';
+    }
+
+    function openEditModal(id) {
+      const t = tasks.find(x => x.id === id);
+      if (!t) return;
+      editingId = id;
+      document.getElementById('modalHeading').textContent = 'Edit Task';
+      document.getElementById('saveBtn').textContent = 'Save Changes';
+      document.getElementById('inputTitle').value = t.title;
+      document.getElementById('inputPriority').value = t.priority;
+      document.getElementById('inputStatus').value = t.status;
+      if (t.due) {
+        const parts = t.due.split('/');
+        if (parts.length === 3) {
+          document.getElementById('inputDate').value = `${parts[2]}-${parts[0].padStart(2, '0')}-${parts[1].padStart(2, '0')}`;
+        }
+      } else {
+        document.getElementById('inputDate').value = '';
+      }
+      document.getElementById('inputTitle').style.borderColor = '';
+      document.getElementById('taskModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('taskModal').style.display = 'none';
+    }
+
+    document.getElementById('taskModal').addEventListener('click', function (e) {
+      if (e.target === this) closeModal();
+    });
+
+    function saveTask() {
+      const title = document.getElementById('inputTitle').value.trim();
+      if (!title) {
+        document.getElementById('inputTitle').style.borderColor = '#ef4444';
+        document.getElementById('inputTitle').focus();
+        return;
+      }
+      document.getElementById('inputTitle').style.borderColor = '';
+      const rawDate = document.getElementById('inputDate').value;
+      let formattedDate = '';
+      if (rawDate) {
+        const d = new Date(rawDate + 'T12:00:00');
+        formattedDate = `${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}/${d.getFullYear()}`;
+      }
+      const priority = document.getElementById('inputPriority').value;
+      const status = document.getElementById('inputStatus').value;
+
+      if (editingId !== null) {
+        const t = tasks.find(x => x.id === editingId);
+        if (t) { t.title = title; t.due = formattedDate; t.priority = priority; t.status = status; delete t.dateLabel; delete t.dateColor; }
+      } else {
+        tasks.push({ id: Date.now(), title, due: formattedDate, priority, status, statusDate: null, attach: false, expand: false });
+      }
+      closeModal();
+      render();
+    }
+
+    function toggleSidebar() {
+      const s = document.getElementById('sidebar');
+      const o = document.getElementById('sidebarOverlay');
+      const isOpen = !s.classList.contains('-translate-x-full');
+      s.classList.toggle('-translate-x-full', isOpen);
+      o.classList.toggle('hidden', isOpen);
+    }
+
+    // Close sidebar on md+ resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        document.getElementById('sidebarOverlay').classList.add('hidden');
+      }
+    });
+
+    // Position filter menu relative to button
+    document.getElementById('filterBtn').style.position = 'relative';
+
+    render();
+  </script>
+</body>
+
+</html>

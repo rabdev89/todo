@@ -1,0 +1,19 @@
+{
+  "id": "T-205",
+  "title": "Multi-select Task Actions",
+  "epicId": "epic-002",
+  "status": "implementation-complete",
+  "priority": "medium",
+  "track": "B",
+  "dependencies": ["T-203"],
+  "requirements": [
+    "Bulk selection with Select All / Deselect All",
+    "Indeterminate checkbox state for partial selection",
+    "Bulk status update (PATCH /tasks/bulk)",
+    "Bulk deletion with confirmation (DELETE /tasks/bulk)",
+    "Action bar UI for bulk operations"
+  ],
+  "completion_percentage": 100,
+  "last_updated": "2026-03-20",
+  "notes": "Multi-select functionality fully implemented in DashboardPage.tsx (selectedIds state, bulk delete/update handlers). Backend bulk endpoints verified in TasksController.ts."
+}

@@ -1,0 +1,44 @@
+{
+  "overview": "A comprehensive task management journey from secure authentication to granular task and subtask organization with attachment support.",
+  "user_stories": [
+    {
+      "title": "Account Creation",
+      "as_a": "New User",
+      "i_want": "to create an account with my credentials or social login",
+      "so_that": "I can start managing my tasks securely across devices.",
+      "acceptance_criteria": [
+        "System validates email format and password strength.",
+        "User is redirected to the dashboard upon successful registration.",
+        "Social login (Google/Facebook) correctly maps to a user profile."
+      ]
+    },
+    {
+      "title": "Task & Subtask Organization",
+      "as_a": "Busy Professional",
+      "i_want": "to break down large tasks into smaller subtasks",
+      "so_that": "I can track granular progress and ensure nothing is missed.",
+      "acceptance_criteria": [
+        "User can add multiple subtasks to a single parent task.",
+        "Subtasks have their own completion status.",
+        "Main task cannot be marked complete if subtasks are pending (optional toggle)."
+      ]
+    },
+    {
+      "title": "Priority Triaging",
+      "as_a": "Task Manager",
+      "i_want": "to filter and sort my dashboard by priority and status",
+      "so_that": "I can focus on the most urgent tasks first.",
+      "acceptance_criteria": [
+        "Dashboard updates instantly when a filter is applied.",
+        "Sorting by priority correctly orders tasks from Urgent to Low."
+      ]
+    }
+  ],
+  "screen_flow": [
+    { "name": "Login/Signup Screen", "description": "Entry point for authentication with forms for email/password and social login buttons." },
+    { "name": "Dashboard", "description": "Main view listing all tasks with quick-add functionality, filters, and search." },
+    { "name": "Task Detail View", "description": "Focused view for a single task showing description, subtasks, and attachments." },
+    { "name": "Profile/Settings", "description": "User preferences and logout options." }
+  ],
+  "flow_diagram": "graph TD\n    A[Login Screen] -->|Authenticated| B[Dashboard]\n    B -->|Click Task| C[Task Detail View]\n    C -->|Add Subtask| D[Subtask Created]\n    C -->|Upload File| E[Attachment Saved]\n    B -->|Quick Add| F[New Task Created]\n    B -->|Filter/Sort| B\n    B -->|Settings| G[Profile/Settings]\n    G -->|Logout| A"
+}

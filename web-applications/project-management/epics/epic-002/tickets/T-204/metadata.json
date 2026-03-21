@@ -1,0 +1,19 @@
+{
+  "id": "T-204",
+  "title": "Task Detail & Modals",
+  "epic_id": "epic-002",
+  "status": "in-progress",
+  "priority": "medium",
+  "track": "B",
+  "dependencies": ["T-203"],
+  "description": "Implement the detailed view for tasks, including editing capabilities and subtask management within a modal/drawer.",
+  "requirements": [
+    "Implement Task Detail Modal/Drawer",
+    "Enable editing of Title, Description, and Due Date",
+    "Display and manage subtasks within the detail view",
+    "Show task creation/update timestamps"
+  ],
+  "completion_percentage": 100,
+  "implementation_notes": "TaskDetailDrawer fully implemented as right-side Drawer in DashboardPage.tsx (lines 562-658). All field editing with proper auto-save/immediate-update logic. Subtask management complete with add/toggle/delete. Keyboard accessible (ESC to close). All API endpoints working.",
+  "last_updated": "2026-03-20T16:35:00Z"
+}

@@ -1,0 +1,70 @@
+{
+  "agents": [
+    {
+      "name": "researcher",
+      "trigger": ["/discover", "before_planning"],
+      "output": "RESEARCH.md",
+      "system_prompt": ".agent/agents/researcher/system-prompt.md",
+      "allowed_tools": ["read_file", "file_search", "grep_search", "memory", "semantic_search"],
+      "description": "Discover patterns, map codebase, recommend skills"
+    },
+    {
+      "name": "planner",
+      "trigger": ["/execute-plan", "planning_phase"],
+      "output": "BLUEPRINT.md",
+      "system_prompt": ".agent/agents/planner/system-prompt.md",
+      "allowed_tools": ["read_file", "file_search", "grep_search", "memory"],
+      "description": "Break requirements into tasks, breaths, and must-haves"
+    },
+    {
+      "name": "executor",
+      "trigger": ["/execute-plan", "implementation_phase"],
+      "output": "RECORD.md",
+      "system_prompt": ".agent/agents/executor/system-prompt.md",
+      "allowed_tools": ["read_file", "run_in_terminal", "apply_patch", "file_search", "grep_search", "memory"],
+      "description": "Implement code within scope, run guards, commit changes"
+    },
+    {
+      "name": "verifier",
+      "trigger": ["/verify-ticket", "verification_phase"],
+      "output": "VERIFICATION.md",
+      "system_prompt": ".agent/agents/verifier/system-prompt.md",
+      "allowed_tools": ["read_file", "run_in_terminal", "file_search", "grep_search"],
+      "description": "Independently validate deliverables against must-haves"
+    },
+    {
+      "name": "security-engineer",
+      "trigger": ["/security-audit", "hardening_phase"],
+      "output": "SECURITY_AUDIT.md",
+      "system_prompt": ".agent/agents/security-engineer/system-prompt.md",
+      "allowed_tools": ["read_file", "file_search", "grep_search", "memory"],
+      "description": "Identify risks, threat modeling, and security hardening"
+    },
+    {
+      "name": "ui-designer",
+      "trigger": ["/design-ui", "design_phase"],
+      "output": "UI_SPEC.md",
+      "system_prompt": ".agent/agents/ui-designer/system-prompt.md",
+      "allowed_tools": ["read_file", "file_search", "grep_search", "memory"],
+      "description": "Create visual systems, components, and interaction patterns"
+    }
+    ,
+    {
+      "name": "architecture-designer",
+      "trigger": ["/review-design", "design_phase"],
+      "output": "DESIGN.md",
+      "system_prompt": ".agent/agents/architecture-designer/system-prompt.md",
+      "allowed_tools": ["read_file", "file_search", "grep_search", "memory"],
+      "description": "Define system architecture, data flows, and API contracts; produce ADRs"
+    }
+  ],
+  "tool_mapping": {
+    "read_file": "Read",
+    "file_search": "SearchCodebase",
+    "grep_search": "Grep",
+    "run_in_terminal": "RunCommand",
+    "apply_patch": "apply_patch",
+    "memory": "manage_core_memory",
+    "semantic_search": "SearchCodebase"
+  }
+}

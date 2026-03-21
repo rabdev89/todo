@@ -1,0 +1,1 @@
+{"version":3,"file":"lint_guard.d.ts","sourceRoot":"","sources":["../../src/guards/lint_guard.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,gBAAgB,EAAE,WAAW,EAAE,MAAM,cAAc,CAAC;AAO7D,qBAAa,SAAU,YAAW,gBAAgB;IAC9C,IAAI,SAAgB;IACpB,WAAW,SAAwE;IAE7E,GAAG,CAAC,QAAQ,EAAE,MAAM,GAAG,OAAO,CAAC,WAAW,CAAC;CAgDpD"}

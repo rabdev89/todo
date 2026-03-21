@@ -1,0 +1,16 @@
+{
+  "id": "T-107",
+  "title": "Login Validation",
+  "epicId": "epic-001",
+  "status": "implementation-complete",
+  "priority": "high",
+  "track": "B",
+  "dependencies": ["T-103"],
+  "description": "Generic failed-login message, LoginDto validation without leaking password policy, client alerts/toasts, tests.",
+  "requirements": [
+    "Unauthorized: same message for unknown user and wrong password",
+    "LoginDto: required non-empty password (no MinLength 8 on login)",
+    "Frontend: Alert + Snackbar on failed sign-in; button loading state"
+  ],
+  "completion_notes": "auth.constants LOGIN_FAILED_MESSAGE; login.dto.spec + auth.service.spec; auth e2e asserts 401 message + empty login 400; LoginPage Alert + 401 Snackbar; fixed 409 copy. DashboardPage: import Attachment type (build fix)."
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"security_guard.d.ts","sourceRoot":"","sources":["../../src/guards/security_guard.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,gBAAgB,EAAE,WAAW,EAAE,MAAM,cAAc,CAAC;AAO7D,qBAAa,aAAc,YAAW,gBAAgB;IAClD,IAAI,SAAuB;IAC3B,WAAW,SAAyD;IAE9D,GAAG,CAAC,QAAQ,EAAE,MAAM,GAAG,OAAO,CAAC,WAAW,CAAC;YAkDnC,OAAO;CAUxB"}

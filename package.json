@@ -1,0 +1,60 @@
+{
+  "name": "bob-framework",
+  "version": "1.0.0",
+  "description": "BOB AI Software Development Workflow Framework",
+  "private": true,
+  "workspaces": [
+    "engine",
+    "packages/*",
+    "web-applications/frontend",
+    "web-applications/backend"
+  ],
+  "scripts": {
+    "scan:tickets": "cd ./engine && npx tsx scan_tickets.ts",
+    "index:repo": "cd ./engine && node dist/index.js index-repo -p ../web-applications",
+    "index:repo:parallel": "cd ./engine && node dist/index.js index-repo -p ../web-applications --parallel",
+    "index:repo:reset": "cd ./engine && node dist/index.js index-repo -p ../web-applications --reset",
+    "build:engine": "cd ./engine && npm run build",
+    "install:engine": "cd ./engine && npm install",
+    "setup:index": "npm run build:engine && npm run index:repo",
+    "bundle:install": "cd ./engine && make bundle-install",
+    "make:index": "cd ./engine && make index",
+    "make:test": "cd ./engine && npm run start -- framework-test",
+    "make:setup-index": "cd ./engine && make setup-index",
+    "ensure-repo-data": "node ensure-repo-data.js",
+    "bob": "cd ./engine && npm run start -- bob",
+    "dev": "concurrently -n frontend,backend -c blue,green \"npm run dev -w web-applications/frontend\" \"npm run start:dev -w web-applications/backend\"",
+    "dev:frontend": "npm run dev -w web-applications/frontend",
+    "dev:backend": "npm run start:dev -w web-applications/backend",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "npm run build -w web-applications/frontend",
+    "build:backend": "npm run build -w web-applications/backend",
+    "lint": "npm run lint:frontend && npm run lint:backend",
+    "lint:frontend": "npm run lint -w web-applications/frontend",
+    "lint:backend": "npm run lint -w web-applications/backend",
+    "format": "npm run format:frontend && npm run format:backend",
+    "format:frontend": "npm run format -w web-applications/frontend",
+    "format:backend": "npm run format -w web-applications/backend"
+  },
+  "keywords": [
+    "ai",
+    "development",
+    "workflow",
+    "framework",
+    "bob"
+  ],
+  "author": "BOB Framework",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "tsx": "^4.21.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/bob-framework"
+  },
+  "homepage": "https://github.com/your-org/bob-framework#readme"
+}

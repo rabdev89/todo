@@ -1,0 +1,760 @@
+{
+  "$schema": "./phases_definition.schema.json",
+  "framework_version": "1.0.0",
+  "description": "BOB - AI Software Development Workflow Framework - Phase Definitions",
+  "phases": [
+    {
+      "id": "framework_bootstrap",
+      "name": "Framework Bootstrap",
+      "description": "Verify framework integrity before installation",
+      "entry_condition": "repository_cloned",
+      "exit_condition": "bootstrap_validated",
+      "skippable": false,
+      "steps": [
+        {
+          "id": "check_framework_setup",
+          "name": "Validate Framework Setup",
+          "description": "Run combined repository, version and diagnostics checks",
+          "required_action": "validate_framework_setup",
+          "user_input_required": false,
+          "next_step": null,
+          "estimated_duration": "1m"
+        }
+      ]
+    },
+    {
+      "id": "framework_installation",
+      "name": "Framework Installation",
+      "description": "Install and start framework tools",
+      "entry_condition": "bootstrap_validated",
+      "exit_condition": "framework_running",
+      "skippable": false,
+      "steps": [
+        {
+          "id": "framework_install",
+          "name": "Install & Initialize Framework",
+          "description": "Install dependencies, validate environment, run tests, generate health report, and start services (combined)",
+          "required_action": "initialize_services",
+          "user_input_required": false,
+          "next_step": null,
+          "estimated_duration": "7m"
+        }
+      ]
+    },
+    {
+      "id": "project_initialization",
+      "name": "Project Initialization",
+      "description": "Initialize project configuration",
+      "entry_condition": "framework_running",
+      "exit_condition": "project_initialized",
+      "skippable": true,
+      "steps": [
+        {
+          "id": "detect_project_type",
+          "name": "Detect Project Type",
+          "description": "Identify new, existing, or migration project and select templates",
+          "required_action": "select_project_type",
+          "user_input_required": false,
+          "next_step": "initialize_management_structure",
+          "estimated_duration": "15s"
+        },
+        {
+          "id": "initialize_management_structure",
+          "name": "Initialize Management Structure",
+          "description": "Create project folders, ticket templates, and CI/verification stubs",
+          "required_action": "generate_project_management_structure",
+          "user_input_required": false,
+          "next_step": null,
+          "estimated_duration": "30s"
+        }
+      ]
+    },
+    {
+      "id": "product_definition",
+      "name": "Product Definition",
+      "description": "Define product vision and user flows",
+      "entry_condition": "project_initialized",
+      "exit_condition": "product_defined",
+      "skippable": false,
+      "steps": [
+        {
+          "id": "vision_generation",
+          "name": "Generate Vision Document",
+          "description": "Generate initial product vision document",
+          "required_action": "generate_vision_document",
+          "user_input_required": false,
+          "next_step": "vision_review",
+          "estimated_duration": "5m"
+        },
+        {
+          "id": "vision_review",
+          "name": "Review Vision",
+          "description": "User reviews and approves product vision",
+          "required_action": "user_review_vision",
+          "user_input_required": false,
+          "next_step": "user_flow_creation",
+          "estimated_duration": "user_dependent"
+        },
+        {
+          "id": "user_flow_creation",
+          "name": "Create User Flow",
+          "description": "Create user_flow.md with journey mapping",
+          "required_action": "generate_user_flow",
+          "user_input_required": false,
+          "next_step": "user_flow_review",
+          "estimated_duration": "10m"
+        },
+        {
+          "id": "user_flow_review",
+          "name": "Review User Flow",
+          "description": "User reviews and approves user_flow.md",
+          "required_action": "user_review_user_flow",
+          "user_input_required": false,
+          "next_step": "user_flow_validation",
+          "estimated_duration": "user_dependent"
+        },
+        {
+          "id": "user_flow_validation",
+          "name": "Validate User Flow",
+          "description": "Validate user flow logic and completeness",
+          "required_action": "validate_user_flow",
+          "user_input_required": false,
+          "next_step": "requirements_alignment",
+          "estimated_duration": "2m"
+        },
+        {
+          "id": "requirements_alignment",
+          "name": "Align Requirements",
+          "description": "Generate PRD, FRD, and system architecture",
+          "required_action": "generate_requirements",
+          "user_input_required": false,
+          "next_step": "generate_design_bible",
+          "estimated_duration": "15m"
+        },
+        {
+          "id": "generate_design_bible",
+          "name": "Generate Design Bible",
+          "description": "Suggest 3 design directions and generate preview templates",
+          "required_action": "generate_design_bible",
+          "user_input_required": false,
+          "next_step": "approve_design_bible",
+          "estimated_duration": "15m"
+        },
+        {
+          "id": "approve_design_bible",
+          "name": "Approve Design Bible",
+          "description": "User selects preferred design direction to finalize style guide",
+          "required_action": "approve_design_bible",
+          "user_input_required": false,
+          "next_step": "requirements_review",
+          "estimated_duration": "user_dependent"
+        },
+        {
+          "id": "requirements_review",
+          "name": "Review Requirements",
+          "description": "User reviews and approves all logic requirements",
+          "required_action": "user_review_requirements",
+          "user_input_required": false,
+          "next_step": "ceo_product_audit",
+          "estimated_duration": "user_dependent"
+        },
+        {
+          "id": "ceo_product_audit",
+          "name": "Audit Product Strategy (CEO Mode)",
+          "description": "Founder-level audit of vision, user flow, and requirements alignment",
+          "required_action": "ceo_product_audit",
+          "user_input_required": false,
+          "next_step": null,
+          "estimated_duration": "10m"
+        }
+      ]
+    },
+    {
+      "id": "technical_architecture",
+      "name": "Technical Architecture",
+      "description": "Define system architecture and technical stack",
+      "entry_condition": "product_defined",
+      "exit_condition": "architecture_defined",
+      "skippable": false,
+      "steps": [
+        {
+          "id": "architecture_design",
+          "name": "Design Architecture",
+          "description": "Generate system architecture design",
+          "required_action": "generate_architecture_design",
+          "user_input_required": false,
+          "next_step": "generate_tech_stack",
+          "estimated_duration": "10m"
+        },
+        {
+          "id": "generate_tech_stack",
+          "name": "Generate Tech Stack",
+          "description": "Detect existing technology stack and dependencies",
+          "required_action": "generate_tech_stack",
+          "user_input_required": false,
+          "next_step": "generate_project_context",
+          "estimated_duration": "30s"
+        },
+        {
+          "id": "generate_project_context",
+          "name": "Generate Project Context",
+          "description": "Create tech_stack.json, project metadata, and environment configs",
+          "required_action": "generate_project_context",
+          "user_input_required": false,
+          "next_step": "tech_stack_validation",
+          "estimated_duration": "1m"
+        },
+        {
+          "id": "tech_stack_validation",
+          "name": "Validate Tech Stack",
+          "description": "Validate and confirm tech stack compatibility",
+          "required_action": "validate_tech_stack",
+          "user_input_required": false,
+          "next_step": "database_schema_planning",
+          "estimated_duration": "5m"
+        },
+        {
+          "id": "database_schema_planning",
+          "name": "Plan Database Schema",
+          "description": "Design database schema and relationships",
+          "required_action": "generate_database_schema",
+          "user_input_required": false,
+          "next_step": "api_contract_definition",
+          "estimated_duration": "10m"
+        },
+        {
+          "id": "api_contract_definition",
+          "name": "Define API Contracts",
+          "description": "Define API structure and contracts",
+          "required_action": "generate_api_contracts",
+          "user_input_required": false,
+          "next_step": "eng_arch_audit",
+          "estimated_duration": "10m"
+        },
+        {
+          "id": "eng_arch_audit",
+          "name": "Audit Technical Architecture (Eng Mode)",
+          "description": "Tech Lead audit of tech stack, database schema, and API contracts",
+          "required_action": "eng_arch_audit",
+          "user_input_required": false,
+          "next_step": null,
+          "estimated_duration": "15m"
+        }
+      ]
+    },
+    {
+      "id": "project_planning",
+      "name": "Project Planning",
+      "description": "Plan development work into epics and tickets",
+      "entry_condition": "architecture_defined",
+      "exit_condition": "planning_complete",
+      "skippable": false,
+      "steps": [
+        {
+          "id": "epic_generation",
+          "name": "Generate Epics",
+          "description": "Generate development epics from requirements",
+          "required_action": "generate_epics",
+          "user_input_required": false,
+          "next_step": "epic_review",
+          "estimated_duration": "15m"
+        },
+        {
+          "id": "epic_review",
+          "name": "Review Epics",
+          "description": "User validates and approves epics",
+          "required_action": "review_epics",
+          "user_input_required": false,
+          "next_step": "ticket_generation",
+          "estimated_duration": "user_dependent"
+        },
+        {
+          "id": "ticket_generation",
+          "name": "Generate Tickets",
+          "description": "Break epics into development tickets",
+          "required_action": "generate_tickets",
+          "user_input_required": false,
+          "next_step": "ticket_validation",
+          "estimated_duration": "20m"
+        },
+        {
+          "id": "ticket_validation",
+          "name": "Validate Tickets",
+          "description": "Check ticket completeness and dependencies",
+          "required_action": "validate_tickets",
+          "user_input_required": false,
+          "next_step": "project_timeline_generation",
+          "estimated_duration": "5m"
+        },
+        {
+          "id": "project_timeline_generation",
+          "name": "Generate Project Timeline",
+          "description": "Generate development timeline and roadmap",
+          "required_action": "generate_project_timeline",
+          "user_input_required": false,
+          "next_step": null,
+          "estimated_duration": "5m"
+        }
+      ]
+    },
+    {
+      "id": "development",
+      "name": "Development",
+      "description": "Feature implementation phase",
+      "entry_condition": "planning_complete",
+      "exit_condition": "development_complete",
+      "skippable": false,
+      "steps": [
+        {
+          "id": "swarm_tickets",
+          "name": "Bee Swarm (Parallel Fan-Out)",
+          "description": "Trigger parallel execution for multiple independent tickets if ready",
+          "required_action": "trigger_swarm",
+          "user_input_required": false,
+          "next_step": "ticket_selection",
+          "estimated_duration": "2m"
+        },
+        {
+          "id": "ticket_selection",
+          "name": "Select Next Ticket",
+          "description": "Select next available ticket based on dependencies",
+          "required_action": "select_next_ticket",
+          "user_input_required": false,
+          "next_step": "ticket_scoping",
+          "estimated_duration": "30s"
+        },
+        {
+          "id": "ticket_scoping",
+          "name": "Scope Ticket",
+          "description": "Scoping ticket through AI requirements and design generation",
+          "required_action": "scope_ticket",
+          "user_input_required": false,
+          "next_step": "code_generation",
+          "estimated_duration": "2m"
+        },
+        {
+          "id": "code_generation",
+          "name": "Generate Code",
+          "description": "Generate implementation code for selected ticket",
+          "required_action": "generate_code",
+          "user_input_required": false,
+          "next_step": "interactive_ui_verification",
+          "estimated_duration": "20m"
+        },
+        {
+          "id": "interactive_ui_verification",
+          "name": "Interactive UI Verification (Agent Browsing)",
+          "description": "Agent uses GStack /browse to interactively verify UI behavior and responsiveness",
+          "required_action": "interactive_ui_verification",
+          "user_input_required": false,
+          "next_step": "code_review_ai",
+          "estimated_duration": "10m"
+        },
+        {
+          "id": "code_review_ai",
+          "name": "AI Code Review",
+          "description": "AI performs code review and quality checks",
+          "required_action": "review_code",
+          "user_input_required": false,
+          "next_step": "expert_code_review",
+          "estimated_duration": "10m"
+        },
+        {
+          "id": "expert_code_review",
+          "name": "Expert Code Review (Staff Eng)",
+          "description": "Deep architectural and security review using GStack specialist",
+          "required_action": "expert_code_review",
+          "user_input_required": false,
+          "next_step": "unit_test_generation",
+          "estimated_duration": "15m"
+        },
+        {
+          "id": "unit_test_generation",
+          "name": "Generate Unit Tests",
+          "description": "Generate unit tests for implemented code",
+          "required_action": "generate_unit_tests",
+          "user_input_required": false,
+          "next_step": "unit_test_execution",
+          "estimated_duration": "15m"
+        },
+        {
+          "id": "unit_test_execution",
+          "name": "Execute Unit Tests",
+          "description": "Execute unit tests and validate results",
+          "required_action": "run_tests",
+          "user_input_required": false,
+          "next_step": "visual_regression_qa",
+          "estimated_duration": "5m"
+        },
+        {
+          "id": "visual_regression_qa",
+          "name": "Visual & Regression QA (QA Lead)",
+          "description": "Diff-aware visual testing and regression check using GStack QA",
+          "required_action": "visual_regression_qa",
+          "user_input_required": false,
+          "next_step": "ticket_selection",
+          "estimated_duration": "10m"
+        }
+      ]
+    },
+    {
+      "id": "epic_hardening",
+      "name": "Epic Hardening",
+      "description": "Ensure epics are stable and production-ready",
+      "entry_condition": "development_complete",
+      "exit_condition": "epics_validated",
+      "skippable": true,
+      "steps": [
+        {
+          "id": "integration_testing",
+          "name": "Integration Testing",
+          "description": "Test integrated features across components",
+          "required_action": "run_integration_tests",
+          "user_input_required": false,
+          "next_step": "threat_modeling",
+          "estimated_duration": "30m"
+        },
+        {
+          "id": "threat_modeling",
+          "name": "Threat Modeling",
+          "description": "Analyze system boundaries and data flows for vulnerabilities",
+          "required_action": "generate_threat_model",
+          "user_input_required": false,
+          "next_step": "api_locking",
+          "estimated_duration": "30m"
+        },
+        {
+          "id": "api_locking",
+          "name": "API Contracts Locking",
+          "description": "Finalize and freeze API contracts and database schema mappings",
+          "required_action": "lock_api_contracts",
+          "user_input_required": false,
+          "next_step": "verification_gate",
+          "estimated_duration": "30m"
+        },
+        {
+          "id": "verification_gate",
+          "name": "Verification Gate",
+          "description": "Run strict quality and coverage checks",
+          "required_action": "run_verification_gate",
+          "user_input_required": false,
+          "next_step": "bug_fix_cycle",
+          "estimated_duration": "10m"
+        },
+        {
+          "id": "bug_fix_cycle",
+          "name": "Bug Fix Cycle",
+          "description": "Fix discovered issues and regressions",
+          "required_action": "fix_bugs",
+          "user_input_required": false,
+          "next_step": "epic_validation",
+          "estimated_duration": "variable"
+        },
+        {
+          "id": "epic_validation",
+          "name": "Validate Epic Completion",
+          "description": "Confirm epic completion and quality gates",
+          "required_action": "validate_epic",
+          "user_input_required": false,
+          "next_step": "eng_epic_audit",
+          "estimated_duration": "10m"
+        },
+        {
+          "id": "eng_epic_audit",
+          "name": "Harden Epic Architecture (Eng Mode)",
+          "description": "Tech Lead audit of epic implementation, performance, and security",
+          "required_action": "eng_epic_audit",
+          "user_input_required": false,
+          "next_step": "ship_epic",
+          "estimated_duration": "15m"
+        },
+        {
+          "id": "ship_epic",
+          "name": "Ship Epic Branch",
+          "description": "Final release engineering and PR synchronization",
+          "required_action": "ship_epic",
+          "user_input_required": false,
+          "next_step": "knowledge_compression",
+          "estimated_duration": "5m"
+        },
+        {
+          "id": "knowledge_compression",
+          "name": "Compress Epic Knowledge",
+          "description": "Synthesize architectural decisions, patterns, and database changes from the completed epic into a concise summary and store in memory for future agent context",
+          "required_action": "compress_epic_knowledge",
+          "user_input_required": false,
+          "next_step": "epic_retrospective",
+          "estimated_duration": "5m"
+        },
+        {
+          "id": "epic_retrospective",
+          "name": "Epic Retrospective (EM Mode)",
+          "description": "Analyze delivery metrics and capture lessons using GStack retro",
+          "required_action": "epic_retrospective",
+          "user_input_required": false,
+          "next_step": null,
+          "estimated_duration": "10m"
+        }
+      ]
+    },
+    {
+      "id": "pi_hardening",
+      "name": "Program Increment Hardening",
+      "description": "Validate release milestone",
+      "entry_condition": "epics_validated",
+      "exit_condition": "release_candidate_ready",
+      "skippable": true,
+      "steps": [
+        {
+          "id": "system_testing",
+          "name": "System Testing",
+          "description": "Run full system integration tests",
+          "required_action": "run_system_tests",
+          "user_input_required": false,
+          "next_step": "performance_testing",
+          "estimated_duration": "1h"
+        },
+        {
+          "id": "performance_testing",
+          "name": "Performance Testing",
+          "description": "Run load and performance tests",
+          "required_action": "run_performance_tests",
+          "user_input_required": false,
+          "next_step": "security_validation",
+          "estimated_duration": "30m"
+        },
+        {
+          "id": "security_validation",
+          "name": "Security Validation",
+          "description": "Run security audits and checks",
+          "required_action": "run_security_audit",
+          "user_input_required": false,
+          "next_step": "release_candidate_build",
+          "estimated_duration": "30m"
+        },
+        {
+          "id": "release_candidate_build",
+          "name": "Build Release Candidate",
+          "description": "Generate release candidate build",
+          "required_action": "build_release_candidate",
+          "user_input_required": false,
+          "next_step": "eng_pi_readiness_audit",
+          "estimated_duration": "20m"
+        },
+        {
+          "id": "eng_pi_readiness_audit",
+          "name": "Audit PI Readiness (Eng Mode)",
+          "description": "Final Tech Lead audit before UAT and release",
+          "required_action": "eng_pi_readiness_audit",
+          "user_input_required": false,
+          "next_step": null,
+          "estimated_duration": "20m"
+        }
+      ]
+    },
+    {
+      "id": "uat",
+      "name": "User Acceptance Testing",
+      "description": "Real-world validation with stakeholders",
+      "entry_condition": "release_candidate_ready",
+      "exit_condition": "uat_approved",
+      "skippable": true,
+      "steps": [
+        {
+          "id": "uat_environment_setup",
+          "name": "Setup UAT Environment",
+          "description": "Prepare staging environment for UAT",
+          "required_action": "setup_continue_project_uat",
+          "user_input_required": false,
+          "next_step": "import_browser_sessions",
+          "estimated_duration": "30m"
+        },
+        {
+          "id": "import_browser_sessions",
+          "name": "Import Browser Sessions",
+          "description": "Import authenticated cookies and sessions using GStack /setup-browser-cookies",
+          "required_action": "import_browser_sessions",
+          "user_input_required": true,
+          "next_step": "uat_execution",
+          "estimated_duration": "5m"
+        },
+        {
+          "id": "uat_execution",
+          "name": "Execute UAT",
+          "description": "Execute user acceptance tests",
+          "required_action": "run_uat",
+          "user_input_required": true,
+          "next_step": "uat_feedback_collection",
+          "estimated_duration": "user_dependent"
+        },
+        {
+          "id": "uat_feedback_collection",
+          "name": "Collect UAT Feedback",
+          "description": "Collect and analyze user feedback",
+          "required_action": "collect_uat_feedback",
+          "user_input_required": true,
+          "next_step": "uat_bug_fix_cycle",
+          "estimated_duration": "user_dependent"
+        },
+        {
+          "id": "uat_bug_fix_cycle",
+          "name": "UAT Bug Fix Cycle",
+          "description": "Fix issues discovered during UAT",
+          "required_action": "fix_uat_bugs",
+          "user_input_required": false,
+          "next_step": null,
+          "estimated_duration": "variable"
+        }
+      ]
+    },
+    {
+      "id": "release_preparation",
+      "name": "Release Preparation",
+      "description": "Prepare production release artifacts",
+      "entry_condition": "uat_approved",
+      "exit_condition": "ready_for_deployment",
+      "skippable": true,
+      "steps": [
+        {
+          "id": "release_notes_generation",
+          "name": "Generate Release Notes",
+          "description": "Generate comprehensive release notes",
+          "required_action": "generate_release_notes",
+          "user_input_required": false,
+          "next_step": "deployment_script_generation",
+          "estimated_duration": "15m"
+        },
+        {
+          "id": "deployment_script_generation",
+          "name": "Generate Deployment Scripts",
+          "description": "Generate deployment automation scripts",
+          "required_action": "generate_deployment_scripts",
+          "user_input_required": false,
+          "next_step": "rollback_plan_creation",
+          "estimated_duration": "30m"
+        },
+        {
+          "id": "rollback_plan_creation",
+          "name": "Create Rollback Plan",
+          "description": "Create rollback strategy and procedures",
+          "required_action": "generate_rollback_plan",
+          "user_input_required": false,
+          "next_step": "deployment_checklist_generation",
+          "estimated_duration": "15m"
+        },
+        {
+          "id": "deployment_checklist_generation",
+          "name": "Generate Deployment Checklist",
+          "description": "Generate pre-launch checklist",
+          "required_action": "generate_deployment_checklist",
+          "user_input_required": false,
+          "next_step": null,
+          "estimated_duration": "10m"
+        }
+      ]
+    },
+    {
+      "id": "deployment",
+      "name": "Deployment",
+      "description": "Deploy application to production",
+      "entry_condition": "ready_for_deployment",
+      "exit_condition": "deployment_successful",
+      "skippable": false,
+      "steps": [
+        {
+          "id": "pre_launch_validation",
+          "name": "Pre-Launch Validation",
+          "description": "Validate production readiness",
+          "required_action": "validate_pre_launch",
+          "user_input_required": false,
+          "next_step": "production_deployment",
+          "estimated_duration": "15m"
+        },
+        {
+          "id": "production_deployment",
+          "name": "Production Deployment",
+          "description": "Deploy application to production",
+          "required_action": "deploy_to_production",
+          "user_input_required": false,
+          "next_step": "deployment_verification",
+          "estimated_duration": "30m"
+        },
+        {
+          "id": "deployment_verification",
+          "name": "Verify Deployment",
+          "description": "Verify deployment success and health",
+          "required_action": "verify_deployment",
+          "user_input_required": false,
+          "next_step": null,
+          "estimated_duration": "15m"
+        }
+      ]
+    },
+    {
+      "id": "post_launch_monitoring",
+      "name": "Post-Launch Monitoring",
+      "description": "Monitor system after launch",
+      "entry_condition": "deployment_successful",
+      "exit_condition": "monitoring_active",
+      "skippable": true,
+      "steps": [
+        {
+          "id": "monitoring_setup",
+          "name": "Setup Monitoring",
+          "description": "Configure production monitoring",
+          "required_action": "setup_monitoring",
+          "user_input_required": false,
+          "next_step": "error_tracking_setup",
+          "estimated_duration": "30m"
+        },
+        {
+          "id": "error_tracking_setup",
+          "name": "Setup Error Tracking",
+          "description": "Configure error tracking and alerts",
+          "required_action": "setup_error_tracking",
+          "user_input_required": false,
+          "next_step": "performance_monitoring",
+          "estimated_duration": "30m"
+        },
+        {
+          "id": "performance_monitoring",
+          "name": "Monitor Performance",
+          "description": "Start performance monitoring and alerting",
+          "required_action": "monitor_performance",
+          "user_input_required": false,
+          "next_step": null,
+          "estimated_duration": "ongoing"
+        }
+      ]
+    }
+  ],
+  "project_types": {
+    "new_project": {
+      "name": "New Project",
+      "description": "Start a new project from scratch",
+      "skip_phases": []
+    },
+    "continue_project": {
+      "name": "Continue Existing",
+      "description": "Continue an existing project",
+      "skip_phases": ["project_initialization", "product_definition", "technical_architecture", "project_planning", "epic_hardening", "pi_hardening"]
+    },
+    "framework_migration": {
+      "name": "Framework Migration",
+      "description": "Migrate existing project to this framework",
+      "skip_phases": ["framework_bootstrap"]
+    },
+    "quick_task": {
+      "name": "Quick Task",
+      "description": "Small task or bug fix",
+      "skip_phases": ["framework_bootstrap", "product_definition", "technical_architecture", "project_planning", "epic_hardening", "pi_hardening", "uat", "release_preparation", "post_launch_monitoring"]
+    }
+  },
+  "settings": {
+    "auto_advance": false,
+    "require_user_approval": true,
+    "dashboard_auto_generate": true,
+    "state_persistence": "file",
+    "watchdog_interval_minutes": 60
+  }
+}
