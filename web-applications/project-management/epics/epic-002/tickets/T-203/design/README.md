@@ -10,7 +10,10 @@
 
 ## UX Logic (Pro-Max)
 - **Layout:** Sidebar navigation + Central Feed.
-- **Interaction:** Micro-animations for task completion (strikethrough + fade).
+- **Interaction:** 
+  - Micro-animations for task completion (strikethrough + fade).
+  - **Filter Chips**: Active filters appear as MUI Chips below the filter bar. Each chip is closable (removes filter).
+  - **Delete Confirmation**: All delete actions (single or bulk) MUST trigger a Modal confirmation.
 - **Feedback:** Toast notifications for CRUD success/failure.
 
 ## Component Hierarchy

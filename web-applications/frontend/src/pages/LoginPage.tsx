@@ -18,7 +18,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CheckIcon from '@mui/icons-material/Check';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { API_BASE_URL, ApiError, apiFetch, formatApiErrorMessage } from '../lib/api';
 import { LOGIN_FAILED_MESSAGE } from '../lib/loginMessages';
 import {
@@ -28,6 +28,7 @@ import {
 
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const theme = useTheme();
   const isLg = useMediaQuery(theme.breakpoints.up('lg'));
 
@@ -90,9 +91,16 @@ const LoginPage: React.FC = () => {
           body: JSON.stringify({ email: trimmedEmail, password }),
           auth: false,
         });
-        localStorage.setItem('access_token', res.access_token);
-        navigate('/', { replace: true });
-        return;
+        const token = res.access_token; // Assuming 'token' refers to access_token
+        if (token) {
+          localStorage.setItem('access_token', token);
+          const redirect = searchParams.get('redirect') || '/'; // Assuming 'params' refers to searchParams
+          // Small delay to ensure storage is updated before redirect
+          setTimeout(() => {
+            navigate(redirect, { replace: true });
+          }, 100);
+          return;
+        }
       }
 
       await apiFetch<{ id: string; email: string }>('/auth/register', {

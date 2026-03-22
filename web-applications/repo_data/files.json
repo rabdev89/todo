@@ -1,0 +1,684 @@
+[
+  [
+    "42e0ecf558bcfa2b",
+    {
+      "id": "42e0ecf558bcfa2b",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/frontend/vite.config.ts",
+      "language": "typescript",
+      "lastModified": 1773841260635.1038,
+      "linesCount": 8,
+      "contentHash": "88439104b3c207f17d33ef3160e3b080"
+    }
+  ],
+  [
+    "db2a7003eded4bf3",
+    {
+      "id": "db2a7003eded4bf3",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/frontend/src/theme.ts",
+      "language": "typescript",
+      "lastModified": 1773841484400.0828,
+      "linesCount": 18,
+      "contentHash": "2dddda90e3d367bbcc4d2d6d5283b471"
+    }
+  ],
+  [
+    "e885186ea94c72c2",
+    {
+      "id": "e885186ea94c72c2",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/test/tasks.e2e-spec.ts",
+      "language": "typescript",
+      "lastModified": 1774026408645.008,
+      "linesCount": 137,
+      "contentHash": "e8890722e2c85c1316ecdd49e6c1a3a8"
+    }
+  ],
+  [
+    "450a8633a875efc2",
+    {
+      "id": "450a8633a875efc2",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/test/subtasks.e2e-spec.ts",
+      "language": "typescript",
+      "lastModified": 1774026408645.2546,
+      "linesCount": 109,
+      "contentHash": "a051a63932db4c01207bc48ee8b9b07b"
+    }
+  ],
+  [
+    "dffa5e8853fff79e",
+    {
+      "id": "dffa5e8853fff79e",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/test/jest-e2e.setup.ts",
+      "language": "typescript",
+      "lastModified": 1773988847224.4434,
+      "linesCount": 5,
+      "contentHash": "bd4e17837c0e2b4fcf41a1fc8024f0dd"
+    }
+  ],
+  [
+    "cfef0b7164547c7c",
+    {
+      "id": "cfef0b7164547c7c",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/test/e2e-app-setup.ts",
+      "language": "typescript",
+      "lastModified": 1774026408644.944,
+      "linesCount": 13,
+      "contentHash": "2f0005eb199e2c2f0e95be882f490c0f"
+    }
+  ],
+  [
+    "218ad57a9e6adb61",
+    {
+      "id": "218ad57a9e6adb61",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/test/auth.e2e-spec.ts",
+      "language": "typescript",
+      "lastModified": 1774051926360.8196,
+      "linesCount": 169,
+      "contentHash": "491f33efb1d27861975a11a436035090"
+    }
+  ],
+  [
+    "4831c9f63fdaceba",
+    {
+      "id": "4831c9f63fdaceba",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/test/attachments.e2e-spec.ts",
+      "language": "typescript",
+      "lastModified": 1774024685425.0537,
+      "linesCount": 98,
+      "contentHash": "47d63936c09c39a240c251e3dcd04b5e"
+    }
+  ],
+  [
+    "916e7aedeb9e14af",
+    {
+      "id": "916e7aedeb9e14af",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/test/app.e2e-spec.ts",
+      "language": "typescript",
+      "lastModified": 1774026408644.9634,
+      "linesCount": 28,
+      "contentHash": "b63ad6749411ba02d974694c0f040b8a"
+    }
+  ],
+  [
+    "069ad7f7eeebaf8c",
+    {
+      "id": "069ad7f7eeebaf8c",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/main.ts",
+      "language": "typescript",
+      "lastModified": 1774026408642.2725,
+      "linesCount": 20,
+      "contentHash": "e30e40f1917a14dcc890912143590f07"
+    }
+  ],
+  [
+    "b5ccd79be1de216f",
+    {
+      "id": "b5ccd79be1de216f",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/app.service.ts",
+      "language": "typescript",
+      "lastModified": 1773841317696.2039,
+      "linesCount": 9,
+      "contentHash": "cd3fb7836f10de08a725ee1fd4ab36fe"
+    }
+  ],
+  [
+    "c432f178c0cfd429",
+    {
+      "id": "c432f178c0cfd429",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/app.module.ts",
+      "language": "typescript",
+      "lastModified": 1774026408644.9802,
+      "linesCount": 28,
+      "contentHash": "c7e69d552a55bcaea685ec3f972aabfe"
+    }
+  ],
+  [
+    "82d053782917a98a",
+    {
+      "id": "82d053782917a98a",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/app.controller.ts",
+      "language": "typescript",
+      "lastModified": 1773841317695.9426,
+      "linesCount": 13,
+      "contentHash": "3ab0e83b7d93b85ea489ab994ec79ea1"
+    }
+  ],
+  [
+    "58dc7f45738b6fb0",
+    {
+      "id": "58dc7f45738b6fb0",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/app.controller.spec.ts",
+      "language": "typescript",
+      "lastModified": 1773841317696.3665,
+      "linesCount": 23,
+      "contentHash": "4a1c0e1133dbda6f6e8f3e60d984eddf"
+    }
+  ],
+  [
+    "6a4785cad27386a7",
+    {
+      "id": "6a4785cad27386a7",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/frontend/src/lib/types.ts",
+      "language": "typescript",
+      "lastModified": 1774026408642.2473,
+      "linesCount": 38,
+      "contentHash": "465c9f79b235835a1e8a899b3c576fb3"
+    }
+  ],
+  [
+    "82d612aceda8d959",
+    {
+      "id": "82d612aceda8d959",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/frontend/src/lib/registerValidation.ts",
+      "language": "typescript",
+      "lastModified": 1774026408642.1252,
+      "linesCount": 22,
+      "contentHash": "02641c0acc0803c9178912c9f82ee9f3"
+    }
+  ],
+  [
+    "a2575f0469c74be6",
+    {
+      "id": "a2575f0469c74be6",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/frontend/src/lib/loginMessages.ts",
+      "language": "typescript",
+      "lastModified": 1774051927049.9563,
+      "linesCount": 3,
+      "contentHash": "dfa3995bea4523a72c539c69db707683"
+    }
+  ],
+  [
+    "9a9a5166643b276d",
+    {
+      "id": "9a9a5166643b276d",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/frontend/src/lib/api.ts",
+      "language": "typescript",
+      "lastModified": 1774026408642.253,
+      "linesCount": 52,
+      "contentHash": "769b09a98a851ddc3378db0d2de8bf27"
+    }
+  ],
+  [
+    "a3a0a145f964aade",
+    {
+      "id": "a3a0a145f964aade",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/users/users.service.ts",
+      "language": "typescript",
+      "lastModified": 1774026408642.1992,
+      "linesCount": 19,
+      "contentHash": "b60dea9b5166deb58077f8cd4e868a1d"
+    }
+  ],
+  [
+    "867d19e5aa3205e9",
+    {
+      "id": "867d19e5aa3205e9",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/users/users.module.ts",
+      "language": "typescript",
+      "lastModified": 1773846605729.7056,
+      "linesCount": 13,
+      "contentHash": "0a4ccb6ed333cdfdcd70a075884a033f"
+    }
+  ],
+  [
+    "9e1987c093ec001c",
+    {
+      "id": "9e1987c093ec001c",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/users/users.controller.ts",
+      "language": "typescript",
+      "lastModified": 1774026408642.0332,
+      "linesCount": 21,
+      "contentHash": "e5cbb99a23669ee9287a9bc446d08652"
+    }
+  ],
+  [
+    "0f452698ed9ee2e7",
+    {
+      "id": "0f452698ed9ee2e7",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/subtasks/subtasks.service.ts",
+      "language": "typescript",
+      "lastModified": 1774026408642.0261,
+      "linesCount": 60,
+      "contentHash": "447a2f9e29def53dc6ef678d4a0f9e90"
+    }
+  ],
+  [
+    "d9e9d96aa38bd786",
+    {
+      "id": "d9e9d96aa38bd786",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/subtasks/subtasks.module.ts",
+      "language": "typescript",
+      "lastModified": 1774026408644.9688,
+      "linesCount": 10,
+      "contentHash": "a33417151dc5ec1b7e4214c70bf6b605"
+    }
+  ],
+  [
+    "625e891d82e7667b",
+    {
+      "id": "625e891d82e7667b",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/subtasks/subtasks.controller.ts",
+      "language": "typescript",
+      "lastModified": 1774026408642.1702,
+      "linesCount": 47,
+      "contentHash": "21cd897161d46da371b8f52fbc04ac76"
+    }
+  ],
+  [
+    "12b90e1f357dc6b5",
+    {
+      "id": "12b90e1f357dc6b5",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/tasks/tasks.service.ts",
+      "language": "typescript",
+      "lastModified": 1774026408642.3093,
+      "linesCount": 229,
+      "contentHash": "fa510eaebb88ddf2fa27b3fdf58e5c3c"
+    }
+  ],
+  [
+    "d77a73893f81aa75",
+    {
+      "id": "d77a73893f81aa75",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/tasks/tasks.service.spec.ts",
+      "language": "typescript",
+      "lastModified": 1774026167954.9248,
+      "linesCount": 415,
+      "contentHash": "d07ef2c841174a8dbcabace768350a14"
+    }
+  ],
+  [
+    "8bf21e79e0ceea9f",
+    {
+      "id": "8bf21e79e0ceea9f",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/tasks/tasks.module.ts",
+      "language": "typescript",
+      "lastModified": 1774026408642.2942,
+      "linesCount": 13,
+      "contentHash": "56a9070a7ce88e746c0c01c9bc3eafcd"
+    }
+  ],
+  [
+    "cfdac19e29015ed4",
+    {
+      "id": "cfdac19e29015ed4",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/tasks/tasks.integration.spec.ts",
+      "language": "typescript",
+      "lastModified": 1774026167966.1248,
+      "linesCount": 30,
+      "contentHash": "e83ebb4dd4ff24c148ce168718791d43"
+    }
+  ],
+  [
+    "4f318d423ffa713f",
+    {
+      "id": "4f318d423ffa713f",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/tasks/tasks.e2e.spec.ts",
+      "language": "typescript",
+      "lastModified": 1774026167962.9937,
+      "linesCount": 398,
+      "contentHash": "13928c4bcdf5cdb7df99853c5f4e4643"
+    }
+  ],
+  [
+    "0f7c7d9c942318fc",
+    {
+      "id": "0f7c7d9c942318fc",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/tasks/tasks.controller.ts",
+      "language": "typescript",
+      "lastModified": 1774026408642.069,
+      "linesCount": 108,
+      "contentHash": "ccb5af78aecb37dc34393e5efbae0902"
+    }
+  ],
+  [
+    "764ce9f7c6b0148e",
+    {
+      "id": "764ce9f7c6b0148e",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/tasks/attachments.service.ts",
+      "language": "typescript",
+      "lastModified": 1774024011730.0762,
+      "linesCount": 51,
+      "contentHash": "775d32e5c98202296b56944763977272"
+    }
+  ],
+  [
+    "aa8ea3fd3ef18298",
+    {
+      "id": "aa8ea3fd3ef18298",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/prisma/prisma.service.ts",
+      "language": "typescript",
+      "lastModified": 1773842701900.9084,
+      "linesCount": 17,
+      "contentHash": "7bb7cda1b0bf147b5015ea9dd61eaaa7"
+    }
+  ],
+  [
+    "8821b691b7c4578d",
+    {
+      "id": "8821b691b7c4578d",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/prisma/prisma.module.ts",
+      "language": "typescript",
+      "lastModified": 1773842701900.924,
+      "linesCount": 10,
+      "contentHash": "3505a1831c78f0a9475e4ce0f0092410"
+    }
+  ],
+  [
+    "2a09bb19e88b3b1f",
+    {
+      "id": "2a09bb19e88b3b1f",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/files/file.service.ts",
+      "language": "typescript",
+      "lastModified": 1774026167942.5083,
+      "linesCount": 93,
+      "contentHash": "342b5fbd035b14d436603dbdadcc51ef"
+    }
+  ],
+  [
+    "d92a6ecd93483eaa",
+    {
+      "id": "d92a6ecd93483eaa",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/files/file.module.ts",
+      "language": "typescript",
+      "lastModified": 1774026167954.8982,
+      "linesCount": 9,
+      "contentHash": "2e768fd024e2ace3f729a4d5bd13ee4c"
+    }
+  ],
+  [
+    "c0ea358f9a502632",
+    {
+      "id": "c0ea358f9a502632",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/auth/jwt.strategy.ts",
+      "language": "typescript",
+      "lastModified": 1773844331234.2686,
+      "linesCount": 22,
+      "contentHash": "c9425c570043f8ee91eaf64738047175"
+    }
+  ],
+  [
+    "ad0e49d9ba1d56aa",
+    {
+      "id": "ad0e49d9ba1d56aa",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/auth/jwt-auth.guard.ts",
+      "language": "typescript",
+      "lastModified": 1773844188008.3196,
+      "linesCount": 6,
+      "contentHash": "184c5bd056e5657c27ecdd69e1e40701"
+    }
+  ],
+  [
+    "9c9cc2b14b69eec2",
+    {
+      "id": "9c9cc2b14b69eec2",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/auth/auth.types.ts",
+      "language": "typescript",
+      "lastModified": 1773844188008.3406,
+      "linesCount": 5,
+      "contentHash": "e2c8b3d8538a94a22270e1c62f7a6674"
+    }
+  ],
+  [
+    "1d56528508a1c7bc",
+    {
+      "id": "1d56528508a1c7bc",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/auth/auth.service.ts",
+      "language": "typescript",
+      "lastModified": 1774051899168.072,
+      "linesCount": 88,
+      "contentHash": "a342d165ac0848c8f71f14c313e47641"
+    }
+  ],
+  [
+    "d78f5845c11fd22c",
+    {
+      "id": "d78f5845c11fd22c",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/auth/auth.service.spec.ts",
+      "language": "typescript",
+      "lastModified": 1774051996057.1875,
+      "linesCount": 98,
+      "contentHash": "aa023bd1a685b4db87ba0b4567e9fa4c"
+    }
+  ],
+  [
+    "00b0127ad7f38add",
+    {
+      "id": "00b0127ad7f38add",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/auth/auth.module.ts",
+      "language": "typescript",
+      "lastModified": 1773847224813.1113,
+      "linesCount": 27,
+      "contentHash": "7cfec59f134830c091b3d948ce267470"
+    }
+  ],
+  [
+    "56ae573a8ea9a0c4",
+    {
+      "id": "56ae573a8ea9a0c4",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/auth/auth.controller.ts",
+      "language": "typescript",
+      "lastModified": 1774026408644.9238,
+      "linesCount": 73,
+      "contentHash": "45300a4df57334d8bc86f2d736847e5d"
+    }
+  ],
+  [
+    "2cf1e26b635de27b",
+    {
+      "id": "2cf1e26b635de27b",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/auth/auth.constants.ts",
+      "language": "typescript",
+      "lastModified": 1774051896057.9182,
+      "linesCount": 3,
+      "contentHash": "8808420c9ae57f6e10e16a1d2ccfff70"
+    }
+  ],
+  [
+    "232ce35e54382e3a",
+    {
+      "id": "232ce35e54382e3a",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/subtasks/dto/update-subtask.dto.ts",
+      "language": "typescript",
+      "lastModified": 1774026408642.1785,
+      "linesCount": 8,
+      "contentHash": "f655870a63cf66162bec707b465f031c"
+    }
+  ],
+  [
+    "4330a8a5068c76d9",
+    {
+      "id": "4330a8a5068c76d9",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/subtasks/dto/create-subtask.dto.ts",
+      "language": "typescript",
+      "lastModified": 1774026408642.2827,
+      "linesCount": 9,
+      "contentHash": "bf20411020975fa97c0f315f3ed3ca61"
+    }
+  ],
+  [
+    "c04f6ecbff455034",
+    {
+      "id": "c04f6ecbff455034",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/tasks/dto/update-task.dto.ts",
+      "language": "typescript",
+      "lastModified": 1774026408644.996,
+      "linesCount": 33,
+      "contentHash": "9a7114f5a1993a80289ea5a2f61b3312"
+    }
+  ],
+  [
+    "669a6eea6c3ffd13",
+    {
+      "id": "669a6eea6c3ffd13",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/tasks/dto/create-task.dto.ts",
+      "language": "typescript",
+      "lastModified": 1774026408644.902,
+      "linesCount": 32,
+      "contentHash": "2d3afc4bf84242b0383abf5296c885cf"
+    }
+  ],
+  [
+    "6f32f86d7eef6090",
+    {
+      "id": "6f32f86d7eef6090",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/common/exceptions/cascade-delete.exception.ts",
+      "language": "typescript",
+      "lastModified": 1774026167943.0403,
+      "linesCount": 26,
+      "contentHash": "9db832e8beaabff9095b35a6991a8407"
+    }
+  ],
+  [
+    "6327a473518779ba",
+    {
+      "id": "6327a473518779ba",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/auth/strategies/google.strategy.ts",
+      "language": "typescript",
+      "lastModified": 1774026408642.3308,
+      "linesCount": 60,
+      "contentHash": "d2da96d89f19103cda7de78bf1b8b823"
+    }
+  ],
+  [
+    "7e9e02bc2e746020",
+    {
+      "id": "7e9e02bc2e746020",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/auth/strategies/facebook.strategy.ts",
+      "language": "typescript",
+      "lastModified": 1774026408642.1062,
+      "linesCount": 60,
+      "contentHash": "d4c7957d8de716dad896616fb9555dc3"
+    }
+  ],
+  [
+    "ecdbafe950d2f837",
+    {
+      "id": "ecdbafe950d2f837",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/auth/dto/register.dto.ts",
+      "language": "typescript",
+      "lastModified": 1774026408662.026,
+      "linesCount": 44,
+      "contentHash": "4503663801f6406f190cfce25375e114"
+    }
+  ],
+  [
+    "a87b7d0d8778186e",
+    {
+      "id": "a87b7d0d8778186e",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/auth/dto/register.dto.spec.ts",
+      "language": "typescript",
+      "lastModified": 1774026408642.0583,
+      "linesCount": 49,
+      "contentHash": "0c3f315f7f1273abaac410dd286dc0a8"
+    }
+  ],
+  [
+    "185f8b8b9883ec2e",
+    {
+      "id": "185f8b8b9883ec2e",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/auth/dto/login.dto.ts",
+      "language": "typescript",
+      "lastModified": 1774051901526.8257,
+      "linesCount": 21,
+      "contentHash": "671d6f53f02013b4e5f9774ad6eba9d5"
+    }
+  ],
+  [
+    "75b7bf161a914261",
+    {
+      "id": "75b7bf161a914261",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/auth/dto/login.dto.spec.ts",
+      "language": "typescript",
+      "lastModified": 1774051905587.8486,
+      "linesCount": 29,
+      "contentHash": "2209fdc181b0ac820933cde22ac12728"
+    }
+  ],
+  [
+    "dc4dab23df2e4b7a",
+    {
+      "id": "dc4dab23df2e4b7a",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/backend/src/auth/decorators/current-user.decorator.ts",
+      "language": "typescript",
+      "lastModified": 1773846686516.1685,
+      "linesCount": 11,
+      "contentHash": "87a9b3a738ba0c5191577be090bda0a5"
+    }
+  ],
+  [
+    "2cf097a66dc58118",
+    {
+      "id": "2cf097a66dc58118",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/frontend/src/main.tsx",
+      "language": "tsx",
+      "lastModified": 1773887203593.1467,
+      "linesCount": 21,
+      "contentHash": "78633737b83bab55adfec79b5e1b63a7"
+    }
+  ],
+  [
+    "51fd181a602b7b1b",
+    {
+      "id": "51fd181a602b7b1b",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/frontend/src/App.tsx",
+      "language": "tsx",
+      "lastModified": 1774026408642.0469,
+      "linesCount": 20,
+      "contentHash": "8a876a7d342d9baabd7930ef2abc0893"
+    }
+  ],
+  [
+    "18a1e1b9383412f7",
+    {
+      "id": "18a1e1b9383412f7",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/frontend/src/pages/LoginPage.tsx",
+      "language": "tsx",
+      "lastModified": 1774051949212.5586,
+      "linesCount": 328,
+      "contentHash": "79b172a5396d2184425a73bd348c823e"
+    }
+  ],
+  [
+    "216600e6f87a16ec",
+    {
+      "id": "216600e6f87a16ec",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/frontend/src/pages/DashboardPage.tsx",
+      "language": "tsx",
+      "lastModified": 1774051968805.99,
+      "linesCount": 862,
+      "contentHash": "2b06d3ec95d1511fcb70adf293dfcfa5"
+    }
+  ],
+  [
+    "0bef9958c123628a",
+    {
+      "id": "0bef9958c123628a",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/frontend/src/pages/AuthCallbackPage.tsx",
+      "language": "tsx",
+      "lastModified": 1773913005973.8044,
+      "linesCount": 48,
+      "contentHash": "b2af1810f2769fdd934dc90f14bcbd88"
+    }
+  ],
+  [
+    "a055f613cca1b2aa",
+    {
+      "id": "a055f613cca1b2aa",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/frontend/tailwind.config.js",
+      "language": "javascript",
+      "lastModified": 1773884077447.473,
+      "linesCount": 21,
+      "contentHash": "e3c37a8daf9259a2ac61adc6a15e49cc"
+    }
+  ],
+  [
+    "ed7bf2a35ec2a9ed",
+    {
+      "id": "ed7bf2a35ec2a9ed",
+      "path": "/Users/ronaldbaniqued/Code/Origin/ToDoApp/web-applications/frontend/eslint.config.js",
+      "language": "javascript",
+      "lastModified": 1773841549038.5618,
+      "linesCount": 26,
+      "contentHash": "2d8d6ef5704a62063469a6536a1b6e80"
+    }
+  ]
+]

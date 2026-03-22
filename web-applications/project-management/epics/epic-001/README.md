@@ -11,3 +11,5 @@ This epic covers the initial project setup, database configuration, and secure u
 - T-105: Social Login (Google, Facebook)
 - T-106: Registration Validation
 - T-107: Login Validation
+- [x] T-108: Login Success dynamic redirect (Handle post-login destination)
+- [x] T-109: Secure Sign-out (Dashboard integration & session clearing)

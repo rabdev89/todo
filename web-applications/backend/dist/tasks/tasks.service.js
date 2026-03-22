@@ -112,6 +112,20 @@ let TasksService = TasksService_1 = class TasksService {
         }
     }
     async bulkUpdate(userId, ids, dto) {
+        if (dto.status === 'completed') {
+            const tasksWithPendingSubtasks = await this.prisma.task.findMany({
+                where: {
+                    id: { in: ids },
+                    userId,
+                    subtasks: { some: { isCompleted: false } },
+                },
+                select: { title: true },
+            });
+            if (tasksWithPendingSubtasks.length > 0) {
+                const titles = tasksWithPendingSubtasks.map(t => t.title).join(', ');
+                throw new common_1.BadRequestException(`Cannot complete tasks with pending subtasks: ${titles}`);
+            }
+        }
         const dueDate = dto.dueDate ? new Date(dto.dueDate) : undefined;
         return await this.prisma.task.updateMany({
             where: {

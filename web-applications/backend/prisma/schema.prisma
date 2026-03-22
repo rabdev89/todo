@@ -12,6 +12,7 @@ enum TaskPriority {
   medium
   high
   urgent
+  critical
 
   @@map("task_priority")
 }
@@ -20,6 +21,7 @@ enum TaskStatus {
   pending
   in_progress
   completed
+  cancelled
 
   @@map("task_status")
 }

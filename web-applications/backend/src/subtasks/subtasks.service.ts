@@ -39,10 +39,26 @@ export class SubtasksService {
     if (!subtask) throw new NotFoundException('Subtask not found');
     if (subtask.task.userId !== userId) throw new ForbiddenException();
 
-    return await this.prisma.subtask.update({
+    const updated = await this.prisma.subtask.update({
       where: { id: subtaskId },
       data: { isCompleted: dto.isCompleted },
     });
+
+    if (dto.isCompleted) {
+      const parentId = subtask.taskId;
+      const pendingSubtasks = await this.prisma.subtask.count({
+        where: { taskId: parentId, isCompleted: false },
+      });
+
+      if (pendingSubtasks === 0) {
+        await this.prisma.task.update({
+          where: { id: parentId },
+          data: { status: 'completed' },
+        });
+      }
+    }
+
+    return updated;
   }
 
   async remove(userId: string, subtaskId: string) {

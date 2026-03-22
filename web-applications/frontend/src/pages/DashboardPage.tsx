@@ -40,6 +40,8 @@ import HomeIcon from '@mui/icons-material/Home'
 import LogoutIcon from '@mui/icons-material/Logout'
 import AddIcon from '@mui/icons-material/Add'
 import FilterListIcon from '@mui/icons-material/FilterList'
+import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import AttachFileIcon from '@mui/icons-material/AttachFile'
@@ -51,7 +53,7 @@ import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile'
 import ImageIcon from '@mui/icons-material/Image'
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf'
 
-import { ApiError, apiFetch } from '../lib/api'
+import { ApiError, apiFetch, formatApiErrorMessage } from '../lib/api'
 import type { Attachment, Task, TaskPriority, TaskStatus } from '../lib/types'
 
 const drawerWidth = 208
@@ -83,11 +85,13 @@ export default function DashboardPage() {
     medium: false,
     high: false,
     urgent: false,
+    critical: false,
   })
   const [statusFilter, setStatusFilter] = useState<Record<TaskStatus, boolean>>({
     pending: false,
     in_progress: false,
     completed: false,
+    cancelled: false,
   })
 
   const [sort, setSort] = useState<SortConfig>({ field: 'title', direction: 'asc' })
@@ -105,6 +109,9 @@ export default function DashboardPage() {
   const [uploading, setUploading] = useState(false)
 
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set())
+  const [deleteConfirmOpen, setDeleteConfirmOpen] = useState(false)
+  const [logoutConfirmOpen, setLogoutConfirmOpen] = useState(false)
+  const [taskToDelete, setTaskToDelete] = useState<string | null>(null) // null for bulk delete
 
   const handleToggleSelect = (id: string) => {
     setSelectedIds(prev => {
@@ -124,7 +131,6 @@ export default function DashboardPage() {
 
   async function handleBulkDelete() {
     if (selectedIds.size === 0) return
-    if (!window.confirm(`Delete ${selectedIds.size} tasks?`)) return
     try {
       await apiFetch('/tasks/bulk', {
         method: 'DELETE',
@@ -133,6 +139,7 @@ export default function DashboardPage() {
       setTasks(prev => prev ? prev.filter(t => !selectedIds.has(t.id)) : prev)
       setSelectedIds(new Set())
       setToast('Tasks deleted.')
+      setDeleteConfirmOpen(false)
     } catch {
       setToast('Failed to delete tasks.')
     }
@@ -148,8 +155,8 @@ export default function DashboardPage() {
       setTasks(prev => prev ? prev.map(t => selectedIds.has(t.id) ? { ...t, ...updates } : t) : prev)
       setSelectedIds(new Set())
       setToast('Tasks updated.')
-    } catch {
-      setToast('Failed to update tasks.')
+    } catch (err: unknown) {
+      setToast(err instanceof ApiError ? formatApiErrorMessage(err.body) : 'Failed to update tasks.')
     }
   }
 
@@ -243,8 +250,8 @@ export default function DashboardPage() {
       setEditingTask(null)
       setFormData({ title: '', description: '', dueDate: '', priority: 'high', status: 'pending' })
       setToast(editingTask ? 'Task updated.' : 'Task created.')
-    } catch {
-      setToast('Failed to save task.')
+    } catch (err: unknown) {
+      setToast(err instanceof ApiError ? formatApiErrorMessage(err.body) : 'Failed to save task.')
     }
   }
 
@@ -256,20 +263,26 @@ export default function DashboardPage() {
         body: JSON.stringify({ status: nextStatus }),
       })
       setTasks(prev => prev ? prev.map(t => t.id === task.id ? updated : t) : prev)
-    } catch {
-      setToast('Failed to update task status.')
+    } catch (err: unknown) {
+      setToast(err instanceof ApiError ? formatApiErrorMessage(err.body) : 'Failed to update task status.')
     }
   }
 
   async function deleteTask(taskId: string) {
-    if (!window.confirm('Are you sure you want to delete this task?')) return
     try {
       await apiFetch(`/tasks/${taskId}`, { method: 'DELETE' })
       setTasks(prev => prev ? prev.filter(t => t.id !== taskId) : prev)
       setToast('Task deleted.')
+      setDeleteConfirmOpen(false)
+      setTaskToDelete(null)
     } catch {
       setToast('Failed to delete task.')
     }
+  }
+
+  function handleLogout() {
+    localStorage.removeItem('access_token')
+    window.location.href = '/login'
   }
 
   const handleOpenEdit = (task: Task) => {
@@ -302,8 +315,8 @@ export default function DashboardPage() {
       setTasks(prev => prev ? prev.map(t => t.id === selectedTask.id ? res : t) : prev)
       setSelectedTask(res)
       setToast('Task updated.')
-    } catch {
-      setToast('Failed to update task.')
+    } catch (err: unknown) {
+      setToast(err instanceof ApiError ? formatApiErrorMessage(err.body) : 'Failed to update task.')
     }
   }
 
@@ -411,20 +424,36 @@ export default function DashboardPage() {
 
   const drawer = (
     <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', p: 3, bgcolor: 'white' }}>
-      <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 5, pb: 4, borderBottom: '1px solid #E2E8F0' }}>
-        <Box sx={{ width: 32, height: 32, bgcolor: '#2563EB', borderRadius: 1.5, display: 'grid', placeItems: 'center', color: 'white' }}>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M2 14V2l5 7V2h7v12l-5-7v7H2z" fill="currentColor" />
+      <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 5, pb: 4, borderBottom: '1px solid #F1F5F9' }}>
+        <Box sx={{ 
+          width: 36, 
+          height: 36, 
+          bgcolor: '#2563EB', 
+          borderRadius: 2, 
+          display: 'grid', 
+          placeItems: 'center', 
+          color: 'white',
+          boxShadow: '0 4px 12px rgba(37, 99, 235, 0.25)' 
+        }}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="20 6 9 17 4 12" />
           </svg>
         </Box>
-        <Typography variant="h6" fontWeight={800} sx={{ color: '#0F172A' }}>NavTask</Typography>
+        <Typography variant="h6" fontWeight={850} sx={{ color: '#0F172A', letterSpacing: '-0.02em' }}>NavTask</Typography>
       </Stack>
 
-      <Stack alignItems="center" spacing={1.5} sx={{ mb: 5, pb: 4, borderBottom: '1px solid #E2E8F0' }}>
-        <Avatar sx={{ width: 64, height: 64, bgcolor: '#F1F5F9', color: '#94A3B8', border: '2px solid #E2E8F0' }}>
-          <Typography variant="h5">JD</Typography>
+      <Stack alignItems="center" spacing={1.5} sx={{ mb: 5, pb: 4, borderBottom: '1px solid #F1F5F9' }}>
+        <Avatar sx={{ 
+          width: 64, 
+          height: 64, 
+          bgcolor: '#F8FAFC', 
+          color: '#64748B', 
+          border: '1px solid #E2E8F0',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
+        }}>
+          <Typography variant="h5" fontWeight={700}>JD</Typography>
         </Avatar>
-        <Typography variant="body2" fontWeight={600} color="#334155">Jhon Doe_456</Typography>
+        <Typography variant="body2" fontWeight={700} color="#0F172A">Jhon Doe_456</Typography>
       </Stack>
 
       <List disablePadding sx={{ flex: 1 }}>
@@ -432,7 +461,7 @@ export default function DashboardPage() {
           <ListItemIcon sx={{ minWidth: 36, color: 'inherit' }}><HomeIcon fontSize="small" /></ListItemIcon>
           <ListItemText primary="Home" primaryTypographyProps={{ fontSize: '0.875rem', fontWeight: 700 }} />
         </ListItemButton>
-        <ListItemButton sx={{ borderRadius: 2, color: '#475569' }} onClick={() => { localStorage.removeItem('access_token'); window.location.href = '/login' }}>
+        <ListItemButton sx={{ borderRadius: 2, color: '#475569' }} onClick={() => setLogoutConfirmOpen(true)}>
           <ListItemIcon sx={{ minWidth: 36, color: 'inherit' }}><LogoutIcon fontSize="small" /></ListItemIcon>
           <ListItemText primary="Sign out" primaryTypographyProps={{ fontSize: '0.875rem' }} />
         </ListItemButton>
@@ -447,20 +476,23 @@ export default function DashboardPage() {
         <Toolbar sx={{ minHeight: 56, px: 2, justifyContent: 'space-between' }}>
           <Stack direction="row" spacing={1.5} alignItems="center">
             <Box sx={{ width: 32, height: 32, bgcolor: '#2563EB', borderRadius: 1.5, display: 'grid', placeItems: 'center', color: 'white' }}>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M2 14V2l5 7V2h7v12l-5-7v7H2z" fill="currentColor" />
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 6 9 17 4 12" />
               </svg>
             </Box>
-            <Typography variant="h6" fontWeight={800}>NavTask</Typography>
+            <Typography variant="h6" fontWeight={850} sx={{ letterSpacing: '-0.02em' }}>NavTask</Typography>
           </Stack>
           <IconButton edge="end" onClick={() => setMobileOpen(true)} sx={{ color: '#64748B' }}><MenuIcon /></IconButton>
         </Toolbar>
       </AppBar>
 
       <Drawer variant="temporary" open={mobileOpen} onClose={() => setMobileOpen(false)} ModalProps={{ keepMounted: true }} sx={{ display: { xs: 'block', md: 'none' }, '& .MuiDrawer-paper': { width: drawerWidth, border: 'none' } }}>{drawer}</Drawer>
-      <Drawer variant="permanent" sx={{ display: { xs: 'none', md: 'block' }, '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box', borderRight: '1px solid #E2E8F0' } }} open>{drawer}</Drawer>
+      
+      <Box component="nav" sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}>
+        <Drawer variant="permanent" sx={{ display: { xs: 'none', md: 'block' }, '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box', borderRight: '1px solid #E2E8F0' } }} open>{drawer}</Drawer>
+      </Box>
 
-      <Box component="main" sx={{ flex: 1, p: { xs: 2, md: 4 }, mt: { xs: 7, md: 0 } }}>
+      <Box component="main" sx={{ flexGrow: 1, p: { xs: 2, md: 4 }, mt: { xs: 7, md: 0 }, width: { md: `calc(100% - ${drawerWidth}px)` } }}>
         <Typography variant="h5" fontWeight={700} sx={{ color: '#1E293B', mb: 3 }}>To-do</Typography>
 
         <TableContainer component={Paper} elevation={0} sx={{ borderRadius: 4, border: '1px solid #F1F5F9', overflow: 'hidden' }}>
@@ -475,7 +507,7 @@ export default function DashboardPage() {
                  <Box>
                     <Typography variant="caption" fontWeight={700} color="#94A3B8" sx={{ display: 'block', mb: 1, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Priority</Typography>
                     <Stack direction="row" spacing={1}>
-                      {(['low', 'medium', 'high', 'urgent'] as TaskPriority[]).map(p => (
+                      {(['low', 'medium', 'high', 'urgent', 'critical'] as TaskPriority[]).map(p => (
                         <Chip key={p} label={p} onClick={() => setPriorityFilter(prev => ({...prev, [p]: !prev[p]}))} variant={priorityFilter[p] ? 'filled' : 'outlined'} color={priorityFilter[p] ? 'primary' : 'default'} sx={{ borderRadius: 1.5, fontWeight: 600 }} />
                       ))}
                     </Stack>
@@ -483,7 +515,7 @@ export default function DashboardPage() {
                  <Box>
                     <Typography variant="caption" fontWeight={700} color="#94A3B8" sx={{ display: 'block', mb: 1, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Status</Typography>
                     <Stack direction="row" spacing={1}>
-                      {(['pending', 'in_progress', 'completed'] as TaskStatus[]).map(s => (
+                      {(['pending', 'in_progress', 'completed', 'cancelled'] as TaskStatus[]).map(s => (
                         <Chip key={s} label={s.replace('_', ' ')} onClick={() => setStatusFilter(prev => ({...prev, [s]: !prev[s]}))} variant={statusFilter[s] ? 'filled' : 'outlined'} color={statusFilter[s] ? 'primary' : 'default'} sx={{ borderRadius: 1.5, fontWeight: 600 }} />
                       ))}
                     </Stack>
@@ -492,32 +524,99 @@ export default function DashboardPage() {
             </Box>
           </Collapse>
 
+          {(Object.values(priorityFilter).some(Boolean) || Object.values(statusFilter).some(Boolean)) && (
+            <Box sx={{ px: 3, py: 1.5, borderBottom: '1px solid #F1F5F9', bgcolor: 'white' }}>
+              <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+                {Object.entries(priorityFilter).filter(([, v]) => v).map(([k]) => (
+                  <Chip 
+                    key={`p-${k}`} 
+                    label={`P: ${k}`} 
+                    size="small" 
+                    onDelete={() => setPriorityFilter(prev => ({...prev, [k]: false}))} 
+                    sx={{ borderRadius: 1.5, bgcolor: '#F1F5F9', fontWeight: 600 }} 
+                  />
+                ))}
+                {Object.entries(statusFilter).filter(([, v]) => v).map(([k]) => (
+                  <Chip 
+                    key={`s-${k}`} 
+                    label={k.replace('_', ' ')} 
+                    size="small" 
+                    onDelete={() => setStatusFilter(prev => ({...prev, [k]: false}))} 
+                    sx={{ borderRadius: 1.5, bgcolor: '#F1F5F9', fontWeight: 600 }} 
+                  />
+                ))}
+                {(Object.values(priorityFilter).some(Boolean) || Object.values(statusFilter).some(Boolean)) && (
+                  <Button 
+                    size="small" 
+                    onClick={() => {
+                      setPriorityFilter({ low: false, medium: false, high: false, urgent: false, critical: false });
+                      setStatusFilter({ pending: false, in_progress: false, completed: false, cancelled: false });
+                    }}
+                    sx={{ textTransform: 'none', fontWeight: 600, fontSize: '0.75rem', minWidth: 'auto', p: 0.5 }}
+                  >
+                    Clear all
+                  </Button>
+                )}
+              </Stack>
+            </Box>
+          )}
+
           <Table sx={{ minWidth: 700 }}>
             <TableHead>
-              <TableRow sx={{ borderBottom: '1px solid #F1F5F9' }}>
-                <TableCell padding="checkbox" sx={{ pl: 3 }}>
-                  <Checkbox
-                    size="small"
-                    checked={filteredSortedTasks?.length ? selectedIds.size === filteredSortedTasks.length : false}
-                    indeterminate={selectedIds.size > 0 && selectedIds.size < (filteredSortedTasks?.length ?? 0)}
-                    onChange={() => filteredSortedTasks && handleToggleSelectAll(filteredSortedTasks.map(t => t.id))}
-                    sx={{ color: '#CBD5E1', '&.Mui-checked': { color: '#2563EB' } }}
-                  />
-                </TableCell>
-                <TableCell>
-                  <TableSortLabel active={sort.field === 'title'} direction={sort.direction} onClick={() => handleSort('title')} sx={{ fontWeight: 600, color: '#475569' }}>Title</TableSortLabel>
-                </TableCell>
-                <TableCell>
-                  <TableSortLabel active={sort.field === 'due'} direction={sort.direction} onClick={() => handleSort('due')} sx={{ fontWeight: 600, color: '#475569' }}>Due Date</TableSortLabel>
-                </TableCell>
-                <TableCell>
-                  <TableSortLabel active={sort.field === 'priority'} direction={sort.direction} onClick={() => handleSort('priority')} sx={{ fontWeight: 600, color: '#475569' }}>Priority</TableSortLabel>
-                </TableCell>
-                <TableCell>
-                  <TableSortLabel active={sort.field === 'status'} direction={sort.direction} onClick={() => handleSort('status')} sx={{ fontWeight: 600, color: '#475569' }}>Status</TableSortLabel>
-                </TableCell>
-                <TableCell align="right" sx={{ pr: 3 }}></TableCell>
-              </TableRow>
+              {selectedIds.size > 0 ? (
+                <TableRow sx={{ bgcolor: '#F8FAFC' }}>
+                  <TableCell padding="checkbox" sx={{ pl: 3 }}>
+                    <Checkbox
+                      size="small"
+                      checked={filteredSortedTasks?.length ? selectedIds.size === filteredSortedTasks.length : false}
+                      indeterminate={selectedIds.size > 0 && selectedIds.size < (filteredSortedTasks?.length ?? 0)}
+                      onChange={() => filteredSortedTasks && handleToggleSelectAll(filteredSortedTasks.map(t => t.id))}
+                      sx={{ color: '#CBD5E1', '&.Mui-checked': { color: '#2563EB' } }}
+                    />
+                  </TableCell>
+                  <TableCell colSpan={5}>
+                    <Stack direction="row" spacing={2} alignItems="center">
+                      <IconButton size="small" onClick={() => { setTaskToDelete(null); setDeleteConfirmOpen(true); }} sx={{ color: '#EF4444' }}>
+                        <DeleteOutlineIcon fontSize="small" />
+                      </IconButton>
+                      <Typography variant="body2" fontWeight={700} color="#0F172A">{selectedIds.size} selected</Typography>
+                      <Box sx={{ flex: 1 }} />
+                      <Button
+                        size="small"
+                        startIcon={<CheckCircleIcon fontSize="small" />}
+                        onClick={() => handleBulkUpdate({ status: 'completed' })}
+                        sx={{ textTransform: 'none', fontWeight: 600, color: '#2563EB', borderRadius: 2 }}
+                      >
+                        Mark Complete
+                      </Button>
+                    </Stack>
+                  </TableCell>
+                </TableRow>
+              ) : (
+                <TableRow sx={{ borderBottom: '1px solid #F1F5F9' }}>
+                  <TableCell padding="checkbox" sx={{ pl: 3 }}>
+                    <Checkbox
+                      size="small"
+                      checked={false}
+                      onChange={() => filteredSortedTasks && handleToggleSelectAll(filteredSortedTasks.map(t => t.id))}
+                      sx={{ color: '#CBD5E1', '&.Mui-checked': { color: '#2563EB' } }}
+                    />
+                  </TableCell>
+                  <TableCell>
+                    <TableSortLabel active={sort.field === 'title'} direction={sort.direction} onClick={() => handleSort('title')} sx={{ fontWeight: 600, color: '#475569' }}>Title</TableSortLabel>
+                  </TableCell>
+                  <TableCell>
+                    <TableSortLabel active={sort.field === 'due'} direction={sort.direction} onClick={() => handleSort('due')} sx={{ fontWeight: 600, color: '#475569' }}>Due Date</TableSortLabel>
+                  </TableCell>
+                  <TableCell>
+                    <TableSortLabel active={sort.field === 'priority'} direction={sort.direction} onClick={() => handleSort('priority')} sx={{ fontWeight: 600, color: '#475569' }}>Priority</TableSortLabel>
+                  </TableCell>
+                  <TableCell>
+                    <TableSortLabel active={sort.field === 'status'} direction={sort.direction} onClick={() => handleSort('status')} sx={{ fontWeight: 600, color: '#475569' }}>Status</TableSortLabel>
+                  </TableCell>
+                  <TableCell align="right" sx={{ pr: 3 }}></TableCell>
+                </TableRow>
+              )}
             </TableHead>
             <TableBody>
               {filteredSortedTasks ? filteredSortedTasks.map((task) => (
@@ -526,7 +625,7 @@ export default function DashboardPage() {
                   task={task}
                   onToggle={() => toggleTaskComplete(task)}
                   onEdit={() => handleOpenEdit(task)}
-                  onDelete={() => deleteTask(task.id)}
+                  onDelete={() => { setTaskToDelete(task.id); setDeleteConfirmOpen(true); }}
                   expanded={expanded[task.id]}
                   onExpand={() => setExpanded(prev => ({...prev, [task.id]: !prev[task.id]}))}
                   selected={selectedIds.has(task.id)}
@@ -536,22 +635,29 @@ export default function DashboardPage() {
                 <TableRow key={i}><TableCell colSpan={6}><Skeleton height={48} /></TableCell></TableRow>
               ))}
               {filteredSortedTasks?.length === 0 && (
-                <TableRow><TableCell colSpan={6} align="center" sx={{ py: 8, color: '#94A3B8' }}>No tasks found</TableCell></TableRow>
+                <TableRow>
+                  <TableCell colSpan={6} align="center" sx={{ py: 12 }}>
+                    <Box sx={{ mb: 2 }}>
+                       <RadioButtonUncheckedIcon sx={{ fontSize: 64, color: '#E2E8F0' }} />
+                    </Box>
+                    <Typography variant="h6" fontWeight={700} color="#334155" sx={{ mb: 1 }}>No tasks yet</Typography>
+                    <Typography variant="body2" color="#64748B" sx={{ mb: 3 }}>Get started by creating your first productivity goal.</Typography>
+                    <Button 
+                      variant="contained" 
+                      startIcon={<AddIcon />} 
+                      onClick={() => setCreateOpen(true)}
+                      sx={{ borderRadius: 2, bgcolor: '#2563EB', textTransform: 'none', fontWeight: 600 }}
+                    >
+                      Create your first task
+                    </Button>
+                  </TableCell>
+                </TableRow>
               )}
             </TableBody>
           </Table>
         </TableContainer>
 
-        {selectedIds.size > 0 && (
-          <Paper elevation={4} sx={{ position: 'fixed', bottom: 32, left: '50%', transform: 'translateX(-50%)', px: 3, py: 1.5, borderRadius: 3, bgcolor: '#1E293B', color: 'white', display: 'flex', alignItems: 'center', gap: 3, zIndex: 1000 }}>
-            <Typography variant="body2" fontWeight={600}>{selectedIds.size} tasks selected</Typography>
-            <Stack direction="row" spacing={1}>
-               <Button size="small" variant="contained" onClick={() => handleBulkUpdate({ status: 'completed' })} sx={{ bgcolor: '#2563EB', textTransform: 'none', fontWeight: 600 }}>Mark Complete</Button>
-               <Button size="small" variant="outlined" onClick={handleBulkDelete} sx={{ color: '#F8FAFC', borderColor: '#475569', textTransform: 'none', fontWeight: 600, '&:hover': { borderColor: '#94A3B8' } }}>Delete</Button>
-            </Stack>
-            <IconButton size="small" onClick={() => setSelectedIds(new Set())} sx={{ color: '#94A3B8' }}><ChevronRightIcon sx={{ transform: 'rotate(90deg)' }} /></IconButton>
-          </Paper>
-        )}
+        {/* Removed floating action bar as it moved to table header */}
       </Box>
 
       {/* Task Detail Drawer */}
@@ -614,6 +720,7 @@ export default function DashboardPage() {
                       <MenuItem value="pending">Not Started</MenuItem>
                       <MenuItem value="in_progress">In Progress</MenuItem>
                       <MenuItem value="completed">Complete</MenuItem>
+                      <MenuItem value="cancelled">Cancelled</MenuItem>
                     </Select>
                   </Box>
                   <Box sx={{ flex: 1 }}>
@@ -642,6 +749,7 @@ export default function DashboardPage() {
                       <MenuItem value="medium">Medium</MenuItem>
                       <MenuItem value="high">High</MenuItem>
                       <MenuItem value="urgent">Urgent</MenuItem>
+                      <MenuItem value="critical">Critical</MenuItem>
                     </Select>
                   </Box>
                 </Stack>
@@ -769,6 +877,7 @@ export default function DashboardPage() {
                 <MenuItem value="medium">Medium</MenuItem>
                 <MenuItem value="high">High</MenuItem>
                 <MenuItem value="urgent">Urgent</MenuItem>
+                <MenuItem value="critical">Critical</MenuItem>
               </Select>
             </FormControl>
             <FormControl fullWidth>
@@ -777,6 +886,7 @@ export default function DashboardPage() {
                 <MenuItem value="pending">Not Started</MenuItem>
                 <MenuItem value="in_progress">In Progress</MenuItem>
                 <MenuItem value="completed">Complete</MenuItem>
+                <MenuItem value="cancelled">Cancelled</MenuItem>
               </Select>
             </FormControl>
           </Stack>
@@ -788,6 +898,34 @@ export default function DashboardPage() {
       </Dialog>
 
       <Snackbar open={!!toast} autoHideDuration={3000} onClose={() => setToast(null)} message={toast ?? ''} />
+
+      {/* Logout Confirmation Dialog */}
+      <Dialog open={logoutConfirmOpen} onClose={() => setLogoutConfirmOpen(false)} PaperProps={{ sx: { borderRadius: 3, p: 1, maxWidth: 360 } }}>
+        <DialogTitle sx={{ fontWeight: 700 }}>Sign out?</DialogTitle>
+        <DialogContent>
+          <Typography variant="body2" color="#64748B">
+            Are you sure you want to sign out? All unsaved changes will be lost.
+          </Typography>
+        </DialogContent>
+        <DialogActions sx={{ p: 3, pt: 1 }}>
+          <Button variant="outlined" onClick={() => setLogoutConfirmOpen(false)} sx={{ borderRadius: 2, flex: 1, textTransform: 'none', fontWeight: 600, color: '#475569', borderColor: '#D1D5DB' }}>Cancel</Button>
+          <Button variant="contained" onClick={handleLogout} sx={{ borderRadius: 2, flex: 1, textTransform: 'none', fontWeight: 600, bgcolor: '#EF4444', '&:hover': { bgcolor: '#DC2626' } }}>Sign out</Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* Delete Confirmation Dialog */}
+      <Dialog open={deleteConfirmOpen} onClose={() => setDeleteConfirmOpen(false)} PaperProps={{ sx: { borderRadius: 3, p: 1, maxWidth: 360 } }}>
+        <DialogTitle sx={{ fontWeight: 700 }}>Delete Task{(!taskToDelete && selectedIds.size > 1) ? 's' : ''}?</DialogTitle>
+        <DialogContent>
+          <Typography variant="body2" color="#64748B">
+            Are you sure you want to delete {taskToDelete ? 'this task' : `these ${selectedIds.size} tasks`}? This action cannot be undone.
+          </Typography>
+        </DialogContent>
+        <DialogActions sx={{ p: 3, pt: 1 }}>
+          <Button variant="outlined" onClick={() => setDeleteConfirmOpen(false)} sx={{ borderRadius: 2, flex: 1, textTransform: 'none', fontWeight: 600, color: '#475569', borderColor: '#D1D5DB' }}>Cancel</Button>
+          <Button variant="contained" onClick={() => taskToDelete ? deleteTask(taskToDelete) : handleBulkDelete()} sx={{ borderRadius: 2, flex: 1, textTransform: 'none', fontWeight: 600, bgcolor: '#EF4444', '&:hover': { bgcolor: '#DC2626' } }}>Delete</Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   )
 }
@@ -795,11 +933,58 @@ export default function DashboardPage() {
 function TaskRow({ task, onToggle, onEdit, onDelete, expanded, onExpand, selected, onSelect }: { task: Task; onToggle: () => void; onEdit: () => void; onDelete: () => void; expanded?: boolean; onExpand: () => void; selected: boolean; onSelect: () => void }) {
   const isCompleted = task.status === 'completed'
   const priorityColors: Record<TaskPriority, string> = {
-    low: 'border-[#22C55E] text-[#166534] bg-[#F0FDF4]',
+    low: 'border-[#2FBD00] text-[#165700] bg-[#F9FFF6]',
     medium: 'border-[#64748B] text-[#334155] bg-[#F8FAFC]',
-    high: 'border-[#FACC15] text-[#854D0E] bg-[#FEFCE8]',
-    urgent: 'border-[#EF4444] text-[#991B1B] bg-[#FEF2F2]',
+    high: 'border-[#FAC300] text-[#624D00] bg-[#FFFFD2]',
+    urgent: 'border-[#EF4444] text-[#991B1B] bg-[#FFF2F2]',
+    critical: 'border-[#EB0000] text-[#7F0000] bg-[#FFF6F6]',
   }
+
+  const getStatusIcon = (status: TaskStatus) => {
+    switch (status) {
+      case 'pending': 
+        return <RadioButtonUncheckedIcon sx={{ fontSize: 18, color: '#94A3B8' }} />
+      case 'in_progress': 
+        return (
+          <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <RadioButtonUncheckedIcon sx={{ fontSize: 18, color: '#2563EB', opacity: 0.3 }} />
+            <Box sx={{ 
+              position: 'absolute', 
+              width: 18, 
+              height: 18, 
+              borderRadius: '50%', 
+              border: '2px solid transparent',
+              borderTopColor: '#2563EB',
+              animation: 'spin 1.5s linear infinite'
+            }} />
+            <style>{`
+              @keyframes spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+              }
+            `}</style>
+          </Box>
+        )
+      case 'completed': 
+        return <CheckCircleIcon sx={{ fontSize: 18, color: '#009292' }} />
+      case 'cancelled': 
+        return (
+          <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <RadioButtonUncheckedIcon sx={{ fontSize: 18, color: '#94A3B8' }} />
+            <Box sx={{ 
+              position: 'absolute', 
+              width: 14, 
+              height: 1.5, 
+              bgcolor: '#94A3B8', 
+              transform: 'rotate(-45deg)' 
+            }} />
+          </Box>
+        )
+    }
+  }
+
+  const isOverdueTask = task.dueDate ? new Date(task.dueDate).setHours(0,0,0,0) < new Date().setHours(0,0,0,0) : false
+  const isTodayTask = task.dueDate ? new Date(task.dueDate).setHours(0,0,0,0) === new Date().setHours(0,0,0,0) : false
 
   return (
     <>
@@ -810,26 +995,32 @@ function TaskRow({ task, onToggle, onEdit, onDelete, expanded, onExpand, selecte
         <TableCell sx={{ py: 2 }}>
           <Stack direction="row" spacing={1} alignItems="center">
             <Checkbox checked={isCompleted} onClick={onToggle} size="small" sx={{ color: '#CBD5E1', '&.Mui-checked': { color: '#2563EB' } }} />
-            <IconButton size="small" onClick={onExpand} sx={{ p: 0.5 }}>
-              {expanded ? <KeyboardArrowDownIcon sx={{ fontSize: 18 }} /> : <ChevronRightIcon sx={{ fontSize: 18 }} />}
-            </IconButton>
-            <Typography variant="body2" fontWeight={600} sx={{ color: isCompleted ? '#94A3B8' : '#334155', textDecoration: isCompleted ? 'line-through' : 'none', cursor: 'pointer' }} onClick={onEdit}>
+            {task.subtasks && task.subtasks.length > 0 && (
+              <IconButton size="small" onClick={onExpand} sx={{ p: 0.5 }}>
+                {expanded ? <KeyboardArrowDownIcon sx={{ fontSize: 18 }} /> : <ChevronRightIcon sx={{ fontSize: 18 }} />}
+              </IconButton>
+            )}
+            <Typography variant="body2" fontWeight={600} sx={{ color: isCompleted ? '#94A3B8' : '#334155', textDecoration: isCompleted ? 'line-through' : 'none', cursor: 'pointer', ml: task.subtasks && task.subtasks.length > 0 ? 0 : 3.5 }} onClick={onEdit}>
               {task.title}
             </Typography>
-            {task.description && <AttachFileIcon sx={{ fontSize: 14, color: '#94A3B8' }} />}
+            {task.attachments && task.attachments.length > 0 && <AttachFileIcon sx={{ fontSize: 14, color: '#94A3B8' }} />}
           </Stack>
         </TableCell>
         <TableCell sx={{ py: 2 }}>
-          <Typography variant="body2" sx={{ color: '#64748B' }}>{task.dueDate ? new Date(task.dueDate).toLocaleDateString() : '—'}</Typography>
+          <Box>
+            <Typography variant="body2" sx={{ color: isOverdueTask ? '#CA0061' : isTodayTask ? '#009292' : '#64748B', fontWeight: (isOverdueTask || isTodayTask) ? 600 : 400 }}>
+              {task.dueDate ? new Date(task.dueDate).toLocaleDateString() : '—'}
+            </Typography>
+            {isOverdueTask && <Typography variant="caption" sx={{ color: '#CA0061', fontWeight: 700, display: 'block', mt: -0.5 }}>Overdue</Typography>}
+            {isTodayTask && <Typography variant="caption" sx={{ color: '#009292', fontWeight: 700, display: 'block', mt: -0.5 }}>Today</Typography>}
+          </Box>
         </TableCell>
         <TableCell sx={{ py: 2 }}>
           <span className={`inline-block px-2 py-0.5 rounded text-[10px] font-bold border uppercase tracking-wider ${priorityColors[task.priority]}`}>{task.priority}</span>
         </TableCell>
         <TableCell sx={{ py: 2 }}>
           <Stack direction="row" spacing={1} alignItems="center">
-            <Box sx={{ width: 14, height: 14, borderRadius: '50%', border: '1.5px solid', borderColor: isCompleted ? '#2563EB' : '#CBD5E1', bgcolor: isCompleted ? '#2563EB' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              {isCompleted && <Box sx={{ width: 6, height: 6, bgcolor: 'white', borderRadius: '50%' }} />}
-            </Box>
+            {getStatusIcon(task.status)}
             <Typography variant="body2" fontWeight={500} sx={{ color: '#475569' }}>{task.status.replace('_', ' ')}</Typography>
           </Stack>
         </TableCell>

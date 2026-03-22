@@ -1,5 +1,5 @@
-export type TaskPriority = 'low' | 'medium' | 'high' | 'urgent'
-export type TaskStatus = 'pending' | 'in_progress' | 'completed'
+export type TaskPriority = 'low' | 'medium' | 'high' | 'urgent' | 'critical'
+export type TaskStatus = 'pending' | 'in_progress' | 'completed' | 'cancelled'
 
 export interface Subtask {
   id: string

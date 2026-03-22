@@ -15,8 +15,11 @@ The To-Do List App is a task management system that allows users to create, orga
 - View list of tasks
 - Expand subtasks
 - Filter by priority and status
+- Active filters: Chips are closable
+- Sort by Priority
 - Sort tasks
-- Multi-select and delete
+- Multiple selection
+- When delete button is clicked – delete confirmation
 
 ### 2.3 Task Management
 - Create task

@@ -1,0 +1,17 @@
+{
+  "id": "T-108",
+  "title": "Login Success Redirect to Dashboard",
+  "epic_id": "epic-001",
+  "status": "done",
+  "priority": "medium",
+  "track": "A",
+  "dependencies": ["T-103", "T-107"],
+  "description": "Ensure that after a successful login or social authentication, the user is redirected to the Dashboard page. Handle redirections for cases where a user attempted to access a protected route without being authenticated.",
+  "requirements": [
+    "Redirect to '/' after manual login.",
+    "Redirect to '/' after social login callback.",
+    "Support 'redirect_uri' parameter for deep linking after login."
+  ],
+  "implementation_notes": "The current `LoginPage.tsx` and `AuthCallbackPage.tsx` already navigate to '/'. This ticket ensures consistency and handles the deep link parameter if needed.",
+  "last_updated": "2026-03-21T23:00:00Z"
+}

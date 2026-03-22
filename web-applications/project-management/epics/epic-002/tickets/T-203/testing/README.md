@@ -41,7 +41,18 @@
   - Click sort header (Due Date)
 - **Expected**:
   - List updates to show only matching tasks
-  - Tasks sorted by due date ascending/descending
+  - **Active Filter Chips** appear for "High" and "Completed".
+  - Clicking the 'X' on a chip removes that filter and refreshes the list.
+  - Tasks sorted by due date ascending/descending.
+- **Status**: ✅ Ready to implement
+
+### TC-DASH-7: Delete Confirmation
+- **Setup**: User clicks delete button on a task row or selects multiple and clicks bulk delete.
+- **Action**: Click 'Delete' button.
+- **Expected**:
+  - Confirmation Modal appears.
+  - Clicking 'Cancel' closes modal; no deletion occurs.
+  - Clicking 'Confirm' triggers API call and removes task(s) from UI.
 - **Status**: ✅ Ready to implement
 
 ### TC-DASH-5: Subtask Management

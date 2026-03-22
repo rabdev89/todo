@@ -12,9 +12,10 @@ const AuthCallbackPage: React.FC = () => {
 
     if (token) {
       localStorage.setItem('access_token', token);
+      const redirect = params.get('redirect') || '/';
       // Small delay to ensure storage is updated before redirect
       setTimeout(() => {
-        navigate('/', { replace: true });
+        navigate(redirect, { replace: true });
       }, 100);
     } else {
       console.error('No token found in callback URL');

@@ -1,0 +1,2235 @@
+[
+  [
+    "cf5322351990b74e",
+    {
+      "id": "cf5322351990b74e",
+      "fileId": "42e0ecf558bcfa2b",
+      "importedName": "{ defineConfig }",
+      "sourceModule": "vite",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "b8f2c66c21a5887e",
+    {
+      "id": "b8f2c66c21a5887e",
+      "fileId": "42e0ecf558bcfa2b",
+      "importedName": "react",
+      "sourceModule": "@vitejs/plugin-react",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "27d1c19fc74280c1",
+    {
+      "id": "27d1c19fc74280c1",
+      "fileId": "db2a7003eded4bf3",
+      "importedName": "{ createTheme }",
+      "sourceModule": "@mui/material/styles",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "d62c8157f46f1990",
+    {
+      "id": "d62c8157f46f1990",
+      "fileId": "e885186ea94c72c2",
+      "importedName": "{ INestApplication }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "59493f80b1af1359",
+    {
+      "id": "59493f80b1af1359",
+      "fileId": "e885186ea94c72c2",
+      "importedName": "{ Test }",
+      "sourceModule": "@nestjs/testing",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "d69bc7a08e759352",
+    {
+      "id": "d69bc7a08e759352",
+      "fileId": "e885186ea94c72c2",
+      "importedName": "request",
+      "sourceModule": "supertest",
+      "isExternal": true,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "9efff20dac6ff730",
+    {
+      "id": "9efff20dac6ff730",
+      "fileId": "e885186ea94c72c2",
+      "importedName": "{ AppModule }",
+      "sourceModule": "../src/app.module",
+      "isExternal": false,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "c49a70a3a208a4f4",
+    {
+      "id": "c49a70a3a208a4f4",
+      "fileId": "e885186ea94c72c2",
+      "importedName": "{ PrismaService }",
+      "sourceModule": "../src/prisma/prisma.service",
+      "isExternal": false,
+      "lineNumber": 5
+    }
+  ],
+  [
+    "817ca25db622d3e2",
+    {
+      "id": "817ca25db622d3e2",
+      "fileId": "e885186ea94c72c2",
+      "importedName": "{ setupE2eApp }",
+      "sourceModule": "./e2e-app-setup",
+      "isExternal": false,
+      "lineNumber": 6
+    }
+  ],
+  [
+    "7dff6739dc9a4e37",
+    {
+      "id": "7dff6739dc9a4e37",
+      "fileId": "450a8633a875efc2",
+      "importedName": "{ INestApplication }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "e0cc4b0c153d9926",
+    {
+      "id": "e0cc4b0c153d9926",
+      "fileId": "450a8633a875efc2",
+      "importedName": "{ Test }",
+      "sourceModule": "@nestjs/testing",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "3fb86d805bc22ce5",
+    {
+      "id": "3fb86d805bc22ce5",
+      "fileId": "450a8633a875efc2",
+      "importedName": "request",
+      "sourceModule": "supertest",
+      "isExternal": true,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "96a23fbe02d45704",
+    {
+      "id": "96a23fbe02d45704",
+      "fileId": "450a8633a875efc2",
+      "importedName": "{ AppModule }",
+      "sourceModule": "../src/app.module",
+      "isExternal": false,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "6900ce51eaa5ff2b",
+    {
+      "id": "6900ce51eaa5ff2b",
+      "fileId": "450a8633a875efc2",
+      "importedName": "{ setupE2eApp }",
+      "sourceModule": "./e2e-app-setup",
+      "isExternal": false,
+      "lineNumber": 5
+    }
+  ],
+  [
+    "2e9076608f4bd1ce",
+    {
+      "id": "2e9076608f4bd1ce",
+      "fileId": "cfef0b7164547c7c",
+      "importedName": "{ INestApplication",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "f85008ca821a1a28",
+    {
+      "id": "f85008ca821a1a28",
+      "fileId": "218ad57a9e6adb61",
+      "importedName": "{ INestApplication }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "25a80514ea478af4",
+    {
+      "id": "25a80514ea478af4",
+      "fileId": "218ad57a9e6adb61",
+      "importedName": "{ Test }",
+      "sourceModule": "@nestjs/testing",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "74ffcecec443b699",
+    {
+      "id": "74ffcecec443b699",
+      "fileId": "218ad57a9e6adb61",
+      "importedName": "request",
+      "sourceModule": "supertest",
+      "isExternal": true,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "9d3967990cfadc7c",
+    {
+      "id": "9d3967990cfadc7c",
+      "fileId": "218ad57a9e6adb61",
+      "importedName": "{ AppModule }",
+      "sourceModule": "../src/app.module",
+      "isExternal": false,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "b12cfff6f7f930be",
+    {
+      "id": "b12cfff6f7f930be",
+      "fileId": "218ad57a9e6adb61",
+      "importedName": "{ PrismaService }",
+      "sourceModule": "../src/prisma/prisma.service",
+      "isExternal": false,
+      "lineNumber": 5
+    }
+  ],
+  [
+    "438ef6a5cb8e9214",
+    {
+      "id": "438ef6a5cb8e9214",
+      "fileId": "218ad57a9e6adb61",
+      "importedName": "{ setupE2eApp }",
+      "sourceModule": "./e2e-app-setup",
+      "isExternal": false,
+      "lineNumber": 6
+    }
+  ],
+  [
+    "2a30e7608ac87824",
+    {
+      "id": "2a30e7608ac87824",
+      "fileId": "4831c9f63fdaceba",
+      "importedName": "{ Test",
+      "sourceModule": "@nestjs/testing",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "470fa1978fce24fc",
+    {
+      "id": "470fa1978fce24fc",
+      "fileId": "4831c9f63fdaceba",
+      "importedName": "{ INestApplication }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "80712bab4d3a1162",
+    {
+      "id": "80712bab4d3a1162",
+      "fileId": "4831c9f63fdaceba",
+      "importedName": "* as request",
+      "sourceModule": "supertest",
+      "isExternal": true,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "f7c59fc1719d343a",
+    {
+      "id": "f7c59fc1719d343a",
+      "fileId": "4831c9f63fdaceba",
+      "importedName": "{ AppModule }",
+      "sourceModule": "../src/app.module",
+      "isExternal": false,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "ae03c4ecb4e9c71f",
+    {
+      "id": "ae03c4ecb4e9c71f",
+      "fileId": "4831c9f63fdaceba",
+      "importedName": "{ PrismaService }",
+      "sourceModule": "../src/prisma/prisma.service",
+      "isExternal": false,
+      "lineNumber": 5
+    }
+  ],
+  [
+    "127d4a2fada5c669",
+    {
+      "id": "127d4a2fada5c669",
+      "fileId": "4831c9f63fdaceba",
+      "importedName": "{ join }",
+      "sourceModule": "path",
+      "isExternal": true,
+      "lineNumber": 6
+    }
+  ],
+  [
+    "d41751dda6bd79f0",
+    {
+      "id": "d41751dda6bd79f0",
+      "fileId": "4831c9f63fdaceba",
+      "importedName": "{ existsSync",
+      "sourceModule": "fs",
+      "isExternal": true,
+      "lineNumber": 7
+    }
+  ],
+  [
+    "dc0c46272737c26b",
+    {
+      "id": "dc0c46272737c26b",
+      "fileId": "916e7aedeb9e14af",
+      "importedName": "{ Test",
+      "sourceModule": "@nestjs/testing",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "b365393933954bc3",
+    {
+      "id": "b365393933954bc3",
+      "fileId": "916e7aedeb9e14af",
+      "importedName": "{ INestApplication }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "49d8c650a63c0b82",
+    {
+      "id": "49d8c650a63c0b82",
+      "fileId": "916e7aedeb9e14af",
+      "importedName": "request",
+      "sourceModule": "supertest",
+      "isExternal": true,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "1d96152b19a3b5ec",
+    {
+      "id": "1d96152b19a3b5ec",
+      "fileId": "916e7aedeb9e14af",
+      "importedName": "{ App }",
+      "sourceModule": "supertest/types",
+      "isExternal": true,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "68942bc9b283d321",
+    {
+      "id": "68942bc9b283d321",
+      "fileId": "916e7aedeb9e14af",
+      "importedName": "{ AppModule }",
+      "sourceModule": "./../src/app.module",
+      "isExternal": false,
+      "lineNumber": 5
+    }
+  ],
+  [
+    "81a62daa97717ecb",
+    {
+      "id": "81a62daa97717ecb",
+      "fileId": "916e7aedeb9e14af",
+      "importedName": "{ setupE2eApp }",
+      "sourceModule": "./e2e-app-setup",
+      "isExternal": false,
+      "lineNumber": 6
+    }
+  ],
+  [
+    "459d79d623a8d272",
+    {
+      "id": "459d79d623a8d272",
+      "fileId": "069ad7f7eeebaf8c",
+      "importedName": "{ ValidationPipe }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "67c77b227f34995a",
+    {
+      "id": "67c77b227f34995a",
+      "fileId": "069ad7f7eeebaf8c",
+      "importedName": "{ NestFactory }",
+      "sourceModule": "@nestjs/core",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "aef68e3419666ac8",
+    {
+      "id": "aef68e3419666ac8",
+      "fileId": "069ad7f7eeebaf8c",
+      "importedName": "{ AppModule }",
+      "sourceModule": "./app.module",
+      "isExternal": false,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "9fcd239477cb2019",
+    {
+      "id": "9fcd239477cb2019",
+      "fileId": "b5ccd79be1de216f",
+      "importedName": "{ Injectable }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "1793fec8a90fe84c",
+    {
+      "id": "1793fec8a90fe84c",
+      "fileId": "c432f178c0cfd429",
+      "importedName": "{ Module }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "9a48b652711e8dbd",
+    {
+      "id": "9a48b652711e8dbd",
+      "fileId": "c432f178c0cfd429",
+      "importedName": "{ ServeStaticModule }",
+      "sourceModule": "@nestjs/serve-static",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "08cd90112f970338",
+    {
+      "id": "08cd90112f970338",
+      "fileId": "c432f178c0cfd429",
+      "importedName": "{ join }",
+      "sourceModule": "path",
+      "isExternal": true,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "945be963ac90e584",
+    {
+      "id": "945be963ac90e584",
+      "fileId": "c432f178c0cfd429",
+      "importedName": "{ AppController }",
+      "sourceModule": "./app.controller",
+      "isExternal": false,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "05d98cc7f33f9365",
+    {
+      "id": "05d98cc7f33f9365",
+      "fileId": "c432f178c0cfd429",
+      "importedName": "{ AppService }",
+      "sourceModule": "./app.service",
+      "isExternal": false,
+      "lineNumber": 5
+    }
+  ],
+  [
+    "088a32e1436dcded",
+    {
+      "id": "088a32e1436dcded",
+      "fileId": "c432f178c0cfd429",
+      "importedName": "{ AuthModule }",
+      "sourceModule": "./auth/auth.module",
+      "isExternal": false,
+      "lineNumber": 6
+    }
+  ],
+  [
+    "0e0fbc569f72096c",
+    {
+      "id": "0e0fbc569f72096c",
+      "fileId": "c432f178c0cfd429",
+      "importedName": "{ PrismaModule }",
+      "sourceModule": "./prisma/prisma.module",
+      "isExternal": false,
+      "lineNumber": 7
+    }
+  ],
+  [
+    "1729816780f6c11b",
+    {
+      "id": "1729816780f6c11b",
+      "fileId": "c432f178c0cfd429",
+      "importedName": "{ SubtasksModule }",
+      "sourceModule": "./subtasks/subtasks.module",
+      "isExternal": false,
+      "lineNumber": 8
+    }
+  ],
+  [
+    "079ad5ac3f7e9f09",
+    {
+      "id": "079ad5ac3f7e9f09",
+      "fileId": "c432f178c0cfd429",
+      "importedName": "{ TasksModule }",
+      "sourceModule": "./tasks/tasks.module",
+      "isExternal": false,
+      "lineNumber": 9
+    }
+  ],
+  [
+    "94f436bdb34a6671",
+    {
+      "id": "94f436bdb34a6671",
+      "fileId": "c432f178c0cfd429",
+      "importedName": "{ UsersModule }",
+      "sourceModule": "./users/users.module",
+      "isExternal": false,
+      "lineNumber": 10
+    }
+  ],
+  [
+    "a4708125f34303b7",
+    {
+      "id": "a4708125f34303b7",
+      "fileId": "82d053782917a98a",
+      "importedName": "{ Controller",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "13f0eed7bbbeb857",
+    {
+      "id": "13f0eed7bbbeb857",
+      "fileId": "82d053782917a98a",
+      "importedName": "{ AppService }",
+      "sourceModule": "./app.service",
+      "isExternal": false,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "76f78aed376607f2",
+    {
+      "id": "76f78aed376607f2",
+      "fileId": "58dc7f45738b6fb0",
+      "importedName": "{ Test",
+      "sourceModule": "@nestjs/testing",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "2ac3e08c6b5c3d06",
+    {
+      "id": "2ac3e08c6b5c3d06",
+      "fileId": "58dc7f45738b6fb0",
+      "importedName": "{ AppController }",
+      "sourceModule": "./app.controller",
+      "isExternal": false,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "ed3680539800f627",
+    {
+      "id": "ed3680539800f627",
+      "fileId": "58dc7f45738b6fb0",
+      "importedName": "{ AppService }",
+      "sourceModule": "./app.service",
+      "isExternal": false,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "00a23eb22045db19",
+    {
+      "id": "00a23eb22045db19",
+      "fileId": "a3a0a145f964aade",
+      "importedName": "{ Injectable }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "10996e0d3bf10800",
+    {
+      "id": "10996e0d3bf10800",
+      "fileId": "a3a0a145f964aade",
+      "importedName": "{ PrismaService }",
+      "sourceModule": "../prisma/prisma.service",
+      "isExternal": false,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "456271b0ab0716f2",
+    {
+      "id": "456271b0ab0716f2",
+      "fileId": "867d19e5aa3205e9",
+      "importedName": "{ Module }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "094a5bad23f62c32",
+    {
+      "id": "094a5bad23f62c32",
+      "fileId": "867d19e5aa3205e9",
+      "importedName": "{ AuthModule }",
+      "sourceModule": "../auth/auth.module",
+      "isExternal": false,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "b8142cfa213e5e60",
+    {
+      "id": "b8142cfa213e5e60",
+      "fileId": "867d19e5aa3205e9",
+      "importedName": "{ UsersController }",
+      "sourceModule": "./users.controller",
+      "isExternal": false,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "389aed9a92473af1",
+    {
+      "id": "389aed9a92473af1",
+      "fileId": "867d19e5aa3205e9",
+      "importedName": "{ UsersService }",
+      "sourceModule": "./users.service",
+      "isExternal": false,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "eda89dbb563f541d",
+    {
+      "id": "eda89dbb563f541d",
+      "fileId": "9e1987c093ec001c",
+      "importedName": "{ Controller",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "8b0f82da86eea9a2",
+    {
+      "id": "8b0f82da86eea9a2",
+      "fileId": "9e1987c093ec001c",
+      "importedName": "{ CurrentUser }",
+      "sourceModule": "../auth/decorators/current-user.decorator",
+      "isExternal": false,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "72867a3641a96dd6",
+    {
+      "id": "72867a3641a96dd6",
+      "fileId": "9e1987c093ec001c",
+      "importedName": "{ JwtAuthGuard }",
+      "sourceModule": "../auth/jwt-auth.guard",
+      "isExternal": false,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "b129b036b01ef8dc",
+    {
+      "id": "b129b036b01ef8dc",
+      "fileId": "9e1987c093ec001c",
+      "importedName": "{ UsersService }",
+      "sourceModule": "./users.service",
+      "isExternal": false,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "cfbdfcc7a66e7e36",
+    {
+      "id": "cfbdfcc7a66e7e36",
+      "fileId": "0f452698ed9ee2e7",
+      "importedName": "{ PrismaService }",
+      "sourceModule": "../prisma/prisma.service",
+      "isExternal": false,
+      "lineNumber": 7
+    }
+  ],
+  [
+    "3a8b8816a649e775",
+    {
+      "id": "3a8b8816a649e775",
+      "fileId": "0f452698ed9ee2e7",
+      "importedName": "{ CreateSubtaskDto }",
+      "sourceModule": "./dto/create-subtask.dto",
+      "isExternal": false,
+      "lineNumber": 8
+    }
+  ],
+  [
+    "099b92832c14732d",
+    {
+      "id": "099b92832c14732d",
+      "fileId": "0f452698ed9ee2e7",
+      "importedName": "{ UpdateSubtaskDto }",
+      "sourceModule": "./dto/update-subtask.dto",
+      "isExternal": false,
+      "lineNumber": 9
+    }
+  ],
+  [
+    "ff1da6a250062098",
+    {
+      "id": "ff1da6a250062098",
+      "fileId": "d9e9d96aa38bd786",
+      "importedName": "{ Module }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "1adbb7520b2ec6d7",
+    {
+      "id": "1adbb7520b2ec6d7",
+      "fileId": "d9e9d96aa38bd786",
+      "importedName": "{ SubtasksController }",
+      "sourceModule": "./subtasks.controller",
+      "isExternal": false,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "3854a899d9ec33ce",
+    {
+      "id": "3854a899d9ec33ce",
+      "fileId": "d9e9d96aa38bd786",
+      "importedName": "{ SubtasksService }",
+      "sourceModule": "./subtasks.service",
+      "isExternal": false,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "7e0e8ee61c5ffa32",
+    {
+      "id": "7e0e8ee61c5ffa32",
+      "fileId": "625e891d82e7667b",
+      "importedName": "{ CurrentUser }",
+      "sourceModule": "../auth/decorators/current-user.decorator",
+      "isExternal": false,
+      "lineNumber": 10
+    }
+  ],
+  [
+    "d7c8a703ac5dd781",
+    {
+      "id": "d7c8a703ac5dd781",
+      "fileId": "625e891d82e7667b",
+      "importedName": "{ JwtAuthGuard }",
+      "sourceModule": "../auth/jwt-auth.guard",
+      "isExternal": false,
+      "lineNumber": 11
+    }
+  ],
+  [
+    "bc43d05072406e19",
+    {
+      "id": "bc43d05072406e19",
+      "fileId": "625e891d82e7667b",
+      "importedName": "{ CreateSubtaskDto }",
+      "sourceModule": "./dto/create-subtask.dto",
+      "isExternal": false,
+      "lineNumber": 12
+    }
+  ],
+  [
+    "f884e2c9e0a6b96c",
+    {
+      "id": "f884e2c9e0a6b96c",
+      "fileId": "625e891d82e7667b",
+      "importedName": "{ UpdateSubtaskDto }",
+      "sourceModule": "./dto/update-subtask.dto",
+      "isExternal": false,
+      "lineNumber": 13
+    }
+  ],
+  [
+    "d135986090f8a0c0",
+    {
+      "id": "d135986090f8a0c0",
+      "fileId": "625e891d82e7667b",
+      "importedName": "{ SubtasksService }",
+      "sourceModule": "./subtasks.service",
+      "isExternal": false,
+      "lineNumber": 14
+    }
+  ],
+  [
+    "7dc36e10258c63b8",
+    {
+      "id": "7dc36e10258c63b8",
+      "fileId": "12b90e1f357dc6b5",
+      "importedName": "{ PrismaService }",
+      "sourceModule": "../prisma/prisma.service",
+      "isExternal": false,
+      "lineNumber": 8
+    }
+  ],
+  [
+    "6d7a52d0b9bdd96a",
+    {
+      "id": "6d7a52d0b9bdd96a",
+      "fileId": "12b90e1f357dc6b5",
+      "importedName": "{ FileService }",
+      "sourceModule": "../files/file.service",
+      "isExternal": false,
+      "lineNumber": 9
+    }
+  ],
+  [
+    "ff8ad729414046ff",
+    {
+      "id": "ff8ad729414046ff",
+      "fileId": "12b90e1f357dc6b5",
+      "importedName": "{ CascadeDeleteException }",
+      "sourceModule": "../common/exceptions/cascade-delete.exception",
+      "isExternal": false,
+      "lineNumber": 10
+    }
+  ],
+  [
+    "aa2bd1483ed3dd65",
+    {
+      "id": "aa2bd1483ed3dd65",
+      "fileId": "12b90e1f357dc6b5",
+      "importedName": "{ CreateTaskDto }",
+      "sourceModule": "./dto/create-task.dto",
+      "isExternal": false,
+      "lineNumber": 11
+    }
+  ],
+  [
+    "9b46474b85f51531",
+    {
+      "id": "9b46474b85f51531",
+      "fileId": "12b90e1f357dc6b5",
+      "importedName": "{ UpdateTaskDto }",
+      "sourceModule": "./dto/update-task.dto",
+      "isExternal": false,
+      "lineNumber": 12
+    }
+  ],
+  [
+    "6d23e524a57dc6e1",
+    {
+      "id": "6d23e524a57dc6e1",
+      "fileId": "d77a73893f81aa75",
+      "importedName": "{ Test",
+      "sourceModule": "@nestjs/testing",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "99fd52a6ebfc327d",
+    {
+      "id": "99fd52a6ebfc327d",
+      "fileId": "d77a73893f81aa75",
+      "importedName": "{ ForbiddenException",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "ccada8aa77a9149b",
+    {
+      "id": "ccada8aa77a9149b",
+      "fileId": "d77a73893f81aa75",
+      "importedName": "{ TasksService }",
+      "sourceModule": "./tasks.service",
+      "isExternal": false,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "fb1a570b997d8542",
+    {
+      "id": "fb1a570b997d8542",
+      "fileId": "d77a73893f81aa75",
+      "importedName": "{ PrismaService }",
+      "sourceModule": "../prisma/prisma.service",
+      "isExternal": false,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "c417a9e85a4be390",
+    {
+      "id": "c417a9e85a4be390",
+      "fileId": "d77a73893f81aa75",
+      "importedName": "{ FileService }",
+      "sourceModule": "../files/file.service",
+      "isExternal": false,
+      "lineNumber": 5
+    }
+  ],
+  [
+    "fb0b6c6f792dd515",
+    {
+      "id": "fb0b6c6f792dd515",
+      "fileId": "d77a73893f81aa75",
+      "importedName": "{ CascadeDeleteException }",
+      "sourceModule": "../common/exceptions/cascade-delete.exception",
+      "isExternal": false,
+      "lineNumber": 6
+    }
+  ],
+  [
+    "dac4e380fe207fdc",
+    {
+      "id": "dac4e380fe207fdc",
+      "fileId": "8bf21e79e0ceea9f",
+      "importedName": "{ Module }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "47070712d09658aa",
+    {
+      "id": "47070712d09658aa",
+      "fileId": "8bf21e79e0ceea9f",
+      "importedName": "{ FileModule }",
+      "sourceModule": "../files/file.module",
+      "isExternal": false,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "8d9a4d879335e2e8",
+    {
+      "id": "8d9a4d879335e2e8",
+      "fileId": "8bf21e79e0ceea9f",
+      "importedName": "{ TasksController }",
+      "sourceModule": "./tasks.controller",
+      "isExternal": false,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "116420d3c9120e47",
+    {
+      "id": "116420d3c9120e47",
+      "fileId": "8bf21e79e0ceea9f",
+      "importedName": "{ TasksService }",
+      "sourceModule": "./tasks.service",
+      "isExternal": false,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "ba03ff4792a505dd",
+    {
+      "id": "ba03ff4792a505dd",
+      "fileId": "8bf21e79e0ceea9f",
+      "importedName": "{ AttachmentsService }",
+      "sourceModule": "./attachments.service",
+      "isExternal": false,
+      "lineNumber": 5
+    }
+  ],
+  [
+    "9750a4b836be668c",
+    {
+      "id": "9750a4b836be668c",
+      "fileId": "4f318d423ffa713f",
+      "importedName": "{ Test",
+      "sourceModule": "@nestjs/testing",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "9b8846f194d2c87e",
+    {
+      "id": "9b8846f194d2c87e",
+      "fileId": "4f318d423ffa713f",
+      "importedName": "{ INestApplication }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "f17a859c4ca5fa20",
+    {
+      "id": "f17a859c4ca5fa20",
+      "fileId": "4f318d423ffa713f",
+      "importedName": "{ AppModule }",
+      "sourceModule": "../app.module",
+      "isExternal": false,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "14ca52b2585f097c",
+    {
+      "id": "14ca52b2585f097c",
+      "fileId": "4f318d423ffa713f",
+      "importedName": "* as request",
+      "sourceModule": "supertest",
+      "isExternal": true,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "77eb5e8a32ea7b8a",
+    {
+      "id": "77eb5e8a32ea7b8a",
+      "fileId": "0f7c7d9c942318fc",
+      "importedName": "{ FileInterceptor }",
+      "sourceModule": "@nestjs/platform-express",
+      "isExternal": true,
+      "lineNumber": 13
+    }
+  ],
+  [
+    "c583f57f32636623",
+    {
+      "id": "c583f57f32636623",
+      "fileId": "0f7c7d9c942318fc",
+      "importedName": "{ diskStorage }",
+      "sourceModule": "multer",
+      "isExternal": true,
+      "lineNumber": 14
+    }
+  ],
+  [
+    "cd430bcd374b7217",
+    {
+      "id": "cd430bcd374b7217",
+      "fileId": "0f7c7d9c942318fc",
+      "importedName": "{ extname }",
+      "sourceModule": "path",
+      "isExternal": true,
+      "lineNumber": 15
+    }
+  ],
+  [
+    "e2d65755304d010f",
+    {
+      "id": "e2d65755304d010f",
+      "fileId": "0f7c7d9c942318fc",
+      "importedName": "{ JwtAuthGuard }",
+      "sourceModule": "../auth/jwt-auth.guard",
+      "isExternal": false,
+      "lineNumber": 16
+    }
+  ],
+  [
+    "57bad3d952dc2c19",
+    {
+      "id": "57bad3d952dc2c19",
+      "fileId": "0f7c7d9c942318fc",
+      "importedName": "{ CurrentUser }",
+      "sourceModule": "../auth/decorators/current-user.decorator",
+      "isExternal": false,
+      "lineNumber": 17
+    }
+  ],
+  [
+    "66081c52b1c18215",
+    {
+      "id": "66081c52b1c18215",
+      "fileId": "0f7c7d9c942318fc",
+      "importedName": "{ CreateTaskDto }",
+      "sourceModule": "./dto/create-task.dto",
+      "isExternal": false,
+      "lineNumber": 18
+    }
+  ],
+  [
+    "408e654549fbc03b",
+    {
+      "id": "408e654549fbc03b",
+      "fileId": "0f7c7d9c942318fc",
+      "importedName": "{ UpdateTaskDto }",
+      "sourceModule": "./dto/update-task.dto",
+      "isExternal": false,
+      "lineNumber": 19
+    }
+  ],
+  [
+    "591a21b929d5d544",
+    {
+      "id": "591a21b929d5d544",
+      "fileId": "0f7c7d9c942318fc",
+      "importedName": "{ TasksService }",
+      "sourceModule": "./tasks.service",
+      "isExternal": false,
+      "lineNumber": 20
+    }
+  ],
+  [
+    "e9846787d28c1391",
+    {
+      "id": "e9846787d28c1391",
+      "fileId": "0f7c7d9c942318fc",
+      "importedName": "{ AttachmentsService }",
+      "sourceModule": "./attachments.service",
+      "isExternal": false,
+      "lineNumber": 21
+    }
+  ],
+  [
+    "0a6e8f76a545ca8a",
+    {
+      "id": "0a6e8f76a545ca8a",
+      "fileId": "764ce9f7c6b0148e",
+      "importedName": "{ Injectable",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "8e44f6d3fafdd315",
+    {
+      "id": "8e44f6d3fafdd315",
+      "fileId": "764ce9f7c6b0148e",
+      "importedName": "{ PrismaService }",
+      "sourceModule": "../prisma/prisma.service",
+      "isExternal": false,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "1d3e8b7a2b8e62bc",
+    {
+      "id": "1d3e8b7a2b8e62bc",
+      "fileId": "764ce9f7c6b0148e",
+      "importedName": "{ join }",
+      "sourceModule": "path",
+      "isExternal": true,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "101449dcdd89f677",
+    {
+      "id": "101449dcdd89f677",
+      "fileId": "764ce9f7c6b0148e",
+      "importedName": "{ existsSync",
+      "sourceModule": "fs",
+      "isExternal": true,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "ed33fa27aaafbf4e",
+    {
+      "id": "ed33fa27aaafbf4e",
+      "fileId": "aa8ea3fd3ef18298",
+      "importedName": "{ Injectable",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "2b11344334d736e8",
+    {
+      "id": "2b11344334d736e8",
+      "fileId": "aa8ea3fd3ef18298",
+      "importedName": "{ PrismaClient }",
+      "sourceModule": "@prisma/client",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "3b000e60da3e7201",
+    {
+      "id": "3b000e60da3e7201",
+      "fileId": "8821b691b7c4578d",
+      "importedName": "{ Global",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "e1ddac2a54b8aae6",
+    {
+      "id": "e1ddac2a54b8aae6",
+      "fileId": "8821b691b7c4578d",
+      "importedName": "{ PrismaService }",
+      "sourceModule": "./prisma.service",
+      "isExternal": false,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "2b40858f80806cc0",
+    {
+      "id": "2b40858f80806cc0",
+      "fileId": "2a09bb19e88b3b1f",
+      "importedName": "{ Injectable",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "ff5a42010146a460",
+    {
+      "id": "ff5a42010146a460",
+      "fileId": "2a09bb19e88b3b1f",
+      "importedName": "* as fs",
+      "sourceModule": "fs/promises",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "e63ebc8701ceb0b3",
+    {
+      "id": "e63ebc8701ceb0b3",
+      "fileId": "2a09bb19e88b3b1f",
+      "importedName": "* as path",
+      "sourceModule": "path",
+      "isExternal": true,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "83a9454b06adbfed",
+    {
+      "id": "83a9454b06adbfed",
+      "fileId": "d92a6ecd93483eaa",
+      "importedName": "{ Module }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "edb2dc952c87afe2",
+    {
+      "id": "edb2dc952c87afe2",
+      "fileId": "d92a6ecd93483eaa",
+      "importedName": "{ FileService }",
+      "sourceModule": "./file.service",
+      "isExternal": false,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "c00ec49fe0eb39b6",
+    {
+      "id": "c00ec49fe0eb39b6",
+      "fileId": "c0ea358f9a502632",
+      "importedName": "{ Injectable }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "1424b0b6ebb496b1",
+    {
+      "id": "1424b0b6ebb496b1",
+      "fileId": "c0ea358f9a502632",
+      "importedName": "{ PassportStrategy }",
+      "sourceModule": "@nestjs/passport",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "272272a926b9d616",
+    {
+      "id": "272272a926b9d616",
+      "fileId": "c0ea358f9a502632",
+      "importedName": "{ ExtractJwt",
+      "sourceModule": "passport-jwt",
+      "isExternal": true,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "bd7796b646c10db7",
+    {
+      "id": "bd7796b646c10db7",
+      "fileId": "c0ea358f9a502632",
+      "importedName": "type { JwtPayload }",
+      "sourceModule": "./auth.types",
+      "isExternal": false,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "82df2a205b667ca7",
+    {
+      "id": "82df2a205b667ca7",
+      "fileId": "ad0e49d9ba1d56aa",
+      "importedName": "{ Injectable }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "99d823873a552be3",
+    {
+      "id": "99d823873a552be3",
+      "fileId": "ad0e49d9ba1d56aa",
+      "importedName": "{ AuthGuard }",
+      "sourceModule": "@nestjs/passport",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "6e2674abaf1c6362",
+    {
+      "id": "6e2674abaf1c6362",
+      "fileId": "1d56528508a1c7bc",
+      "importedName": "{ JwtService }",
+      "sourceModule": "@nestjs/jwt",
+      "isExternal": true,
+      "lineNumber": 6
+    }
+  ],
+  [
+    "8500da3484d33353",
+    {
+      "id": "8500da3484d33353",
+      "fileId": "1d56528508a1c7bc",
+      "importedName": "* as bcrypt",
+      "sourceModule": "bcrypt",
+      "isExternal": true,
+      "lineNumber": 7
+    }
+  ],
+  [
+    "1de503285fe95896",
+    {
+      "id": "1de503285fe95896",
+      "fileId": "1d56528508a1c7bc",
+      "importedName": "{ randomBytes }",
+      "sourceModule": "crypto",
+      "isExternal": true,
+      "lineNumber": 8
+    }
+  ],
+  [
+    "bc77a8545121f202",
+    {
+      "id": "bc77a8545121f202",
+      "fileId": "1d56528508a1c7bc",
+      "importedName": "{ PrismaService }",
+      "sourceModule": "../prisma/prisma.service",
+      "isExternal": false,
+      "lineNumber": 9
+    }
+  ],
+  [
+    "b5dcbefeee872888",
+    {
+      "id": "b5dcbefeee872888",
+      "fileId": "1d56528508a1c7bc",
+      "importedName": "{ LoginDto }",
+      "sourceModule": "./dto/login.dto",
+      "isExternal": false,
+      "lineNumber": 10
+    }
+  ],
+  [
+    "ddef06448a2e97f9",
+    {
+      "id": "ddef06448a2e97f9",
+      "fileId": "1d56528508a1c7bc",
+      "importedName": "{ RegisterDto }",
+      "sourceModule": "./dto/register.dto",
+      "isExternal": false,
+      "lineNumber": 11
+    }
+  ],
+  [
+    "270512ba4cf513c8",
+    {
+      "id": "270512ba4cf513c8",
+      "fileId": "1d56528508a1c7bc",
+      "importedName": "type { JwtPayload }",
+      "sourceModule": "./auth.types",
+      "isExternal": false,
+      "lineNumber": 12
+    }
+  ],
+  [
+    "adc1349e99a39678",
+    {
+      "id": "adc1349e99a39678",
+      "fileId": "1d56528508a1c7bc",
+      "importedName": "{ LOGIN_FAILED_MESSAGE }",
+      "sourceModule": "./auth.constants",
+      "isExternal": false,
+      "lineNumber": 13
+    }
+  ],
+  [
+    "bc803bff38a1aeee",
+    {
+      "id": "bc803bff38a1aeee",
+      "fileId": "d78f5845c11fd22c",
+      "importedName": "{ UnauthorizedException }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "97565044fbc64534",
+    {
+      "id": "97565044fbc64534",
+      "fileId": "d78f5845c11fd22c",
+      "importedName": "{ JwtService }",
+      "sourceModule": "@nestjs/jwt",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "571398e5e5e8c118",
+    {
+      "id": "571398e5e5e8c118",
+      "fileId": "d78f5845c11fd22c",
+      "importedName": "{ Test }",
+      "sourceModule": "@nestjs/testing",
+      "isExternal": true,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "581a54b3625740a4",
+    {
+      "id": "581a54b3625740a4",
+      "fileId": "d78f5845c11fd22c",
+      "importedName": "* as bcrypt",
+      "sourceModule": "bcrypt",
+      "isExternal": true,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "3dcd8b94833c0a39",
+    {
+      "id": "3dcd8b94833c0a39",
+      "fileId": "d78f5845c11fd22c",
+      "importedName": "{ PrismaService }",
+      "sourceModule": "../prisma/prisma.service",
+      "isExternal": false,
+      "lineNumber": 5
+    }
+  ],
+  [
+    "86a68cec9a0b39c7",
+    {
+      "id": "86a68cec9a0b39c7",
+      "fileId": "d78f5845c11fd22c",
+      "importedName": "{ LOGIN_FAILED_MESSAGE }",
+      "sourceModule": "./auth.constants",
+      "isExternal": false,
+      "lineNumber": 6
+    }
+  ],
+  [
+    "492e87be8fde6cc6",
+    {
+      "id": "492e87be8fde6cc6",
+      "fileId": "d78f5845c11fd22c",
+      "importedName": "{ AuthService }",
+      "sourceModule": "./auth.service",
+      "isExternal": false,
+      "lineNumber": 7
+    }
+  ],
+  [
+    "98e7935f9f93963f",
+    {
+      "id": "98e7935f9f93963f",
+      "fileId": "00b0127ad7f38add",
+      "importedName": "{ Module }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "9491922159567977",
+    {
+      "id": "9491922159567977",
+      "fileId": "00b0127ad7f38add",
+      "importedName": "{ JwtModule }",
+      "sourceModule": "@nestjs/jwt",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "ff19294e0ba4c769",
+    {
+      "id": "ff19294e0ba4c769",
+      "fileId": "00b0127ad7f38add",
+      "importedName": "{ PassportModule }",
+      "sourceModule": "@nestjs/passport",
+      "isExternal": true,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "3938e8191e1ef1e4",
+    {
+      "id": "3938e8191e1ef1e4",
+      "fileId": "00b0127ad7f38add",
+      "importedName": "{ AuthController }",
+      "sourceModule": "./auth.controller",
+      "isExternal": false,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "0602d7056c10c954",
+    {
+      "id": "0602d7056c10c954",
+      "fileId": "00b0127ad7f38add",
+      "importedName": "{ AuthService }",
+      "sourceModule": "./auth.service",
+      "isExternal": false,
+      "lineNumber": 5
+    }
+  ],
+  [
+    "a710de9213a42698",
+    {
+      "id": "a710de9213a42698",
+      "fileId": "00b0127ad7f38add",
+      "importedName": "{ FacebookStrategy }",
+      "sourceModule": "./strategies/facebook.strategy",
+      "isExternal": false,
+      "lineNumber": 6
+    }
+  ],
+  [
+    "89b5054da4786f31",
+    {
+      "id": "89b5054da4786f31",
+      "fileId": "00b0127ad7f38add",
+      "importedName": "{ GoogleStrategy }",
+      "sourceModule": "./strategies/google.strategy",
+      "isExternal": false,
+      "lineNumber": 7
+    }
+  ],
+  [
+    "dcbaa1505246131c",
+    {
+      "id": "dcbaa1505246131c",
+      "fileId": "00b0127ad7f38add",
+      "importedName": "{ JwtStrategy }",
+      "sourceModule": "./jwt.strategy",
+      "isExternal": false,
+      "lineNumber": 8
+    }
+  ],
+  [
+    "b7a2286927da7982",
+    {
+      "id": "b7a2286927da7982",
+      "fileId": "56ae573a8ea9a0c4",
+      "importedName": "{ AuthGuard }",
+      "sourceModule": "@nestjs/passport",
+      "isExternal": true,
+      "lineNumber": 12
+    }
+  ],
+  [
+    "ec3a73937298ee4c",
+    {
+      "id": "ec3a73937298ee4c",
+      "fileId": "56ae573a8ea9a0c4",
+      "importedName": "type { Request }",
+      "sourceModule": "express",
+      "isExternal": true,
+      "lineNumber": 13
+    }
+  ],
+  [
+    "c3b7cd67045cc49a",
+    {
+      "id": "c3b7cd67045cc49a",
+      "fileId": "56ae573a8ea9a0c4",
+      "importedName": "{ AuthService }",
+      "sourceModule": "./auth.service",
+      "isExternal": false,
+      "lineNumber": 14
+    }
+  ],
+  [
+    "7bd2f6d8218f16b3",
+    {
+      "id": "7bd2f6d8218f16b3",
+      "fileId": "56ae573a8ea9a0c4",
+      "importedName": "{ LoginDto }",
+      "sourceModule": "./dto/login.dto",
+      "isExternal": false,
+      "lineNumber": 15
+    }
+  ],
+  [
+    "c50f596a247493e1",
+    {
+      "id": "c50f596a247493e1",
+      "fileId": "56ae573a8ea9a0c4",
+      "importedName": "{ RegisterDto }",
+      "sourceModule": "./dto/register.dto",
+      "isExternal": false,
+      "lineNumber": 16
+    }
+  ],
+  [
+    "ac36fb7e51b69684",
+    {
+      "id": "ac36fb7e51b69684",
+      "fileId": "232ce35e54382e3a",
+      "importedName": "{ IsBoolean",
+      "sourceModule": "class-validator",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "597ca3583b40cb07",
+    {
+      "id": "597ca3583b40cb07",
+      "fileId": "4330a8a5068c76d9",
+      "importedName": "{ IsString",
+      "sourceModule": "class-validator",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "e977b21f7e0ba315",
+    {
+      "id": "e977b21f7e0ba315",
+      "fileId": "c04f6ecbff455034",
+      "importedName": "{ TaskPriority",
+      "sourceModule": "@prisma/client",
+      "isExternal": true,
+      "lineNumber": 8
+    }
+  ],
+  [
+    "c66bd608ce7c6929",
+    {
+      "id": "c66bd608ce7c6929",
+      "fileId": "669a6eea6c3ffd13",
+      "importedName": "{ TaskPriority",
+      "sourceModule": "@prisma/client",
+      "isExternal": true,
+      "lineNumber": 8
+    }
+  ],
+  [
+    "0c498a7618c2776a",
+    {
+      "id": "0c498a7618c2776a",
+      "fileId": "6f32f86d7eef6090",
+      "importedName": "{ HttpException",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "a8a9b8c094d26574",
+    {
+      "id": "a8a9b8c094d26574",
+      "fileId": "6327a473518779ba",
+      "importedName": "{ Injectable }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "d3956ab80d962c17",
+    {
+      "id": "d3956ab80d962c17",
+      "fileId": "6327a473518779ba",
+      "importedName": "{ PassportStrategy }",
+      "sourceModule": "@nestjs/passport",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "c09ec9b81e7fc504",
+    {
+      "id": "c09ec9b81e7fc504",
+      "fileId": "6327a473518779ba",
+      "importedName": "type { VerifyCallback }",
+      "sourceModule": "passport-oauth2",
+      "isExternal": true,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "4651347b5596d850",
+    {
+      "id": "4651347b5596d850",
+      "fileId": "6327a473518779ba",
+      "importedName": "{ Strategy }",
+      "sourceModule": "passport-google-oauth20",
+      "isExternal": true,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "08976695789d622f",
+    {
+      "id": "08976695789d622f",
+      "fileId": "6327a473518779ba",
+      "importedName": "{ AuthService }",
+      "sourceModule": "../auth.service",
+      "isExternal": false,
+      "lineNumber": 5
+    }
+  ],
+  [
+    "7d47fa0d0ff9f1cc",
+    {
+      "id": "7d47fa0d0ff9f1cc",
+      "fileId": "7e9e02bc2e746020",
+      "importedName": "{ Injectable }",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "af364bf92df7ddaf",
+    {
+      "id": "af364bf92df7ddaf",
+      "fileId": "7e9e02bc2e746020",
+      "importedName": "{ PassportStrategy }",
+      "sourceModule": "@nestjs/passport",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "63c33b044ad1f419",
+    {
+      "id": "63c33b044ad1f419",
+      "fileId": "7e9e02bc2e746020",
+      "importedName": "type { VerifyCallback }",
+      "sourceModule": "passport-oauth2",
+      "isExternal": true,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "767aaec3be577aad",
+    {
+      "id": "767aaec3be577aad",
+      "fileId": "7e9e02bc2e746020",
+      "importedName": "{ Strategy }",
+      "sourceModule": "passport-facebook",
+      "isExternal": true,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "b3df8878ff82c352",
+    {
+      "id": "b3df8878ff82c352",
+      "fileId": "7e9e02bc2e746020",
+      "importedName": "{ AuthService }",
+      "sourceModule": "../auth.service",
+      "isExternal": false,
+      "lineNumber": 5
+    }
+  ],
+  [
+    "35467c5d7a1d99c4",
+    {
+      "id": "35467c5d7a1d99c4",
+      "fileId": "ecdbafe950d2f837",
+      "importedName": "{ Transform }",
+      "sourceModule": "class-transformer",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "30ce1850e4a34fa2",
+    {
+      "id": "30ce1850e4a34fa2",
+      "fileId": "a87b7d0d8778186e",
+      "importedName": "{ plainToInstance }",
+      "sourceModule": "class-transformer",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "36dcefc4d6a6e5ec",
+    {
+      "id": "36dcefc4d6a6e5ec",
+      "fileId": "a87b7d0d8778186e",
+      "importedName": "{ validate }",
+      "sourceModule": "class-validator",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "5d01ee8ec4c21f65",
+    {
+      "id": "5d01ee8ec4c21f65",
+      "fileId": "185f8b8b9883ec2e",
+      "importedName": "{ Transform }",
+      "sourceModule": "class-transformer",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "a76078b5db5e1c3a",
+    {
+      "id": "a76078b5db5e1c3a",
+      "fileId": "75b7bf161a914261",
+      "importedName": "{ plainToInstance }",
+      "sourceModule": "class-transformer",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "650009e03a81aa69",
+    {
+      "id": "650009e03a81aa69",
+      "fileId": "75b7bf161a914261",
+      "importedName": "{ validate }",
+      "sourceModule": "class-validator",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "7626b9caba3c9e4c",
+    {
+      "id": "7626b9caba3c9e4c",
+      "fileId": "75b7bf161a914261",
+      "importedName": "{ LoginDto }",
+      "sourceModule": "./login.dto",
+      "isExternal": false,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "c782863997c81dfa",
+    {
+      "id": "c782863997c81dfa",
+      "fileId": "dc4dab23df2e4b7a",
+      "importedName": "{ createParamDecorator",
+      "sourceModule": "@nestjs/common",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "87024285dc7e394e",
+    {
+      "id": "87024285dc7e394e",
+      "fileId": "dc4dab23df2e4b7a",
+      "importedName": "type { Request }",
+      "sourceModule": "express",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "479f5c254aee3c4b",
+    {
+      "id": "479f5c254aee3c4b",
+      "fileId": "2cf097a66dc58118",
+      "importedName": "{ StrictMode }",
+      "sourceModule": "react",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "3f90374f9dc84460",
+    {
+      "id": "3f90374f9dc84460",
+      "fileId": "2cf097a66dc58118",
+      "importedName": "{ createRoot }",
+      "sourceModule": "react-dom/client",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "262c5e08ed0a4a95",
+    {
+      "id": "262c5e08ed0a4a95",
+      "fileId": "2cf097a66dc58118",
+      "importedName": "{ CssBaseline }",
+      "sourceModule": "@mui/material",
+      "isExternal": true,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "f25964bbb2e98c8e",
+    {
+      "id": "f25964bbb2e98c8e",
+      "fileId": "2cf097a66dc58118",
+      "importedName": "{ ThemeProvider }",
+      "sourceModule": "@mui/material/styles",
+      "isExternal": true,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "4bcda147c3877deb",
+    {
+      "id": "4bcda147c3877deb",
+      "fileId": "2cf097a66dc58118",
+      "importedName": "App",
+      "sourceModule": "./App.tsx",
+      "isExternal": false,
+      "lineNumber": 10
+    }
+  ],
+  [
+    "605060b6eeb839fd",
+    {
+      "id": "605060b6eeb839fd",
+      "fileId": "2cf097a66dc58118",
+      "importedName": "{ appTheme }",
+      "sourceModule": "./theme.ts",
+      "isExternal": false,
+      "lineNumber": 11
+    }
+  ],
+  [
+    "8f5082f2f4fcd85d",
+    {
+      "id": "8f5082f2f4fcd85d",
+      "fileId": "51fd181a602b7b1b",
+      "importedName": "{ BrowserRouter as Router",
+      "sourceModule": "react-router-dom",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "898eda22a490c694",
+    {
+      "id": "898eda22a490c694",
+      "fileId": "51fd181a602b7b1b",
+      "importedName": "LoginPage",
+      "sourceModule": "./pages/LoginPage",
+      "isExternal": false,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "80f7cef376d4155d",
+    {
+      "id": "80f7cef376d4155d",
+      "fileId": "51fd181a602b7b1b",
+      "importedName": "DashboardPage",
+      "sourceModule": "./pages/DashboardPage",
+      "isExternal": false,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "77034d266a75d9b5",
+    {
+      "id": "77034d266a75d9b5",
+      "fileId": "51fd181a602b7b1b",
+      "importedName": "AuthCallbackPage",
+      "sourceModule": "./pages/AuthCallbackPage",
+      "isExternal": false,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "af16616d1a3973a4",
+    {
+      "id": "af16616d1a3973a4",
+      "fileId": "18a1e1b9383412f7",
+      "importedName": "React",
+      "sourceModule": "react",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "1468006cd5b84d74",
+    {
+      "id": "1468006cd5b84d74",
+      "fileId": "18a1e1b9383412f7",
+      "importedName": "Visibility",
+      "sourceModule": "@mui/icons-material/Visibility",
+      "isExternal": true,
+      "lineNumber": 16
+    }
+  ],
+  [
+    "e6dd39934d0d3c12",
+    {
+      "id": "e6dd39934d0d3c12",
+      "fileId": "18a1e1b9383412f7",
+      "importedName": "VisibilityOff",
+      "sourceModule": "@mui/icons-material/VisibilityOff",
+      "isExternal": true,
+      "lineNumber": 17
+    }
+  ],
+  [
+    "92ff3eb4e66be2a1",
+    {
+      "id": "92ff3eb4e66be2a1",
+      "fileId": "18a1e1b9383412f7",
+      "importedName": "CheckCircleIcon",
+      "sourceModule": "@mui/icons-material/CheckCircle",
+      "isExternal": true,
+      "lineNumber": 18
+    }
+  ],
+  [
+    "63a2edd1a97ed5cd",
+    {
+      "id": "63a2edd1a97ed5cd",
+      "fileId": "18a1e1b9383412f7",
+      "importedName": "CheckIcon",
+      "sourceModule": "@mui/icons-material/Check",
+      "isExternal": true,
+      "lineNumber": 19
+    }
+  ],
+  [
+    "1903445bb0a00545",
+    {
+      "id": "1903445bb0a00545",
+      "fileId": "18a1e1b9383412f7",
+      "importedName": "RocketLaunchIcon",
+      "sourceModule": "@mui/icons-material/RocketLaunch",
+      "isExternal": true,
+      "lineNumber": 20
+    }
+  ],
+  [
+    "b19a371e1b119812",
+    {
+      "id": "b19a371e1b119812",
+      "fileId": "18a1e1b9383412f7",
+      "importedName": "{ useNavigate }",
+      "sourceModule": "react-router-dom",
+      "isExternal": true,
+      "lineNumber": 21
+    }
+  ],
+  [
+    "9aca7110e7e15ff8",
+    {
+      "id": "9aca7110e7e15ff8",
+      "fileId": "18a1e1b9383412f7",
+      "importedName": "{ API_BASE_URL",
+      "sourceModule": "../lib/api",
+      "isExternal": false,
+      "lineNumber": 22
+    }
+  ],
+  [
+    "4c27d1e5cc9f8413",
+    {
+      "id": "4c27d1e5cc9f8413",
+      "fileId": "18a1e1b9383412f7",
+      "importedName": "{ LOGIN_FAILED_MESSAGE }",
+      "sourceModule": "../lib/loginMessages",
+      "isExternal": false,
+      "lineNumber": 23
+    }
+  ],
+  [
+    "05a64a8c043b9231",
+    {
+      "id": "05a64a8c043b9231",
+      "fileId": "0bef9958c123628a",
+      "importedName": "React",
+      "sourceModule": "react",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "f01c006b303dc827",
+    {
+      "id": "f01c006b303dc827",
+      "fileId": "0bef9958c123628a",
+      "importedName": "{ useNavigate",
+      "sourceModule": "react-router-dom",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "f520ca008c5d1a34",
+    {
+      "id": "f520ca008c5d1a34",
+      "fileId": "0bef9958c123628a",
+      "importedName": "{ Box",
+      "sourceModule": "@mui/material",
+      "isExternal": true,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "f992fcd41ea48acb",
+    {
+      "id": "f992fcd41ea48acb",
+      "fileId": "ed7bf2a35ec2a9ed",
+      "importedName": "js",
+      "sourceModule": "@eslint/js",
+      "isExternal": true,
+      "lineNumber": 1
+    }
+  ],
+  [
+    "fadecefa05c83250",
+    {
+      "id": "fadecefa05c83250",
+      "fileId": "ed7bf2a35ec2a9ed",
+      "importedName": "globals",
+      "sourceModule": "globals",
+      "isExternal": true,
+      "lineNumber": 2
+    }
+  ],
+  [
+    "de98d8f37d78bddf",
+    {
+      "id": "de98d8f37d78bddf",
+      "fileId": "ed7bf2a35ec2a9ed",
+      "importedName": "reactHooks",
+      "sourceModule": "eslint-plugin-react-hooks",
+      "isExternal": true,
+      "lineNumber": 3
+    }
+  ],
+  [
+    "968dc331eace9fe3",
+    {
+      "id": "968dc331eace9fe3",
+      "fileId": "ed7bf2a35ec2a9ed",
+      "importedName": "reactRefresh",
+      "sourceModule": "eslint-plugin-react-refresh",
+      "isExternal": true,
+      "lineNumber": 4
+    }
+  ],
+  [
+    "eb005281bafc8319",
+    {
+      "id": "eb005281bafc8319",
+      "fileId": "ed7bf2a35ec2a9ed",
+      "importedName": "tseslint",
+      "sourceModule": "typescript-eslint",
+      "isExternal": true,
+      "lineNumber": 5
+    }
+  ],
+  [
+    "b11f8b8b5db80b0f",
+    {
+      "id": "b11f8b8b5db80b0f",
+      "fileId": "ed7bf2a35ec2a9ed",
+      "importedName": "prettier",
+      "sourceModule": "eslint-config-prettier",
+      "isExternal": true,
+      "lineNumber": 6
+    }
+  ],
+  [
+    "13ea0c7937e4f2cd",
+    {
+      "id": "13ea0c7937e4f2cd",
+      "fileId": "ed7bf2a35ec2a9ed",
+      "importedName": "{ defineConfig",
+      "sourceModule": "eslint/config",
+      "isExternal": true,
+      "lineNumber": 7
+    }
+  ]
+]

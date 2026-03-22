@@ -2,11 +2,11 @@
   "id": "T-206",
   "title": "Cascading Deletes",
   "epicId": "epic-002",
-  "status": "in-progress",
+  "status": "done",
   "priority": "high",
   "track": "B",
   "dependencies": ["T-201", "T-202"],
-  "completion_percentage": 75,
+  "completion_percentage": 100,
   "last_updated": "2026-03-21",
   "phase_tracking": {
     "phase_1": {
@@ -29,9 +29,9 @@
     },
     "phase_4": {
       "name": "Final Validation & Documentation",
-      "status": "not-started",
-      "tasks_completed": "0/3",
-      "notes": "API documentation update and deployment verification pending"
+      "status": "completed",
+      "tasks_completed": "3/3",
+      "notes": "API documentation verified, cascading deletes tested across tasks, subtasks, and attachments."
     }
   },
   "implementation_summary": {

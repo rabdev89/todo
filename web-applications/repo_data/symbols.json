@@ -1,0 +1,594 @@
+[
+  [
+    "81c5cf463bb802c5",
+    {
+      "id": "81c5cf463bb802c5",
+      "fileId": "e885186ea94c72c2",
+      "name": "expectRecord",
+      "type": "function",
+      "lineStart": 8,
+      "lineEnd": 13,
+      "signature": "function expectRecord(\n  value: unknown,\n): asserts value is Record<string, unknown> {\n  expect(value).toBeTruthy();\n  expect(typeof value).toBe('object');\n}",
+      "isExported": false
+    }
+  ],
+  [
+    "e9952eba08f21e58",
+    {
+      "id": "e9952eba08f21e58",
+      "fileId": "e885186ea94c72c2",
+      "name": "registerAndLogin",
+      "type": "function",
+      "lineStart": 15,
+      "lineEnd": 30,
+      "signature": "async function registerAndLogin(app: INestApplication, email: string) {\n  const server: unknown = app.getHttpServer();\n  await request(server as never)\n    .post('/auth/register')\n    .send({ email, password: 'Password123!' })\n    .expect(201);\n\n  const res: Response = await request(server as never)\n    .post('/auth/login')\n    .send({ email, password: 'Password123!' })\n    .expect(200);\n\n  expectRecord(res.body);\n  expect(typeof res.body['access_token']).toBe('string');\n  return res.body['access_token'] as string;\n}",
+      "isExported": false
+    }
+  ],
+  [
+    "e48281f296fa07a3",
+    {
+      "id": "e48281f296fa07a3",
+      "fileId": "450a8633a875efc2",
+      "name": "expectRecord",
+      "type": "function",
+      "lineStart": 7,
+      "lineEnd": 12,
+      "signature": "function expectRecord(\n  value: unknown,\n): asserts value is Record<string, unknown> {\n  expect(value).toBeTruthy();\n  expect(typeof value).toBe('object');\n}",
+      "isExported": false
+    }
+  ],
+  [
+    "7842af5a2cd10ec3",
+    {
+      "id": "7842af5a2cd10ec3",
+      "fileId": "450a8633a875efc2",
+      "name": "registerAndLogin",
+      "type": "function",
+      "lineStart": 14,
+      "lineEnd": 28,
+      "signature": "async function registerAndLogin(app: INestApplication, email: string) {\n  const server: unknown = app.getHttpServer();\n  await request(server as never)\n    .post('/auth/register')\n    .send({ email, password: 'Password123!' })\n    .expect(201);\n\n  const res: Response = await request(server as never)\n    .post('/auth/login')\n    .send({ email, password: 'Password123!' })\n    .expect(200);\n\n  expectRecord(res.body);\n  return res.body['access_token'] as string;\n}",
+      "isExported": false
+    }
+  ],
+  [
+    "38d3e8491496b358",
+    {
+      "id": "38d3e8491496b358",
+      "fileId": "cfef0b7164547c7c",
+      "name": "setupE2eApp",
+      "type": "function",
+      "lineStart": 4,
+      "lineEnd": 12,
+      "signature": "function setupE2eApp(app: INestApplication): void {\n  app.useGlobalPipes(\n    new ValidationPipe({\n      whitelist: true,\n      forbidNonWhitelisted: true,\n      transform: true,\n    }),\n  );\n}",
+      "isExported": false
+    }
+  ],
+  [
+    "80d151cd993a8345",
+    {
+      "id": "80d151cd993a8345",
+      "fileId": "218ad57a9e6adb61",
+      "name": "expectRecord",
+      "type": "function",
+      "lineStart": 8,
+      "lineEnd": 13,
+      "signature": "function expectRecord(\n  value: unknown,\n): asserts value is Record<string, unknown> {\n  expect(value).toBeTruthy();\n  expect(typeof value).toBe('object');\n}",
+      "isExported": false
+    }
+  ],
+  [
+    "d49eea8787668dfa",
+    {
+      "id": "d49eea8787668dfa",
+      "fileId": "069ad7f7eeebaf8c",
+      "name": "bootstrap",
+      "type": "function",
+      "lineStart": 5,
+      "lineEnd": 18,
+      "signature": "async function bootstrap() {\n  const app = await NestFactory.create(AppModule);\n  app.enableCors({\n    origin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(',') : 'http://localhost:5173',\n  });\n  app.useGlobalPipes(\n    new ValidationPipe({\n      whitelist: true,\n      forbidNonWhitelisted: true,\n      transform: true,\n    }),\n  );\n  await app.listen(process.env.PORT ?? 3000);\n}",
+      "isExported": false
+    }
+  ],
+  [
+    "cbb95710ea1a9fd1",
+    {
+      "id": "cbb95710ea1a9fd1",
+      "fileId": "b5ccd79be1de216f",
+      "name": "AppService",
+      "type": "class",
+      "lineStart": 4,
+      "lineEnd": 8,
+      "isExported": false
+    }
+  ],
+  [
+    "946de94d458ea72d",
+    {
+      "id": "946de94d458ea72d",
+      "fileId": "c432f178c0cfd429",
+      "name": "AppModule",
+      "type": "class",
+      "lineStart": 27,
+      "lineEnd": 27,
+      "isExported": false
+    }
+  ],
+  [
+    "100dd26d4e7390a7",
+    {
+      "id": "100dd26d4e7390a7",
+      "fileId": "82d053782917a98a",
+      "name": "AppController",
+      "type": "class",
+      "lineStart": 5,
+      "lineEnd": 12,
+      "isExported": false
+    }
+  ],
+  [
+    "0291b06cad61015f",
+    {
+      "id": "0291b06cad61015f",
+      "fileId": "82d612aceda8d959",
+      "name": "getPasswordHint",
+      "type": "function",
+      "lineStart": 5,
+      "lineEnd": 17,
+      "signature": "function getPasswordHint(password: string): string | null {\n  if (!password) return 'Enter a password'\n  if (password.length < 8 || password.length > 72)\n    return 'Use 8–72 characters'\n  if (!/[a-z]/.test(password)) return 'Add a lowercase letter'\n  if (!/[A-Z]/.test(password)) return 'Add an uppercase letter'\n  if (!/\\d/.test(password)) return 'Add a number'\n  if (!/[!@#$%^&*]/.test(password))\n    return 'Add a special character (!@#$%^&*)'\n  if (!REGISTER_PASSWORD_PATTERN.test(password))\n    return 'Password does not meet requirements'\n  return null\n}",
+      "isExported": false
+    }
+  ],
+  [
+    "ab9e3c28821541a4",
+    {
+      "id": "ab9e3c28821541a4",
+      "fileId": "82d612aceda8d959",
+      "name": "isRegisterPasswordValid",
+      "type": "function",
+      "lineStart": 19,
+      "lineEnd": 21,
+      "signature": "function isRegisterPasswordValid(password: string): boolean {\n  return REGISTER_PASSWORD_PATTERN.test(password)\n}",
+      "isExported": false
+    }
+  ],
+  [
+    "d4f3f350f3f82cee",
+    {
+      "id": "d4f3f350f3f82cee",
+      "fileId": "9a9a5166643b276d",
+      "name": "ApiError",
+      "type": "class",
+      "lineStart": 4,
+      "lineEnd": 12,
+      "isExported": false
+    }
+  ],
+  [
+    "6a3a0f34b6ea20a0",
+    {
+      "id": "6a3a0f34b6ea20a0",
+      "fileId": "9a9a5166643b276d",
+      "name": "formatApiErrorMessage",
+      "type": "function",
+      "lineStart": 15,
+      "lineEnd": 22,
+      "signature": "function formatApiErrorMessage(body: unknown): string {\n  if (body && typeof body === 'object' && 'message' in body) {\n    const msg = (body as { message: unknown }).message\n    if (Array.isArray(msg)) return msg.filter(Boolean).join(' ')\n    if (typeof msg === 'string') return msg\n  }\n  return 'Something went wrong'\n}",
+      "isExported": false
+    }
+  ],
+  [
+    "737fcce9c30f5ad5",
+    {
+      "id": "737fcce9c30f5ad5",
+      "fileId": "9a9a5166643b276d",
+      "name": "getToken",
+      "type": "function",
+      "lineStart": 24,
+      "lineEnd": 26,
+      "signature": "function getToken() {\n  return localStorage.getItem('access_token')\n}",
+      "isExported": false
+    }
+  ],
+  [
+    "31fed9ef3de33288",
+    {
+      "id": "31fed9ef3de33288",
+      "fileId": "9a9a5166643b276d",
+      "name": "apiFetch",
+      "type": "function",
+      "lineStart": 28,
+      "lineEnd": 50,
+      "signature": "async function apiFetch<T>(\n  path: string,\n  init: RequestInit & { auth?: boolean } = { auth: true },\n): Promise<T> {\n  const { auth = true, ...rest } = init\n  const headers = new Headers(rest.headers)\n  \n  // Only set application/json if not FormData\n  if (!(rest.body instanceof FormData)) {\n    headers.set('Content-Type', 'application/json')\n  }\n\n  if (auth) {\n    const token = getToken()\n    if (token) headers.set('Authorization', `Bearer ${token}`)\n  }\n\n  const res = await fetch(`${API_BASE_URL}${path}`, { ...rest, headers })\n  const text = await res.text()\n  const body = text ? (JSON.parse(text) as unknown) : null\n  if (!res.ok) throw new ApiError(res.status, body)\n  return body as T\n}",
+      "isExported": false
+    }
+  ],
+  [
+    "0d180d098583dd8b",
+    {
+      "id": "0d180d098583dd8b",
+      "fileId": "a3a0a145f964aade",
+      "name": "UsersService",
+      "type": "class",
+      "lineStart": 5,
+      "lineEnd": 18,
+      "isExported": false
+    }
+  ],
+  [
+    "e9ff33a273103404",
+    {
+      "id": "e9ff33a273103404",
+      "fileId": "867d19e5aa3205e9",
+      "name": "UsersModule",
+      "type": "class",
+      "lineStart": 12,
+      "lineEnd": 12,
+      "isExported": false
+    }
+  ],
+  [
+    "b140c5396c656116",
+    {
+      "id": "b140c5396c656116",
+      "fileId": "9e1987c093ec001c",
+      "name": "UsersController",
+      "type": "class",
+      "lineStart": 7,
+      "lineEnd": 20,
+      "isExported": false
+    }
+  ],
+  [
+    "a95f6943931ba88e",
+    {
+      "id": "a95f6943931ba88e",
+      "fileId": "0f452698ed9ee2e7",
+      "name": "SubtasksService",
+      "type": "class",
+      "lineStart": 12,
+      "lineEnd": 59,
+      "isExported": false
+    }
+  ],
+  [
+    "9ed04b579894e041",
+    {
+      "id": "9ed04b579894e041",
+      "fileId": "d9e9d96aa38bd786",
+      "name": "SubtasksModule",
+      "type": "class",
+      "lineStart": 9,
+      "lineEnd": 9,
+      "isExported": false
+    }
+  ],
+  [
+    "860f3d9230aefc71",
+    {
+      "id": "860f3d9230aefc71",
+      "fileId": "625e891d82e7667b",
+      "name": "SubtasksController",
+      "type": "class",
+      "lineStart": 18,
+      "lineEnd": 46,
+      "isExported": false
+    }
+  ],
+  [
+    "4c53b40021c632be",
+    {
+      "id": "4c53b40021c632be",
+      "fileId": "12b90e1f357dc6b5",
+      "name": "TasksService",
+      "type": "class",
+      "lineStart": 15,
+      "lineEnd": 228,
+      "isExported": false
+    }
+  ],
+  [
+    "8b81f4613ab5fcee",
+    {
+      "id": "8b81f4613ab5fcee",
+      "fileId": "8bf21e79e0ceea9f",
+      "name": "TasksModule",
+      "type": "class",
+      "lineStart": 12,
+      "lineEnd": 12,
+      "isExported": false
+    }
+  ],
+  [
+    "aaa48031f92223cd",
+    {
+      "id": "aaa48031f92223cd",
+      "fileId": "0f7c7d9c942318fc",
+      "name": "TasksController",
+      "type": "class",
+      "lineStart": 25,
+      "lineEnd": 107,
+      "isExported": false
+    }
+  ],
+  [
+    "a34db46920b34809",
+    {
+      "id": "a34db46920b34809",
+      "fileId": "764ce9f7c6b0148e",
+      "name": "AttachmentsService",
+      "type": "class",
+      "lineStart": 7,
+      "lineEnd": 50,
+      "isExported": false
+    }
+  ],
+  [
+    "6b0da7f66e34f8e4",
+    {
+      "id": "6b0da7f66e34f8e4",
+      "fileId": "aa8ea3fd3ef18298",
+      "name": "PrismaService",
+      "type": "class",
+      "lineStart": 5,
+      "lineEnd": 16,
+      "isExported": false
+    }
+  ],
+  [
+    "9df01a8c6d91dc5d",
+    {
+      "id": "9df01a8c6d91dc5d",
+      "fileId": "8821b691b7c4578d",
+      "name": "PrismaModule",
+      "type": "class",
+      "lineStart": 9,
+      "lineEnd": 9,
+      "isExported": false
+    }
+  ],
+  [
+    "d80027f68caa71f7",
+    {
+      "id": "d80027f68caa71f7",
+      "fileId": "2a09bb19e88b3b1f",
+      "name": "FileService",
+      "type": "class",
+      "lineStart": 11,
+      "lineEnd": 92,
+      "isExported": false
+    }
+  ],
+  [
+    "29d06633b4bb9d96",
+    {
+      "id": "29d06633b4bb9d96",
+      "fileId": "d92a6ecd93483eaa",
+      "name": "FileModule",
+      "type": "class",
+      "lineStart": 8,
+      "lineEnd": 8,
+      "isExported": false
+    }
+  ],
+  [
+    "6010dadf2e90b5e7",
+    {
+      "id": "6010dadf2e90b5e7",
+      "fileId": "c0ea358f9a502632",
+      "name": "JwtStrategy",
+      "type": "class",
+      "lineStart": 9,
+      "lineEnd": 21,
+      "isExported": false
+    }
+  ],
+  [
+    "ab4382f411aca19e",
+    {
+      "id": "ab4382f411aca19e",
+      "fileId": "ad0e49d9ba1d56aa",
+      "name": "JwtAuthGuard",
+      "type": "class",
+      "lineStart": 5,
+      "lineEnd": 5,
+      "isExported": false
+    }
+  ],
+  [
+    "b4898cf0bf22741f",
+    {
+      "id": "b4898cf0bf22741f",
+      "fileId": "1d56528508a1c7bc",
+      "name": "AuthService",
+      "type": "class",
+      "lineStart": 18,
+      "lineEnd": 87,
+      "isExported": false
+    }
+  ],
+  [
+    "1e894205d0b2f902",
+    {
+      "id": "1e894205d0b2f902",
+      "fileId": "d78f5845c11fd22c",
+      "name": "expectLoginFailed",
+      "type": "function",
+      "lineStart": 35,
+      "lineEnd": 41,
+      "signature": "function expectLoginFailed(err: unknown) {\n      expect(err).toBeInstanceOf(UnauthorizedException);\n      expect((err as UnauthorizedException).getResponse()).toMatchObject({\n        message: LOGIN_FAILED_MESSAGE,\n        statusCode: 401,\n      });\n    }",
+      "isExported": false
+    }
+  ],
+  [
+    "62cab11ce9a2a737",
+    {
+      "id": "62cab11ce9a2a737",
+      "fileId": "00b0127ad7f38add",
+      "name": "AuthModule",
+      "type": "class",
+      "lineStart": 26,
+      "lineEnd": 26,
+      "isExported": false
+    }
+  ],
+  [
+    "066f6f5053d867b1",
+    {
+      "id": "066f6f5053d867b1",
+      "fileId": "56ae573a8ea9a0c4",
+      "name": "AuthController",
+      "type": "class",
+      "lineStart": 19,
+      "lineEnd": 72,
+      "isExported": false
+    }
+  ],
+  [
+    "720f938f3f427fff",
+    {
+      "id": "720f938f3f427fff",
+      "fileId": "232ce35e54382e3a",
+      "name": "UpdateSubtaskDto",
+      "type": "class",
+      "lineStart": 3,
+      "lineEnd": 7,
+      "isExported": false
+    }
+  ],
+  [
+    "27b62be8eb7b245a",
+    {
+      "id": "27b62be8eb7b245a",
+      "fileId": "4330a8a5068c76d9",
+      "name": "CreateSubtaskDto",
+      "type": "class",
+      "lineStart": 3,
+      "lineEnd": 8,
+      "isExported": false
+    }
+  ],
+  [
+    "a74e7e1379a0119e",
+    {
+      "id": "a74e7e1379a0119e",
+      "fileId": "c04f6ecbff455034",
+      "name": "UpdateTaskDto",
+      "type": "class",
+      "lineStart": 10,
+      "lineEnd": 32,
+      "isExported": false
+    }
+  ],
+  [
+    "18eea16955dbd58c",
+    {
+      "id": "18eea16955dbd58c",
+      "fileId": "669a6eea6c3ffd13",
+      "name": "CreateTaskDto",
+      "type": "class",
+      "lineStart": 10,
+      "lineEnd": 31,
+      "isExported": false
+    }
+  ],
+  [
+    "7e5d32697a60cbbc",
+    {
+      "id": "7e5d32697a60cbbc",
+      "fileId": "6f32f86d7eef6090",
+      "name": "CascadeDeleteException",
+      "type": "class",
+      "lineStart": 3,
+      "lineEnd": 25,
+      "isExported": false
+    }
+  ],
+  [
+    "4e1e388a02e4f594",
+    {
+      "id": "4e1e388a02e4f594",
+      "fileId": "6327a473518779ba",
+      "name": "GoogleStrategy",
+      "type": "class",
+      "lineStart": 12,
+      "lineEnd": 59,
+      "isExported": false
+    }
+  ],
+  [
+    "947cc48729d13ba8",
+    {
+      "id": "947cc48729d13ba8",
+      "fileId": "7e9e02bc2e746020",
+      "name": "FacebookStrategy",
+      "type": "class",
+      "lineStart": 12,
+      "lineEnd": 59,
+      "isExported": false
+    }
+  ],
+  [
+    "9b38856a29b4af99",
+    {
+      "id": "9b38856a29b4af99",
+      "fileId": "ecdbafe950d2f837",
+      "name": "trimEmail",
+      "type": "function",
+      "lineStart": 10,
+      "lineEnd": 12,
+      "signature": "function trimEmail({ value }: { value: unknown }) {\n  return typeof value === 'string' ? value.trim() : value;\n}",
+      "isExported": false
+    }
+  ],
+  [
+    "78440668fe8d767c",
+    {
+      "id": "78440668fe8d767c",
+      "fileId": "ecdbafe950d2f837",
+      "name": "trimOptionalDisplayName",
+      "type": "function",
+      "lineStart": 14,
+      "lineEnd": 18,
+      "signature": "function trimOptionalDisplayName({ value }: { value: unknown }) {\n  if (typeof value !== 'string') return undefined;\n  const t = value.trim();\n  return t.length > 0 ? t : undefined;\n}",
+      "isExported": false
+    }
+  ],
+  [
+    "14be5b47017910f6",
+    {
+      "id": "14be5b47017910f6",
+      "fileId": "ecdbafe950d2f837",
+      "name": "RegisterDto",
+      "type": "class",
+      "lineStart": 27,
+      "lineEnd": 43,
+      "isExported": false
+    }
+  ],
+  [
+    "6f209e4468a03ae6",
+    {
+      "id": "6f209e4468a03ae6",
+      "fileId": "185f8b8b9883ec2e",
+      "name": "LoginDto",
+      "type": "class",
+      "lineStart": 9,
+      "lineEnd": 20,
+      "isExported": false
+    }
+  ],
+  [
+    "77600b84dbf7e0d1",
+    {
+      "id": "77600b84dbf7e0d1",
+      "fileId": "51fd181a602b7b1b",
+      "name": "App",
+      "type": "function",
+      "lineStart": 6,
+      "lineEnd": 17,
+      "signature": "function App() {\n  return (\n    <Router>\n      <Routes>\n        <Route path=\"/login\" element={<LoginPage />} />\n        <Route path=\"/auth/callback\" element={<AuthCallbackPage />} />\n        <Route path=\"/\" element={<DashboardPage />} />\n        <Route path=\"*\" element={<Navigate to=\"/login\" replace />} />\n      </Routes>\n    </Router>\n  )\n}",
+      "isExported": false
+    }
+  ]
+]

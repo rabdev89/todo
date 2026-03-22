@@ -1,0 +1,18 @@
+{
+  "id": "T-109",
+  "title": "Logout Functionality",
+  "epic_id": "epic-001",
+  "status": "done",
+  "priority": "high",
+  "track": "B",
+  "dependencies": ["T-103", "T-203"],
+  "description": "Implement secure logout functionality. Add a logout button to the Dashboard UI, clear authentication tokens from local storage, and redirect the user to the login page.",
+  "requirements": [
+    "Add Logout button to Dashboard sidebar or profile menu.",
+    "Clear `access_token` from `localStorage` on logout.",
+    "Redirect to `/login` immediately after logout.",
+    "Ensure session is invalidated on the backend (if applicable/JWT blacklist)."
+  ],
+  "implementation_notes": "Logout is a client-side token removal combined with a redirect. The UI should place the logout button in a standard location (e.g., bottom of sidebar or dropdown).",
+  "last_updated": "2026-03-21T23:05:00Z"
+}

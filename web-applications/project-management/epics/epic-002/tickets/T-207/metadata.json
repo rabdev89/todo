@@ -2,11 +2,11 @@
   "id": "T-207",
   "title": "Task Completion Logic & Dependencies",
   "epicId": "epic-002",
-  "status": "scoped",
+  "status": "done",
   "priority": "high",
   "track": "B",
   "dependencies": ["T-202", "T-204"],
-  "completion_percentage": 0,
-  "last_updated": "2026-03-20",
-  "notes": "Full Track B scoping complete: TRACK_DECISION.md, design/README.md, planning/README.md, testing/README.md created. Ready for implementation phase. Three core features: (1) Dependency enforcement - block completion if subtasks incomplete, (2) Auto-completion - auto-complete parent when last subtask done, (3) Manual override - allow completion for tasks with no subtasks. 18 implementation tasks identified with 14 hour estimate. Test strategy covers unit, integration, E2E, and frontend tests."
+  "completion_percentage": 100,
+  "last_updated": "2026-03-21",
+  "notes": "Implementation complete. Features: (1) Dependency enforcement in TaskService.update and bulkUpdate, (2) Auto-completion in SubtasksService.update, (3) Manual override allowed. Frontend updated to display specific backend error messages."
 }

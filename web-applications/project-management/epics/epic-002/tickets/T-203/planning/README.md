@@ -1,73 +1,32 @@
-# T-203 Planning: Dashboard UI Implementation
+# T-203 Planning: Dashboard UI Implementation (Breath-Based)
 
-## Task Breakdown (ACTUAL COMPLETION STATUS)
-1. [x] Metadata Update: status to `scoped`, track to `B`.
-2. [x] Frontend: Setup `Dashboard` route and base layout (DashboardPage.tsx with Sidebar + AppBar).
-3. [x] Frontend: Implement state management using React hooks (useState for tasks, filters, dialogs, expanded rows).
-4. [x] Frontend: Build `TaskRow` component with priority styling and expand/collapse.
-5. [x] Frontend: Build `SubtaskList` with inline completion display and "Add or Manage Subtasks" link.
-6. [x] Frontend: Build `CreateTaskDialog` and `DetailDrawer` with form validation.
-7. [x] Frontend: Connect components to `backend` API via `apiFetch` utility.
+## Implementation Breaths
 
-## Implementation Details
+### Breath 1: Foundation & Layout
+- [x] Integrate standard MUI Theme with style_guide.json tokens.
+- [x] Setup `DashboardPage` layout (Responsive Sidebar + AppBar).
+- [x] Implement base `TaskList` container with skeleton loading states.
+- **Verification**: Visual check of layout consistency.
 
-### Main Components
-- **DashboardPage.tsx** (800+ lines)
-  - AppBar with logout button
-  - Sidebar navigation with drawer toggle (mobile)
-  - Table-based task list with sorting headers
-  - Filter panel (by priority & status)
-  - Bulk selection and bulk operations
-  - Task detail drawer for editing/managing subtasks
-  - Create/Edit task dialog
-  - Toast notifications for user feedback
+### Breath 2: Task List & Filtering
+- [/] Connect `TaskList` to `GET /tasks` API.
+- [/] Implement Priority & Status filters in the Sidebar.
+- [ ] **GAP**: Implement **Active Filter Chips** (closable) below the filter bar.
+- **Verification**: Filters correctly update the list; chips appear/disappear.
 
-### Features Implemented
-- **Task Management**
-  - Create tasks with title, description, due date, priority, status
-  - Edit existing tasks
-  - Delete single or bulk tasks
-  - Toggle task completion status
-  - Expand/collapse rows to view subtasks
-  
-- **Subtask Management**
-  - View subtasks inline within expanded rows
-  - Add subtasks via detail drawer
-  - See completion status of subtasks
-  
-- **Filtering & Sorting**
-  - Filter by priority (Low, Medium, High, Urgent)
-  - Filter by status (Pending, In Progress, Completed)
-  - Sort by title, due date, priority, status
-  - Click column headers to toggle sort direction
+### Breath 3: Interaction & Subtasks
+- [x] Implement row expansion to reveal `SubtaskList`.
+- [ ] **GAP**: Add **Single-Task Delete Confirmation** dialog.
+- [ ] Implement Sort-by-Priority and Sort-by-Date on header click.
+- **Verification**: Subtasks are visible; sorting logic is correct.
 
-- **UI/UX**
-  - Responsive layout (sidebar collapses on mobile)
-  - Skeleton loaders during data fetch
-  - Empty state handling
-  - Toast notifications for CRUD feedback
-  - Strikethrough styling for completed tasks
-  - Priority badge colors matching design
+### Breath 4: Multi-select & Bulk Actions (Sync with T-205)
+- [x] Implement multi-select checkboxes.
+- [x] Implement floating action bar for bulk delete/update.
+- [x] **Verification**: Bulk actions work with confirmation.
 
-### API Integration
-- POST /tasks (create)
-- GET /tasks (list)
-- PATCH /tasks/:id (update)
-- PATCH /tasks/bulk (bulk update)
-- DELETE /tasks/:id (delete)
-- DELETE /tasks/bulk (bulk delete)
-
-### Design Adherence
-- Follows style_guide.json color tokens for priority badges
-- Uses MUI components with custom theme overrides
-- Responsive grid layout with proper spacing
-- Clean, minimal aesthetic ("Pristine Productivity Engine")
-
-## Verification Checklist
-- [x] Task list displays correctly with real data.
-- [x] Adding a task updates the UI immediately.
-- [x] Subtasks are visible and interactive.
-- [x] Colors and spacing match `style_guide.json`.
-- [ ] Unit tests for components (Jest/Vitest) — TO DO
-- [ ] E2E tests for full creation flow (Playwright) — FUTURE
-- [ ] Mobile responsiveness validation — TO DO
+### Breath 5: Final Hardening & Testing
+- [ ] Resolve CSS dependency conflicts for Jest/Vitest.
+- [ ] Achieve ≥ 80% component test coverage.
+- [ ] Mobile responsiveness final pass.
+- **Verification**: `ci/verify.sh` passes.
